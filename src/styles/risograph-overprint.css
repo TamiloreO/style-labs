@@ -1,0 +1,242 @@
+/* Risograph overprint: separate ink plates, small registration offsets. */
+
+[data-style="risograph-overprint"] {
+  --bg: #f2ecdc;
+  --bg-2: #faf5e7;
+  --ink: #14120f;
+  --ink-2: #453d33;
+  --ink-3: #776b5c;
+  --line: #1f4fbf;
+  --surface: #faf5e7;
+  --surface-2: #e8dfc9;
+  --accent: #1f4fbf;
+  --accent-2: #ff4a1c;
+  --on-accent: #fdf8ea;
+
+  --radius: 2px;
+  --radius-sm: 2px;
+  --radius-lg: 3px;
+  --border-w: 1px;
+  --card-shadow: 4px 4px 0 rgba(255, 74, 28, 0.9), -4px -4px 0 rgba(31, 79, 191, 0.55);
+
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", sans-serif;
+  --font-text: "Bricolage Grotesque", "Helvetica Neue", sans-serif;
+  --font-label: "IBM Plex Mono", ui-monospace, monospace;
+
+  --display-weight: 700;
+  --display-size: clamp(2.5rem, 6.2vw, 4.9rem);
+  --display-lh: 0.92;
+  --display-track: -0.03em;
+  --label-track: 0.14em;
+  --label-case: uppercase;
+  --label-size: 0.66rem;
+
+  --btn-radius: 2px;
+  --btn-bg: var(--ink);
+  --btn-ink: #fdf8ea;
+  --btn-border: 1px solid var(--ink);
+  --btn-shadow: 3px 3px 0 var(--accent-2), -3px -3px 0 rgba(31, 79, 191, 0.6);
+  --btn-pad: 0.8em 1.4em;
+  --btn-weight: 600;
+
+  --card-pad: 24px;
+  --tile-radius: 2px;
+
+  --sw-bg: #14120f;
+  --sw-ink: #faf5e7;
+  --sw-line: rgba(250, 245, 231, 0.2);
+  --sw-active-bg: #ff4a1c;
+  --sw-active-ink: #14120f;
+  --sw-radius: 4px;
+  --sw-font: "IBM Plex Mono", monospace;
+}
+
+[data-style="risograph-overprint"] body {
+  background-image: radial-gradient(rgba(20, 18, 15, 0.07) 0.6px, transparent 0.7px);
+  background-size: 4px 4px;
+}
+
+[data-style="risograph-overprint"] .site-header {
+  border-bottom: 2px solid var(--ink);
+  background: var(--bg);
+  backdrop-filter: none;
+}
+
+[data-style="risograph-overprint"] .brand__word {
+  position: relative;
+}
+
+[data-style="risograph-overprint"] .brand__mark {
+  color: var(--accent);
+}
+
+[data-style="risograph-overprint"] .hero__title {
+  text-shadow: 3px 0 0 rgba(255, 74, 28, 0.55), -3px 0 0 rgba(31, 79, 191, 0.5);
+}
+
+[data-style="risograph-overprint"] .hero__title em {
+  font-style: italic;
+  color: var(--accent);
+  text-shadow: 3px 2px 0 rgba(255, 74, 28, 0.75);
+}
+
+[data-style="risograph-overprint"] .eyebrow__dot {
+  border-radius: 0;
+  background: var(--accent-2);
+  box-shadow: 3px 3px 0 rgba(31, 79, 191, 0.55);
+}
+
+[data-style="risograph-overprint"] .art {
+  border: 1px solid var(--ink);
+  box-shadow: 7px 7px 0 rgba(255, 74, 28, 0.85), -7px -7px 0 rgba(31, 79, 191, 0.5);
+  background: var(--bg-2);
+}
+
+[data-style="risograph-overprint"] .art__head {
+  border-bottom: 1px solid rgba(20, 18, 15, 0.35);
+}
+
+[data-style="risograph-overprint"] .art__label {
+  font-family: var(--font-label);
+}
+
+[data-style="risograph-overprint"] .art__bars i {
+  border-radius: 0;
+  opacity: 1;
+  background: repeating-linear-gradient(
+    45deg,
+    var(--accent) 0 2px,
+    transparent 2px 6px
+  );
+}
+
+[data-style="risograph-overprint"] .art__bars i:nth-child(2n) {
+  background: repeating-linear-gradient(
+    45deg,
+    var(--accent-2) 0 2px,
+    transparent 2px 6px
+  );
+  opacity: 1;
+}
+
+[data-style="risograph-overprint"] .btn:hover {
+  transform: none;
+  box-shadow: 1px 1px 0 var(--accent-2), -1px -1px 0 rgba(31, 79, 191, 0.6);
+}
+
+[data-style="risograph-overprint"] .btn--ghost {
+  background: transparent;
+  color: var(--ink);
+  box-shadow: none;
+  border: 1px solid var(--ink);
+}
+
+[data-style="risograph-overprint"] .ticker {
+  background: var(--accent);
+  border-block: 2px solid var(--ink);
+}
+
+[data-style="risograph-overprint"] .ticker__group,
+[data-style="risograph-overprint"] .ticker__group i {
+  color: #fdf8ea;
+}
+
+[data-style="risograph-overprint"] .section__head {
+  border-bottom: 2px solid var(--ink);
+}
+
+[data-style="risograph-overprint"] .section__title {
+  font-size: clamp(1.7rem, 3.4vw, 2.7rem);
+}
+
+[data-style="risograph-overprint"] .card {
+  border: 1px solid var(--ink);
+  box-shadow: 5px 5px 0 rgba(255, 74, 28, 0.85), -5px -5px 0 rgba(31, 79, 191, 0.45);
+}
+
+[data-style="risograph-overprint"] .card:nth-child(2) {
+  box-shadow: 5px 5px 0 rgba(31, 79, 191, 0.8), -5px -5px 0 rgba(255, 74, 28, 0.45);
+}
+
+[data-style="risograph-overprint"] .card__index {
+  color: var(--accent-2);
+  font-family: var(--font-label);
+}
+
+[data-style="risograph-overprint"] .card__title {
+  font-size: 1.24rem;
+}
+
+[data-style="risograph-overprint"] .card__link {
+  border-top: 1px solid var(--ink);
+  color: var(--accent);
+}
+
+[data-style="risograph-overprint"] .tile {
+  border: 1px solid var(--ink);
+  box-shadow: 4px 4px 0 rgba(31, 79, 191, 0.35);
+}
+
+[data-style="risograph-overprint"] .tile--accent {
+  background-image: radial-gradient(rgba(255, 74, 28, 0.55) 1px, transparent 1.1px);
+  background-size: 5px 5px;
+}
+
+[data-style="risograph-overprint"] .tile__figure {
+  text-shadow: 2px 0 0 rgba(255, 74, 28, 0.6);
+}
+
+[data-style="risograph-overprint"] .quote {
+  border-block: 2px solid var(--ink);
+  background-image: radial-gradient(rgba(31, 79, 191, 0.18) 1px, transparent 1.1px);
+  background-size: 6px 6px;
+}
+
+[data-style="risograph-overprint"] .quote__text {
+  text-shadow: 2px 0 0 rgba(255, 74, 28, 0.45);
+}
+
+[data-style="risograph-overprint"] .quote__avatar {
+  border-radius: 0;
+  background: var(--accent-2);
+  box-shadow: 3px 3px 0 rgba(31, 79, 191, 0.6);
+}
+
+[data-style="risograph-overprint"] .closing__inner {
+  border: 2px solid var(--ink);
+  box-shadow: 8px 8px 0 rgba(255, 74, 28, 0.85), -8px -8px 0 rgba(31, 79, 191, 0.45);
+}
+
+[data-style="risograph-overprint"] .site-footer {
+  border-top: 2px solid var(--ink);
+}
+
+[data-style="risograph-overprint"] .switcher__bar {
+  border-color: rgba(250, 245, 231, 0.3);
+}
+
+[data-style="risograph-overprint"] .chip {
+  border-radius: 2px;
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+}
+
+[data-style="risograph-overprint"] .sheet__panel {
+  border-radius: 0;
+  border-top: 6px solid var(--accent);
+}
+
+[data-style="risograph-overprint"] .style-card {
+  box-shadow: 3px 3px 0 rgba(255, 74, 28, 0.5);
+}
+
+@media (max-width: 720px) {
+  [data-style="risograph-overprint"] .art,
+  [data-style="risograph-overprint"] .closing__inner {
+    box-shadow: 5px 5px 0 rgba(255, 74, 28, 0.8);
+  }
+
+  [data-style="risograph-overprint"] .card {
+    box-shadow: 4px 4px 0 rgba(255, 74, 28, 0.75);
+  }
+}

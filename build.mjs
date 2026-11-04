@@ -165,7 +165,11 @@ const assetMap = [
 
 const template = await readFile(join(here, "src", "index.html"), "utf8");
 let page = template
-  .replaceAll("{{CountWord}}", spell(count).replace(/\b\w/g, (c) => c.toUpperCase()))
+  .replaceAll("{{CountWord}}", spell(count).charAt(0).toUpperCase() + spell(count).slice(1))
+  .replaceAll("{{CountWordNb}}",
+    `<span class="no-break">${spell(count).charAt(0).toUpperCase()}${spell(count).slice(1)}</span>`
+  )
+
   .replaceAll("{{countWord}}", spell(count))
   .replaceAll("{{count}}", String(count))
   .replace(

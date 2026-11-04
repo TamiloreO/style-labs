@@ -80,3 +80,20 @@ html {
   .style-card__name { font-size: 0.85rem; }
   .style-card__meta { font-size: 0.62rem; }
 }
+
+@media (max-width: 640px) {
+  /* Meta strips share one small-screen grid so labels never collide. */
+  .hero__meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 14px;
+  }
+  .hero__meta div {
+    min-width: 0;
+    flex: none;
+  }
+  .hero__meta dt,
+  .hero__meta dd {
+    overflow-wrap: anywhere;
+  }
+}

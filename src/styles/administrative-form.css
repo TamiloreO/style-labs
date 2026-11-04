@@ -1,0 +1,401 @@
+/* Administrative form: the page is one issued document to complete. */
+
+[data-style="administrative-form"] {
+  --bg: #f4f1e8;
+  --bg-2: #fbf9f2;
+  --ink: #14171a;
+  --ink-2: #3f454b;
+  --ink-3: #6b7178;
+  --line: #14171a;
+  --surface: #fbf9f2;
+  --surface-2: #e9e4d4;
+  --accent: #a8322a;
+  --accent-2: #a8322a;
+  --on-accent: #fbf9f2;
+
+  --radius: 0px;
+  --radius-sm: 0px;
+  --radius-lg: 0px;
+  --border-w: 1px;
+  --card-shadow: none;
+
+  --font-display: "Archivo", "Helvetica Neue", sans-serif;
+  --font-text: "Archivo", "Helvetica Neue", sans-serif;
+  --font-label: "IBM Plex Mono", ui-monospace, monospace;
+
+  --display-weight: 700;
+  --display-size: clamp(2.1rem, 4.8vw, 3.6rem);
+  --display-lh: 1.02;
+  --display-track: -0.02em;
+  --display-case: uppercase;
+  --label-track: 0.14em;
+  --label-case: uppercase;
+  --label-size: 0.62rem;
+  --label-weight: 700;
+
+  --btn-radius: 0px;
+  --btn-bg: var(--ink);
+  --btn-ink: #fbf9f2;
+  --btn-border: 1px solid var(--ink);
+  --btn-pad: 0.75em 1.3em;
+  --btn-weight: 700;
+  --btn-case: uppercase;
+  --btn-track: 0.1em;
+
+  --card-pad: 20px;
+  --tile-radius: 0px;
+
+  --sw-bg: #14171a;
+  --sw-ink: #f4f1e8;
+  --sw-line: rgba(244, 241, 232, 0.24);
+  --sw-active-bg: #a8322a;
+  --sw-active-ink: #fbf9f2;
+  --sw-radius: 0px;
+  --sw-font: "IBM Plex Mono", monospace;
+}
+
+[data-style="administrative-form"] .site-header {
+  background: var(--bg);
+  border-bottom: 1px solid var(--ink);
+  backdrop-filter: none;
+}
+
+[data-style="administrative-form"] .brand__mark {
+  color: var(--accent);
+}
+
+[data-style="administrative-form"] .brand__word {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 1rem;
+}
+
+[data-style="administrative-form"] .site-nav {
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+[data-style="administrative-form"] .eyebrow {
+  border: 1px solid var(--ink);
+  padding: 4px 8px;
+  color: var(--ink);
+  font-family: var(--font-label);
+  letter-spacing: 0.12em;
+}
+
+[data-style="administrative-form"] .eyebrow__dot {
+  border-radius: 0;
+  background: var(--accent);
+}
+
+[data-style="administrative-form"] .hero__title em {
+  font-style: normal;
+  border-bottom: 4px solid var(--accent);
+}
+
+[data-style="administrative-form"] .hero__lede {
+  border-left: 1px solid var(--ink);
+  padding-left: 14px;
+  max-width: 46ch;
+}
+
+[data-style="administrative-form"] .btn:hover {
+  transform: none;
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+[data-style="administrative-form"] .btn--ghost {
+  background: transparent;
+  color: var(--ink);
+}
+
+[data-style="administrative-form"] .hero__meta {
+  border-top: 1px solid var(--ink);
+  gap: 0;
+}
+
+[data-style="administrative-form"] .hero__meta div {
+  flex: 1;
+  padding: 8px 10px;
+  border-right: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  min-width: 120px;
+}
+
+[data-style="administrative-form"] .hero__meta div:last-child {
+  border-right: 0;
+}
+
+[data-style="administrative-form"] .hero__meta dt {
+  font-family: var(--font-label);
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+}
+
+[data-style="administrative-form"] .hero__meta dd {
+  font-family: var(--font-label);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+}
+
+/* A form panel with ruled entry lines and a stamp. */
+[data-style="administrative-form"] .art {
+  border: 1px solid var(--ink);
+  background: var(--surface);
+  background-image: repeating-linear-gradient(
+    180deg,
+    transparent 0 27px,
+    rgba(20, 23, 26, 0.18) 27px 28px
+  );
+  padding: 0 0 16px;
+}
+
+[data-style="administrative-form"] .art::after {
+  content: "";
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  width: 74px;
+  height: 74px;
+  border: 2px solid rgba(168, 50, 42, 0.55);
+  border-radius: 50%;
+  transform: rotate(-12deg);
+  box-shadow: inset 0 0 0 3px rgba(168, 50, 42, 0.28);
+}
+
+[data-style="administrative-form"] .art__head {
+  border-bottom: 1px solid var(--ink);
+  padding: 8px 12px;
+  background: var(--ink);
+}
+
+[data-style="administrative-form"] .art__head .art__label,
+[data-style="administrative-form"] .art__head .art__num {
+  color: #f4f1e8;
+  font-family: var(--font-label);
+}
+
+[data-style="administrative-form"] .art__dot {
+  border-radius: 0;
+  background: var(--accent);
+}
+
+[data-style="administrative-form"] .art__stat {
+  padding: 12px 12px 0;
+}
+
+[data-style="administrative-form"] .art__stat b {
+  font-family: var(--font-label);
+  font-size: clamp(2rem, 3.6vw, 2.6rem);
+  letter-spacing: -0.02em;
+}
+
+[data-style="administrative-form"] .art__bars {
+  padding-inline: 12px;
+  height: clamp(64px, 9vw, 96px);
+}
+
+[data-style="administrative-form"] .art__bars i {
+  border-radius: 0;
+  background: var(--ink);
+  opacity: 1;
+}
+
+[data-style="administrative-form"] .art__bars i:nth-child(2n) {
+  background: var(--accent);
+  opacity: 1;
+}
+
+[data-style="administrative-form"] .art__list {
+  padding: 8px 12px 0;
+}
+
+[data-style="administrative-form"] .art__list span {
+  border-radius: 0;
+  height: 1px;
+  background: rgba(20, 23, 26, 0.35);
+}
+
+[data-style="administrative-form"] .ticker {
+  border-block: 1px solid var(--ink);
+  background: var(--surface-2);
+}
+
+[data-style="administrative-form"] .ticker__group {
+  font-family: var(--font-label);
+  letter-spacing: 0.1em;
+  font-size: 0.68rem;
+}
+
+[data-style="administrative-form"] .ticker__group i {
+  color: var(--accent);
+}
+
+[data-style="administrative-form"] .section__head {
+  border-bottom: 1px solid var(--ink);
+}
+
+[data-style="administrative-form"] .section__index {
+  display: inline-block;
+  border: 1px solid var(--ink);
+  padding: 3px 8px;
+  align-self: start;
+  font-family: var(--font-label);
+}
+
+[data-style="administrative-form"] .section__title {
+  text-transform: uppercase;
+  font-size: clamp(1.6rem, 3.2vw, 2.4rem);
+}
+
+[data-style="administrative-form"] .cards {
+  gap: 0;
+}
+
+[data-style="administrative-form"] .card {
+  border: 1px solid var(--ink);
+  margin: 0 -1px -1px 0;
+  padding-top: 46px;
+}
+
+[data-style="administrative-form"] .card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 30px;
+  border-bottom: 1px solid var(--ink);
+  background: var(--surface-2);
+}
+
+[data-style="administrative-form"] .card__index {
+  position: absolute;
+  top: 8px;
+  left: 12px;
+  color: var(--ink);
+  font-family: var(--font-label);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+}
+
+[data-style="administrative-form"] .card__title {
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 0.01em;
+}
+
+[data-style="administrative-form"] .card__body {
+  color: var(--ink-2);
+}
+
+[data-style="administrative-form"] .card__list li::before {
+  border-radius: 0;
+  width: 6px;
+  height: 6px;
+  background: transparent;
+  border: 1px solid var(--ink);
+}
+
+[data-style="administrative-form"] .card__link {
+  border-top: 1px dashed rgba(20, 23, 26, 0.5);
+  font-family: var(--font-label);
+  font-size: 0.66rem;
+  color: var(--accent);
+}
+
+[data-style="administrative-form"] .tile {
+  border: 1px solid var(--ink);
+}
+
+[data-style="administrative-form"] .tile--accent {
+  background: var(--surface-2);
+}
+
+[data-style="administrative-form"] .tile__figure {
+  font-family: var(--font-label);
+  letter-spacing: -0.03em;
+}
+
+[data-style="administrative-form"] .tile__label {
+  font-family: var(--font-label);
+}
+
+[data-style="administrative-form"] .quote {
+  border-block: 1px solid var(--ink);
+}
+
+[data-style="administrative-form"] .quote__text {
+  font-family: var(--font-text);
+  font-size: clamp(1.2rem, 2.4vw, 1.8rem);
+  font-weight: 500;
+  line-height: 1.35;
+  max-width: 48ch;
+  text-align: left;
+}
+
+[data-style="administrative-form"] .quote {
+  justify-items: start;
+  text-align: left;
+}
+
+[data-style="administrative-form"] .quote__cite {
+  border-top: 1px solid var(--ink);
+  padding-top: 10px;
+  font-family: var(--font-label);
+  font-size: 0.68rem;
+}
+
+[data-style="administrative-form"] .quote__avatar {
+  border-radius: 0;
+  background: var(--accent);
+}
+
+[data-style="administrative-form"] .closing__inner {
+  border: 2px solid var(--ink);
+  background: var(--surface);
+  box-shadow: 8px 8px 0 var(--surface-2);
+}
+
+[data-style="administrative-form"] .closing__title {
+  text-transform: uppercase;
+}
+
+[data-style="administrative-form"] .closing__eyebrow,
+[data-style="administrative-form"] .site-footer__legal,
+[data-style="administrative-form"] .hero__art figcaption {
+  font-family: var(--font-label);
+}
+
+[data-style="administrative-form"] .site-footer {
+  border-top: 1px solid var(--ink);
+}
+
+[data-style="administrative-form"] .chip {
+  border-radius: 0;
+  background: rgba(244, 241, 232, 0.08);
+  font-family: var(--font-label);
+  font-size: 0.68rem;
+}
+
+[data-style="administrative-form"] .switcher__arrow,
+[data-style="administrative-form"] .switcher__all {
+  border-radius: 0;
+}
+
+[data-style="administrative-form"] .sheet__panel {
+  border-radius: 0;
+  border-top: 6px solid var(--accent);
+}
+
+[data-style="administrative-form"] .style-card {
+  border-radius: 0;
+}
+
+@media (max-width: 640px) {
+  [data-style="administrative-form"] .hero__meta div {
+    border-right: 0;
+  }
+}

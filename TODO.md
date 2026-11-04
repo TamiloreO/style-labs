@@ -3,7 +3,7 @@
 ## [x] 1. One shared front page, 22 skins
 
 - A single static front page exists at `/` with one fixed content structure: header, hero, ticker, three feature cards, bento stats, quote, closing call to action, footer.
-- Twenty-two stylesheet implementations exist as separate files: Claymorphism, Cybercore, Neo-brutalism, Scrapbook, Surrealism, Y2K aesthetic, Pixel art, Synthwave, Glassmorphism, Neumorphism, Bento grid, Editorial design, Swiss design, Minimalism, Maximalism, Luxury typography, Conceptual sketch, Ethereal, Bohemian, Victorian, Cyberpunk, Wabi-sabi.
+- Forty-two stylesheet implementations exist as separate files: Claymorphism, Cybercore, Neo-brutalism, Scrapbook, Surrealism, Y2K aesthetic, Pixel art, Synthwave, Glassmorphism, Neumorphism, Bento grid, Editorial design, Swiss design, Minimalism, Maximalism, Luxury typography, Conceptual sketch, Ethereal, Bohemian, Victorian, Cyberpunk, Wabi-sabi.
 - Each style is a cohesive design system covering typography (its own font pairing), palette, spacing rhythm, surfaces, borders, radii, shadows, decorative motifs and component treatment. No style is a color-only retheme of another.
 - The same copy appears in all styles so the treatments can be compared directly.
 

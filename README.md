@@ -11,16 +11,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=scrapbook"><img src="assets/screenshots/scrapbook.webp" alt="Scrapbook"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=surrealism"><img src="assets/screenshots/surrealism.webp" alt="Surrealism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=retro-desktop"><img src="assets/screenshots/retro-desktop.webp" alt="Retro desktop"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=swiss"><img src="assets/screenshots/swiss.webp" alt="Swiss design"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=neumorphism"><img src="assets/screenshots/neumorphism.webp" alt="Neumorphism"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=maximalism"><img src="assets/screenshots/maximalism.webp" alt="Maximalism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=glassmorphism"><img src="assets/screenshots/glassmorphism.webp" alt="Glassmorphism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=concrete-poetry"><img src="assets/screenshots/concrete-poetry.webp" alt="Concrete poetry"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=pixel-art"><img src="assets/screenshots/pixel-art.webp" alt="Pixel art"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=victorian"><img src="assets/screenshots/victorian.webp" alt="Victorian"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=relationship-graph"><img src="assets/screenshots/relationship-graph.webp" alt="Relationship graph"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=administrative-form"><img src="assets/screenshots/administrative-form.webp" alt="Administrative form"></a></td>
   </tr>
 </table>
 <!-- samples:end -->

@@ -1,0 +1,274 @@
+/* Skeuomorphism: physical objects, stitched leather, paper and brass. */
+
+[data-style="skeuomorphism"] {
+  --bg: #ded0b4;
+  --bg-2: #f7f0de;
+  --ink: #2f2418;
+  --ink-2: #5a4a38;
+  --ink-3: #7c6a54;
+  --line: #c3b193;
+  --surface: #f7f0de;
+  --surface-2: #e8dcc2;
+  --accent: #8c2f26;
+  --accent-2: #a8863f;
+  --on-accent: #fdf7ea;
+
+  --radius: 6px;
+  --radius-sm: 4px;
+  --radius-lg: 12px;
+  --border-w: 1px;
+  --card-shadow: inset 0 1px 0 #ffffff, 0 8px 18px rgba(70, 48, 28, 0.18);
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-text: "Inter", system-ui, sans-serif;
+  --font-label: "Inter", system-ui, sans-serif;
+
+  --display-weight: 600;
+  --display-size: clamp(2.4rem, 5.4vw, 4.3rem);
+  --display-lh: 1.02;
+  --display-track: -0.02em;
+  --label-track: 0.16em;
+  --label-case: uppercase;
+  --label-size: 0.66rem;
+
+  --btn-radius: 6px;
+  --btn-bg: linear-gradient(#b4402f, #8c2f26);
+  --btn-ink: #fdf7ea;
+  --btn-border: 1px solid #6d241d;
+  --btn-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42), 0 2px 0 #6d241d,
+    0 8px 14px rgba(70, 48, 28, 0.24);
+  --btn-pad: 0.85em 1.4em;
+  --btn-weight: 600;
+
+  --card-pad: 26px;
+  --tile-radius: 8px;
+
+  --sw-bg: rgba(47, 36, 24, 0.95);
+  --sw-ink: #f4e8d2;
+  --sw-line: rgba(217, 184, 119, 0.34);
+  --sw-active-bg: #d9b877;
+  --sw-active-ink: #2f2418;
+  --sw-radius: 12px;
+  --sw-font: "Inter", system-ui, sans-serif;
+}
+
+[data-style="skeuomorphism"] body {
+  background-image: repeating-linear-gradient(
+      45deg,
+      rgba(90, 64, 38, 0.05) 0 2px,
+      transparent 2px 5px
+    ),
+    radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.55), transparent 55%);
+}
+
+[data-style="skeuomorphism"] .site-header {
+  background: linear-gradient(#573b28, #3f2a1c);
+  border-bottom: 3px solid #2c1c12;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  color: #f4e8d2;
+  padding-block: clamp(16px, 2.2vw, 24px);
+}
+
+[data-style="skeuomorphism"] .site-header .brand__word {
+  font-family: var(--font-display);
+  letter-spacing: 0.01em;
+}
+
+[data-style="skeuomorphism"] .site-header .brand__mark {
+  color: #d9b877;
+}
+
+[data-style="skeuomorphism"] .site-header .site-nav a {
+  color: #f0e2c8;
+}
+
+[data-style="skeuomorphism"] .site-header .btn {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 2px 0 #6d241d;
+}
+
+[data-style="skeuomorphism"] .nav-toggle {
+  color: #f0e2c8;
+  border-color: rgba(217, 184, 119, 0.4);
+}
+
+[data-style="skeuomorphism"] .hero__title em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+[data-style="skeuomorphism"] .eyebrow__dot {
+  background: var(--accent-2);
+  box-shadow: 0 0 0 3px rgba(168, 134, 63, 0.22);
+}
+
+/* Paper surfaces get a stitched inner seam. */
+
+[data-style="skeuomorphism"] .card,
+[data-style="skeuomorphism"] .tile,
+[data-style="skeuomorphism"] .art {
+  border: 1px solid var(--line);
+  background-image: linear-gradient(#fdf8ec, #f4ead4);
+  position: relative;
+}
+
+[data-style="skeuomorphism"] .card::after,
+[data-style="skeuomorphism"] .tile::after {
+  content: "";
+  position: absolute;
+  inset: 8px;
+  border: 1px dashed rgba(140, 47, 38, 0.32);
+  border-radius: 4px;
+  pointer-events: none;
+}
+
+[data-style="skeuomorphism"] .card__title,
+[data-style="skeuomorphism"] .section__title,
+[data-style="skeuomorphism"] .closing__title,
+[data-style="skeuomorphism"] .quote__text {
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+[data-style="skeuomorphism"] .card__index {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+[data-style="skeuomorphism"] .card__link {
+  text-transform: none;
+  letter-spacing: 0.02em;
+  font-family: var(--font-text);
+  font-size: 0.82rem;
+  color: var(--accent);
+  border-top: 1px solid rgba(140, 47, 38, 0.28);
+}
+
+[data-style="skeuomorphism"] .art {
+  background: linear-gradient(#59402c, #402c1e);
+  border: 1px solid #2c1c12;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 14px 26px rgba(47, 36, 24, 0.3);
+  color: #f4e8d2;
+}
+
+[data-style="skeuomorphism"] .art__head {
+  border-bottom: 1px solid rgba(217, 184, 119, 0.28);
+}
+
+[data-style="skeuomorphism"] .art__label,
+[data-style="skeuomorphism"] .art__num {
+  color: #e4d2ae;
+}
+
+[data-style="skeuomorphism"] .art__stat span,
+[data-style="skeuomorphism"] .hero__art figcaption {
+  color: #d6c2a1;
+}
+
+[data-style="skeuomorphism"] .art__bars i {
+  border-radius: 2px;
+  background: #d9b877;
+  opacity: 1;
+}
+
+[data-style="skeuomorphism"] .art__bars i:nth-child(2n) {
+  background: #f0e2c8;
+  opacity: 0.72;
+}
+
+[data-style="skeuomorphism"] .art__list span {
+  background: rgba(244, 234, 212, 0.26);
+}
+
+[data-style="skeuomorphism"] .art__dot {
+  background: var(--accent);
+  box-shadow: 0 0 0 3px rgba(140, 47, 38, 0.3);
+}
+
+[data-style="skeuomorphism"] .btn {
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.28);
+}
+
+[data-style="skeuomorphism"] .btn:hover {
+  transform: none;
+  filter: brightness(1.06);
+}
+
+[data-style="skeuomorphism"] .btn--ghost {
+  background: rgba(253, 247, 234, 0.75);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  text-shadow: none;
+}
+
+[data-style="skeuomorphism"] .ticker {
+  background: var(--surface-2);
+  border-block: 1px solid var(--line);
+}
+
+[data-style="skeuomorphism"] .ticker__group {
+  text-transform: none;
+  letter-spacing: 0.1em;
+  font-size: 0.74rem;
+}
+
+[data-style="skeuomorphism"] .section__head {
+  border-bottom: 1px solid rgba(140, 47, 38, 0.28);
+}
+
+[data-style="skeuomorphism"] .quote {
+  background: linear-gradient(#4a3222, #362415);
+  color: #f4e8d2;
+  border: 0;
+  border-radius: 14px;
+  padding-inline: clamp(20px, 5vw, 48px);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.18), 0 16px 30px rgba(47, 36, 24, 0.28);
+  margin-block: var(--section-y);
+}
+
+[data-style="skeuomorphism"] .quote__cite {
+  color: #d6c2a1;
+}
+
+[data-style="skeuomorphism"] .quote__cite b {
+  color: #f7f0de;
+}
+
+[data-style="skeuomorphism"] .quote__avatar {
+  background: radial-gradient(circle at 34% 30%, #e6c98d, #a8863f);
+}
+
+[data-style="skeuomorphism"] .closing__inner {
+  background-image: linear-gradient(#fdf8ec, #f1e5cd);
+  border: 1px solid var(--line);
+}
+
+[data-style="skeuomorphism"] .site-footer {
+  background: linear-gradient(#4a3222, #362415);
+  color: #f4e8d2;
+  border-top: 0;
+}
+
+[data-style="skeuomorphism"] .site-footer__brand p,
+[data-style="skeuomorphism"] .site-footer__legal {
+  color: #cbb694;
+}
+
+[data-style="skeuomorphism"] .switcher__bar {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.16), 0 14px 34px rgba(47, 36, 24, 0.34);
+}
+
+[data-style="skeuomorphism"] .chip {
+  border-radius: 999px;
+  background: rgba(217, 184, 119, 0.14);
+}
+
+[data-style="skeuomorphism"] .chip[aria-pressed="true"] {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.55);
+}
+
+[data-style="skeuomorphism"] .sheet__panel {
+  background: #f7f0de;
+  border-top: 6px solid #4a3222;
+}
