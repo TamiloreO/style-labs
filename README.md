@@ -4,6 +4,25 @@ A playground for comparing interface styles on one page. The content stays the s
 
 Live at **https://tamiloreo.github.io/style-labs/**
 
+## Screenshots
+
+Five of the twenty-two styles. Each image opens that style.
+
+<table>
+  <tr>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=claymorphism"><img src="assets/screenshots/claymorphism.webp" alt="Claymorphism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=neo-brutalism"><img src="assets/screenshots/neo-brutalism.webp" alt="Neo-brutalism"></a></td>
+  </tr>
+  <tr>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=glassmorphism"><img src="assets/screenshots/glassmorphism.webp" alt="Glassmorphism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=editorial"><img src="assets/screenshots/editorial.webp" alt="Editorial design"></a></td>
+  </tr>
+  <tr>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=cyberpunk"><img src="assets/screenshots/cyberpunk.webp" alt="Cyberpunk"></a></td>
+    <td></td>
+  </tr>
+</table>
+
 ## Files
 
 | Path | Purpose |
