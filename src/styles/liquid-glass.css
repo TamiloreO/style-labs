@@ -500,23 +500,6 @@
    ripple.js paints the canvas; the panels blur it through backdrop-filter.
    -------------------------------------------------------------------------- */
 
-.liquid-field {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  display: block;
-  z-index: 0;
-  pointer-events: none;
-  opacity: 0;
-  mix-blend-mode: overlay;
-  transform: translateZ(0);
-  transition: opacity 900ms ease;
-}
-
-[data-style="liquid-glass"] .liquid-field {
-  opacity: 0.92;
-}
 
 /* Lensed edge: a bright inner rim plus a soft bottom bounce, so every pane
    reads as a physical slab of glass rather than a white box. */
