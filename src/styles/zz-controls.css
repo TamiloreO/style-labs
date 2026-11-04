@@ -1,4 +1,12 @@
 /* Shared interaction safeguards, loaded after the individual skins. */
+/* Offscreen sections skip layout and paint until they approach the viewport. */
+main > section:not(:first-of-type) {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 780px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .chip, .style-card, .switcher__rail { scroll-behavior: auto; }
+}
 html {
   overflow-x: clip;
 }

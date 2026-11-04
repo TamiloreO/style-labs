@@ -169,6 +169,10 @@
   var sheet = document.getElementById("style-sheet");
   var openSheetBtn = document.getElementById("open-sheet");
   var fontCache = {};
+  var skinSheet = document.getElementById("skin-sheet");
+  var controlsSheet = document.querySelector('link[href="styles/controls.css"]');
+  var prefetched = {};
+  var applyToken = 0;
   var current = 0;
 
   function byId(id) {
@@ -185,6 +189,50 @@
     link.rel = "stylesheet";
     link.href = entry.fonts;
     link.setAttribute("data-style-font", entry.id);
+    document.head.appendChild(link);
+  }
+
+  function sheetHref(id) {
+    return "styles/" + id + ".css";
+  }
+
+  // Swap the skin sheet before changing data-style so the new rules are ready,
+  // then drop the old sheet so at most two are ever in the document.
+  function ensureSheet(id, done) {
+    var href = sheetHref(id);
+    if (skinSheet && skinSheet.getAttribute("href") === href) {
+      done(null);
+      return;
+    }
+    var previous = skinSheet;
+    var link = document.createElement("link");
+    link.rel = "stylesheet";
+    link.id = "skin-sheet";
+    link.href = href;
+    var settled = false;
+    function settle() {
+      if (settled) return;
+      settled = true;
+      skinSheet = link;
+      done(previous);
+    }
+    link.addEventListener("load", settle);
+    link.addEventListener("error", settle);
+    // Insert before the shared controls so its safeguards still win the cascade.
+    if (controlsSheet && controlsSheet.parentNode === document.head) {
+      document.head.insertBefore(link, controlsSheet);
+    } else {
+      document.head.appendChild(link);
+    }
+  }
+
+  function prefetchSheet(id) {
+    if (!id || prefetched[id]) return;
+    prefetched[id] = true;
+    var link = document.createElement("link");
+    link.rel = "prefetch";
+    link.as = "style";
+    link.href = sheetHref(id);
     document.head.appendChild(link);
   }
 
@@ -226,10 +274,9 @@
     if (index < 0) index = byId("swiss");
     current = index;
     var entry = STYLES[index];
-
-    root.setAttribute("data-style", entry.id);
-    loadFonts(entry);
-    paintState();
+    var token = ++applyToken;
+    var forward = STYLES[(index + 1) % STYLES.length];
+    var backward = STYLES[(index + STYLES.length - 1) % STYLES.length];
 
     try {
       localStorage.setItem("stylelab:style", entry.id);
@@ -243,9 +290,17 @@
       } catch (e) {}
     }
 
-    // Warm the next style's fonts so browsing feels instant.
-    loadFonts(STYLES[(index + 1) % STYLES.length]);
-    loadFonts(STYLES[(index + STYLES.length - 1) % STYLES.length]);
+    loadFonts(entry);
+    prefetchSheet(forward.id);
+    loadFonts(forward);
+    loadFonts(backward);
+
+    ensureSheet(entry.id, function (previous) {
+      if (token !== applyToken) return;
+      root.setAttribute("data-style", entry.id);
+      if (previous && previous.parentNode) previous.parentNode.removeChild(previous);
+      paintState();
+    });
   }
 
   function build() {
@@ -268,6 +323,11 @@
       });
       chip.addEventListener("mouseenter", function () {
         loadFonts(entry);
+        prefetchSheet(entry.id);
+      });
+      chip.addEventListener("focus", function () {
+        loadFonts(entry);
+        prefetchSheet(entry.id);
       });
       railFrag.appendChild(chip);
 
@@ -432,5 +492,12 @@
       clean.searchParams.delete("s");
       history.replaceState(null, "", clean);
     } catch (e) {}
+  }
+
+  // Precached repeat visits: the shell and every skin are available offline.
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", function () {
+      navigator.serviceWorker.register("sw.js").catch(function () {});
+    });
   }
 })();

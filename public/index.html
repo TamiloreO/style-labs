@@ -24,20 +24,10 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles.css" />
-    <script>
-      // Set the style before first paint so there is no flash of the wrong theme.
-      (function () {
-        try {
-          var q = new URLSearchParams(location.search).get("s");
-          var saved = localStorage.getItem("stylelab:style");
-          var validIds = ["claymorphism", "cybercore", "neo-brutalism", "scrapbook", "surrealism", "y2k", "pixel-art", "synthwave", "glassmorphism", "neumorphism", "bento", "editorial", "swiss", "minimalism", "maximalism", "luxury-typography", "conceptual-sketch", "ethereal", "bohemian", "victorian", "cyberpunk", "wabi-sabi"];
-          var valid = { test: function (id) { return validIds.indexOf(id) >= 0; } };
-          var pick = q && valid.test(q) ? q : saved && valid.test(saved) ? saved : null;
-          if (pick) document.documentElement.dataset.style = pick;
-        } catch (e) {}
-      })();
-    </script>
+    <link rel="stylesheet" href="styles/base.css" />
+    <script src="boot.js"></script>
+    <noscript><link rel="stylesheet" href="styles/swiss.css" /></noscript>
+    <link rel="stylesheet" href="styles/controls.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
