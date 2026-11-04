@@ -4,7 +4,7 @@ A playground for comparing interface styles on one page. The content stays the s
 
 Live at **https://tamiloreo.github.io/style-labs/**
 
-## Screenshots
+## Samples
 
 Five of the twenty-two styles. Each image opens that style.
 
