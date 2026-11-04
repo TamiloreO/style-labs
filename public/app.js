@@ -337,6 +337,14 @@
     else closeSheet();
   });
 
+  // Secondary entry points (hero button, first card link) open the same picker.
+  Array.prototype.forEach.call(document.querySelectorAll("[data-open-sheet]"), function (el) {
+    el.addEventListener("click", function (event) {
+      event.preventDefault();
+      openSheet();
+    });
+  });
+
   sheet.addEventListener("click", function (event) {
     if (event.target.closest("[data-close-sheet]")) closeSheet();
   });
@@ -368,9 +376,9 @@
     if (tag === "input" || tag === "textarea" || event.target.isContentEditable) return;
 
     if (event.key === "Tab" && !sheet.hidden) {
-      var buttons = Array.from(sheet.querySelectorAll("button"));
-      var first = buttons[0];
-      var last = buttons[buttons.length - 1];
+      var controls = Array.from(sheet.querySelectorAll('button:not([disabled]), a[href], [tabindex="0"]'));
+      var first = controls[0];
+      var last = controls[controls.length - 1];
       if (event.shiftKey && document.activeElement === first) {
         event.preventDefault();
         last.focus();

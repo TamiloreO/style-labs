@@ -3,11 +3,23 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Halcyon: front page, twenty-two ways</title>
+    <title>Style Lab by TamiloreO: one page in twenty-two styles</title>
     <meta
       name="description"
-      content="One studio front page, rebuilt in twenty-two design styles. Switch between them from the bar at the bottom of the screen."
+      content="Twenty-two design styles applied to the same front page. Switch skins to compare type, color and layout, then borrow what works for your next site."
     />
+    <link rel="canonical" href="https://tamiloreo.github.io/style-labs/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tamiloreo.github.io/style-labs/" />
+    <meta property="og:title" content="Style Lab by TamiloreO" />
+    <meta
+      property="og:description"
+      content="One page, twenty-two design styles. Compare them and find ideas for your next site."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="TamiloreO’s Style Lab" />
+    <meta name="twitter:description" content="One page, twenty-two styles. Play, compare, and find a direction for your next site." />
+    <meta property="og:site_name" content="TamiloreO’s Style Lab" />
     <meta name="theme-color" content="#ffffff" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,22 +51,35 @@
 
     <header class="site-header">
       <div class="wrap site-header__inner">
-        <a class="brand" href="#top" aria-label="Halcyon, home">
+        <a class="brand" href="#top" aria-label="Style Lab by TamiloreO, home">
           <span class="brand__mark" aria-hidden="true">
             <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
-              <path d="M4 26V6h5v8h14V6h5v20h-5v-8H9v8H4Z" fill="currentColor" />
+              <rect x="3" y="3" width="11" height="11" rx="2.4" fill="currentColor" />
+              <rect x="18" y="3" width="11" height="11" rx="2.4" fill="currentColor" opacity="0.45" />
+              <rect x="3" y="18" width="11" height="11" rx="2.4" fill="currentColor" opacity="0.45" />
+              <rect x="18" y="18" width="11" height="11" rx="5.5" fill="currentColor" />
             </svg>
           </span>
-          <span class="brand__word">Halcyon</span>
+          <span class="brand__word">Style Lab</span>
         </a>
 
         <nav class="site-nav" aria-label="Primary">
-          <a href="#work">Work</a>
-          <a href="#studio">Studio</a>
-          <a href="#journal">Journal</a>
+          <a href="#work">Styles</a>
+          <a href="#studio">How it works</a>
+          <a href="https://github.com/TamiloreO/style-labs" target="_blank" rel="noopener noreferrer">GitHub</a>
         </nav>
 
-        <a class="btn btn--sm site-header__cta" href="#contact">Start a project</a>
+        <a
+          class="btn btn--sm site-header__cta"
+          href="https://github.com/TamiloreO/style-labs"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+          </svg>
+          Star on GitHub
+        </a>
 
         <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
           <span aria-hidden="true"></span>
@@ -63,10 +88,10 @@
       </div>
 
       <div class="mobile-nav" id="mobile-nav" hidden>
-        <a href="#work">Work</a>
-        <a href="#studio">Studio</a>
-        <a href="#journal">Journal</a>
-        <a href="#contact">Start a project</a>
+        <a href="#work">Styles</a>
+        <a href="#studio">How it works</a>
+        <a href="https://github.com/TamiloreO/style-labs" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://github.com/TamiloreO/style-labs" target="_blank" rel="noopener noreferrer">Star on GitHub</a>
       </div>
     </header>
 
@@ -75,24 +100,34 @@
         <div class="hero__copy">
           <p class="eyebrow">
             <span class="eyebrow__dot" aria-hidden="true"></span>
-            Independent design studio, Rotterdam
+            TamiloreO · Style Lab
           </p>
           <h1 class="hero__title">
-            Interfaces that stay <em>quiet</em> while the idea gets loud.
+            Same page. Twenty-two ways to <em>see</em> it.
           </h1>
           <p class="hero__lede">
-            Halcyon is two people shaping product surfaces for teams who care how things
-            feel. Short client list, long attention span, and a stubborn belief that clarity
-            is a form of respect.
+            Style Lab holds the words still and changes everything around them: type, color,
+            surfaces, motion. Pick a skin from the bar below, compare how it behaves on your
+            phone, then borrow whatever helps your next site.
           </p>
           <div class="hero__actions">
-            <a class="btn" href="#contact">Start a project</a>
-            <a class="btn btn--ghost" href="#work">See selected work</a>
+            <button class="btn" type="button" data-open-sheet>Browse all 22 styles</button>
+            <a
+              class="btn btn--ghost"
+              href="https://github.com/TamiloreO/style-labs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                <path d="M8 .9l2.1 4.3 4.7.7-3.4 3.3.8 4.7L8 11.7l-4.2 2.2.8-4.7L1.2 5.9l4.7-.7L8 .9Z" />
+              </svg>
+              Star on GitHub
+            </a>
           </div>
           <dl class="hero__meta">
-            <div><dt>Founded</dt><dd>2019</dd></div>
-            <div><dt>Studio</dt><dd>2 people</dd></div>
-            <div><dt>Shipped</dt><dd>14 products</dd></div>
+            <div><dt>Styles</dt><dd>22</dd></div>
+            <div><dt>Markup</dt><dd>1 page</dd></div>
+            <div><dt>npm packages</dt><dd>0</dd></div>
           </dl>
         </div>
 
@@ -100,12 +135,12 @@
           <div class="art">
             <div class="art__head">
               <span class="art__dot" aria-hidden="true"></span>
-              <span class="art__label">Onboarding, rebuilt</span>
+              <span class="art__label">Style comparison</span>
               <span class="art__num">01</span>
             </div>
             <div class="art__stat">
-              <b>3.4×</b>
-              <span>faster first-run setup</span>
+              <b>22</b>
+              <span>skins, one page</span>
             </div>
             <div class="art__bars" aria-hidden="true">
               <i style="--h: 38%"></i>
@@ -119,144 +154,188 @@
               <span></span><span></span><span></span>
             </div>
           </div>
-          <figcaption>Fig. 01 <span>Kestrel, product study</span></figcaption>
+          <figcaption>Fig. 01 <span>Same content, every skin</span></figcaption>
         </figure>
       </section>
 
       <section class="ticker" aria-hidden="true">
         <div class="ticker__track">
           <div class="ticker__group">
-            <span>Product design</span><i>·</i><span>Design systems</span><i>·</i>
-            <span>Interface engineering</span><i>·</i><span>Art direction</span><i>·</i>
-            <span>Prototyping</span><i>·</i><span>Design audits</span><i>·</i>
+            <span>Claymorphism</span><i>·</i><span>Cybercore</span><i>·</i>
+            <span>Neo-brutalism</span><i>·</i><span>Scrapbook</span><i>·</i>
+            <span>Surrealism</span><i>·</i><span>Y2K</span><i>·</i>
+            <span>Pixel art</span><i>·</i><span>Synthwave</span><i>·</i>
+            <span>Glassmorphism</span><i>·</i><span>Neumorphism</span><i>·</i>
+            <span>Bento grid</span><i>·</i><span>Editorial</span><i>·</i>
+            <span>Swiss</span><i>·</i><span>Minimalism</span><i>·</i>
+            <span>Maximalism</span><i>·</i><span>Luxury type</span><i>·</i>
+            <span>Conceptual sketch</span><i>·</i><span>Ethereal</span><i>·</i>
+            <span>Bohemian</span><i>·</i><span>Victorian</span><i>·</i>
+            <span>Cyberpunk</span><i>·</i><span>Wabi-sabi</span><i>·</i>
           </div>
           <div class="ticker__group">
-            <span>Product design</span><i>·</i><span>Design systems</span><i>·</i>
-            <span>Interface engineering</span><i>·</i><span>Art direction</span><i>·</i>
-            <span>Prototyping</span><i>·</i><span>Design audits</span><i>·</i>
+            <span>Claymorphism</span><i>·</i><span>Cybercore</span><i>·</i>
+            <span>Neo-brutalism</span><i>·</i><span>Scrapbook</span><i>·</i>
+            <span>Surrealism</span><i>·</i><span>Y2K</span><i>·</i>
+            <span>Pixel art</span><i>·</i><span>Synthwave</span><i>·</i>
+            <span>Glassmorphism</span><i>·</i><span>Neumorphism</span><i>·</i>
+            <span>Bento grid</span><i>·</i><span>Editorial</span><i>·</i>
+            <span>Swiss</span><i>·</i><span>Minimalism</span><i>·</i>
+            <span>Maximalism</span><i>·</i><span>Luxury type</span><i>·</i>
+            <span>Conceptual sketch</span><i>·</i><span>Ethereal</span><i>·</i>
+            <span>Bohemian</span><i>·</i><span>Victorian</span><i>·</i>
+            <span>Cyberpunk</span><i>·</i><span>Wabi-sabi</span><i>·</i>
           </div>
         </div>
       </section>
 
       <section class="section wrap" id="work">
         <header class="section__head">
-          <p class="section__index">01 / Services</p>
-          <h2 class="section__title">Three things we do properly</h2>
+          <p class="section__index">01 / How it works</p>
+          <h2 class="section__title">Play, compare, borrow</h2>
           <p class="section__note">
-            We take on four projects a year. Everything else is a referral.
+            Every skin runs on this same markup. Switching takes one click, or one arrow key.
           </p>
         </header>
 
         <div class="cards">
           <article class="card">
             <span class="card__index">A</span>
-            <h3 class="card__title">Product design</h3>
+            <h3 class="card__title">Switch the skin</h3>
             <p class="card__body">
-              Flows, states and edge cases mapped before a single pixel is placed. We ship
-              the boring parts too.
+              The bar at the bottom switches between twenty-two design styles. No reload, no
+              settings to learn, and your choice is waiting next time you visit.
             </p>
             <ul class="card__list">
-              <li>Discovery sprints</li>
-              <li>Interaction design</li>
-              <li>Usability testing</li>
+              <li>Bottom switcher</li>
+              <li>Arrow keys</li>
+              <li>Saved preference</li>
             </ul>
-            <a class="card__link" href="#contact">Read the approach <span aria-hidden="true">→</span></a>
+            <a class="card__link" href="#style-rail" data-open-sheet>
+              See all 22 styles <span aria-hidden="true">→</span>
+            </a>
           </article>
 
           <article class="card">
             <span class="card__index">B</span>
-            <h3 class="card__title">Design systems</h3>
+            <h3 class="card__title">Read the decisions</h3>
             <p class="card__body">
-              Tokens, components and documentation your team can maintain long after we
-              have packed up.
+              Each skin is one CSS file with its own type scale, palette, corners and surfaces.
+              Open a file and the reasoning is all there, nothing compiled away.
             </p>
             <ul class="card__list">
-              <li>Token architecture</li>
-              <li>Component libraries</li>
-              <li>Adoption support</li>
+              <li>One file per style</li>
+              <li>Plain CSS</li>
+              <li>Easy to diff</li>
             </ul>
-            <a class="card__link" href="#contact">See a system <span aria-hidden="true">→</span></a>
+            <a
+              class="card__link"
+              href="https://github.com/TamiloreO/style-labs/tree/main/src/styles"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Browse the stylesheets <span aria-hidden="true">→</span>
+            </a>
           </article>
 
           <article class="card">
             <span class="card__index">C</span>
-            <h3 class="card__title">Interface engineering</h3>
+            <h3 class="card__title">Take what fits</h3>
             <p class="card__body">
-              We build what we draw. Motion, accessibility and performance are part of the
-              drawing, not the cleanup.
+              Use a palette, a heading treatment or a whole skin. The MIT licence allows reuse
+              and modification; keep the copyright and licence notice with the code.
             </p>
             <ul class="card__list">
-              <li>Front-end build</li>
-              <li>Motion systems</li>
-              <li>Performance passes</li>
+              <li>MIT licensed</li>
+              <li>Fork and remix</li>
+              <li>No framework</li>
             </ul>
-            <a class="card__link" href="#contact">Talk about code <span aria-hidden="true">→</span></a>
+            <a
+              class="card__link"
+              href="https://github.com/TamiloreO/style-labs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Clone the repo <span aria-hidden="true">→</span>
+            </a>
           </article>
         </div>
       </section>
 
       <section class="section wrap" id="studio">
         <header class="section__head">
-          <p class="section__index">02 / Studio</p>
-          <h2 class="section__title">Small on purpose</h2>
+          <p class="section__index">02 / The lab</p>
+          <h2 class="section__title">Same words, different rules</h2>
           <p class="section__note">
-            No account managers, no decks that take a week. The people you meet are the
-            people who do the work.
+            The copy never changes. Typography, color, spacing and surfaces do. That is the
+            whole trick.
           </p>
         </header>
 
         <div class="bento">
           <article class="tile tile--wide">
-            <p class="tile__label">Projects shipped</p>
-            <p class="tile__figure">14</p>
-            <p class="tile__note">Across fintech, health and civic tools since 2019.</p>
+            <p class="tile__label">Styles in the lab</p>
+            <p class="tile__figure">22</p>
+            <p class="tile__note">Claymorphism through wabi-sabi, one click apart.</p>
           </article>
           <article class="tile">
-            <p class="tile__label">Clients who return</p>
-            <p class="tile__figure">98<span>%</span></p>
-            <p class="tile__note">Most of our work is a second or third round.</p>
+            <p class="tile__label">Shared markup</p>
+            <p class="tile__figure">100<span>%</span></p>
+            <p class="tile__note">One HTML skeleton behind every skin.</p>
           </article>
           <article class="tile">
-            <p class="tile__label">Time zones</p>
-            <p class="tile__figure">6</p>
-            <p class="tile__note">One studio, no office, four years of remote-first.</p>
+            <p class="tile__label">npm packages</p>
+            <p class="tile__figure">0</p>
+            <p class="tile__note">No framework, no backend, no accounts.</p>
           </article>
           <article class="tile tile--tall">
-            <p class="tile__label">Currently</p>
+            <p class="tile__label">Part one</p>
             <p class="tile__quote">
-              Rewriting the billing surface at Kestrel, and drawing a type specimen for a
-              museum in Ghent.
+              A front page for trying out visual directions before building something bigger.
             </p>
-            <p class="tile__note">Two slots open from March.</p>
+            <p class="tile__note">This is part one.</p>
           </article>
           <article class="tile tile--accent">
-            <p class="tile__label">Working with us</p>
+            <p class="tile__label">Reuse</p>
             <p class="tile__quote">
-              Fixed scope, weekly demo, one invoice a month. No surprises in either
-              direction.
+              Take a stylesheet, a palette or one heading treatment. Keep whatever earns its
+              place.
             </p>
           </article>
         </div>
       </section>
 
       <section class="quote wrap" id="journal">
-        <blockquote class="quote__text">
-          “They rewrote our onboarding in six weeks and support tickets dropped by a third.
-          It was not magic. It was a long list of small decisions.”
-        </blockquote>
+        <p class="quote__text">
+          A screenshot shows one moment. Here, you can resize the page, press the buttons,
+          and see how each design behaves before choosing a direction.
+        </p>
         <footer class="quote__cite">
           <span class="quote__avatar" aria-hidden="true"></span>
-          <span><b>Marit Vos</b> Head of Product, Kestrel</span>
+          <span><b>Why Style Lab exists</b> Try the design, not just the screenshot</span>
         </footer>
       </section>
 
       <section class="closing wrap" id="contact">
         <div class="closing__inner">
           <p class="closing__eyebrow">03 / Next</p>
-          <h2 class="closing__title">Got something half-formed?</h2>
-          <p class="closing__body">Send the messy version. We are good with messy.</p>
+          <h2 class="closing__title">Found a direction you like?</h2>
+          <p class="closing__body">
+            Take the CSS, keep what works, delete the rest. If it saved you time, a star helps
+            other people find it.
+          </p>
           <div class="closing__actions">
-            <a class="btn" href="mailto:hello@halcyon.studio">hello@halcyon.studio</a>
+            <a
+              class="btn"
+              href="https://github.com/TamiloreO/style-labs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+              </svg>
+              Star on GitHub
+            </a>
             <a class="btn btn--ghost" href="#top">Back to top</a>
           </div>
         </div>
@@ -266,17 +345,16 @@
     <footer class="site-footer">
       <div class="wrap site-footer__inner">
         <div class="site-footer__brand">
-          <span class="brand__word">Halcyon</span>
-          <p>Product design and interface engineering. Rotterdam, NL.</p>
+          <span class="brand__word">Style Lab</span>
+          <p>A playground for interface styles, built by TamiloreO.</p>
         </div>
         <nav class="site-footer__nav" aria-label="Footer">
-          <a href="#work">Work</a>
-          <a href="#studio">Studio</a>
-          <a href="#journal">Journal</a>
-          <a href="#contact">Contact</a>
+          <a href="#work">Styles</a>
+          <a href="#studio">How it works</a>
+          <a href="https://github.com/TamiloreO/style-labs" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="#top">Back to top</a>
         </nav>
-        <p class="site-footer__legal">© 2026 Halcyon Studio</p>
-        <p class="demo-note">Style Lab design prototype. Studio names, metrics and testimonials are sample content.</p>
+        <p class="site-footer__legal">© 2026 TamiloreO</p>
       </div>
     </footer>
 
@@ -308,12 +386,26 @@
       <div class="sheet__panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
         <header class="sheet__head">
           <div>
-            <p class="sheet__eyebrow">Style Lab</p>
+            <p class="sheet__eyebrow">TamiloreO · Style Lab</p>
             <h2 class="sheet__title" id="sheet-title">Twenty-two directions, one page</h2>
           </div>
           <button class="sheet__close" type="button" data-close-sheet aria-label="Close style list">×</button>
         </header>
         <div class="sheet__grid" id="style-grid"></div>
+        <footer class="sheet__foot">
+          <p>Explore the styles, then see how they are built on GitHub.</p>
+          <a
+            class="btn btn--sm"
+            href="https://github.com/TamiloreO/style-labs"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+            </svg>
+            Star on GitHub
+          </a>
+        </footer>
       </div>
     </div>
 

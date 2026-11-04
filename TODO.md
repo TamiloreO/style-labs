@@ -26,4 +26,21 @@
 - Route manifest, logo metadata and app config are in place for checkpointing and publishing.
 - Checked mobile and laptop renderings, with 88 layout measurements across 320px, 375px, 768px and 1280px widths. Independent code review and functional control checks completed before handoff.
 
-The private GitHub repository `TamiloreO/style-lab` has been created. Source pushes and Manus checkpoint saving are awaiting the user’s explicit approval. The live development Preview is available; no public publication has occurred.
+The initial version was pushed to GitHub and the Manus canonical repository after explicit approval. The repository has since been renamed to `TamiloreO/style-labs` for the requested project-page namespace.
+
+## [x] 5. TamiloreO’s Style Lab rebrand
+
+- Replace the unrelated studio identity and fictional company claims with TamiloreO’s design playground.
+- Explain that visitors can switch all 22 styles, compare them on mobile and laptop, and use them as inspiration for their next sites.
+- Add GitHub icons and links pointing to `TamiloreO/style-labs`, with a simple invitation to star the project.
+- Keep the existing design systems and switching behavior intact. This is the first part of the project, not a promise of unrequested future features.
+- New copy and entry points passed structural checks, functional checks, and 110 layout measurements at 320px, 375px, 768px, 900px, and 1280px.
+
+## [ ] 6. GitHub Pages deployment
+
+- Publish the project at `https://tamiloreo.github.io/style-labs/` using a main-branch GitHub Actions build and deploy pipeline.
+- Keep asset paths relative so the `/style-labs/` namespace works.
+- Repository public visibility, optional MIT licensing, and new source pushes await the user’s explicit approval.
+- GitHub Pages settings are currently inaccessible to the connector; setup may require the user’s authenticated browser.
+- No custom domain is purchased or configured. Document how to add one later through GitHub Pages settings and DNS.
+- Confirm successful workflow deployment and check the public HTML and asset responses before marking this outcome complete.
