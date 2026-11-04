@@ -1,8 +1,9 @@
 /**
- * Rebuilds the README sample gallery with five styles.
+ * Rebuilds the README sample gallery with six styles.
  *
  * Run daily by .github/workflows/rotate.yml. It avoids repeating any style that
- * is already in the gallery, so each morning shows five different skins.
+ * is already in the gallery, so each morning shows six different skins, which
+ * fills the two-column sample table exactly.
  */
 import { readFile, writeFile, access } from "node:fs/promises";
 import { join, dirname } from "node:path";
@@ -15,7 +16,7 @@ const registryPath = join(root, "src", "registry.json");
 const shotDir = join(root, "assets", "screenshots");
 const START = "<!-- samples:start -->";
 const END = "<!-- samples:end -->";
-const COUNT = 5;
+const COUNT = 6;
 const SITE = "https://tamiloreo.github.io/style-labs/?s=";
 
 const styles = JSON.parse(await readFile(registryPath, "utf8"));
@@ -65,8 +66,7 @@ const rows = [];
 for (let i = 0; i < picks.length; i += 2) {
   const pair = picks.slice(i, i + 2);
   const cells = pair.map(cell).join("\n");
-  const filler = pair.length === 1 ? "\n    <td></td>" : "";
-  rows.push(`  <tr>\n${cells}${filler}\n  </tr>`);
+  rows.push(`  <tr>\n${cells}\n  </tr>`);
 }
 
 const block = `${START}\n<table>\n${rows.join("\n")}\n</table>\n${END}`;

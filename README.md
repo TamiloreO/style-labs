@@ -6,21 +6,21 @@ Live at **https://tamiloreo.github.io/style-labs/**
 
 ## Samples
 
-Five of the styles in the lab. Each image opens that style, and a daily GitHub Action swaps in a fresh set.
+Six of the styles in the lab. Each image opens that style, and a daily GitHub Action swaps in a fresh set.
 
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=synthwave"><img src="assets/screenshots/synthwave.webp" alt="Synthwave"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=liquid-glass"><img src="assets/screenshots/liquid-glass.webp" alt="Liquid glass"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=scrapbook"><img src="assets/screenshots/scrapbook.webp" alt="Scrapbook"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=surrealism"><img src="assets/screenshots/surrealism.webp" alt="Surrealism"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=claymorphism"><img src="assets/screenshots/claymorphism.webp" alt="Claymorphism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=neumorphism"><img src="assets/screenshots/neumorphism.webp" alt="Neumorphism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=maximalism"><img src="assets/screenshots/maximalism.webp" alt="Maximalism"></a></td>
+  </tr>
+  <tr>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=pixel-art"><img src="assets/screenshots/pixel-art.webp" alt="Pixel art"></a></td>
     <td><a href="https://tamiloreo.github.io/style-labs/?s=victorian"><img src="assets/screenshots/victorian.webp" alt="Victorian"></a></td>
-  </tr>
-  <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=cyberpunk"><img src="assets/screenshots/cyberpunk.webp" alt="Cyberpunk"></a></td>
-    <td></td>
   </tr>
 </table>
 <!-- samples:end -->
