@@ -25,7 +25,7 @@ jobs:
           node-version: 24
           package-manager-cache: false
 
-      - name: Pick five new screenshots
+      - name: Pick six new screenshots
         run: node scripts/rotate-gallery.mjs
 
       - name: Commit and push the change
