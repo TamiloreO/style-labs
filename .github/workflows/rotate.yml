@@ -1,0 +1,41 @@
+name: Rotate README samples
+
+on:
+  schedule:
+    - cron: "15 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: rotate-samples
+  cancel-in-progress: true
+
+jobs:
+  rotate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v6
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          package-manager-cache: false
+
+      - name: Pick five new screenshots
+        run: node scripts/rotate-gallery.mjs
+
+      - name: Commit and push the change
+        run: |
+          git config user.name "TamiloreO"
+          git config user.email "75487658+TamiloreO@users.noreply.github.com"
+          git add README.md
+          if git diff --staged --quiet; then
+            echo "Gallery already up to date"
+            exit 0
+          fi
+          git commit -m "Rotate the README sample gallery"
+          git push
