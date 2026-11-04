@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en" data-style="swiss">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Style Lab by TamiloreO: one page in {{countWord}} styles</title>
+    <meta
+      name="description"
+      content="{{CountWord}} design styles applied to the same front page. Switch skins to compare type, color and layout, then borrow what works for your next site."
+    />
+    <link rel="canonical" href="https://tamiloreo.github.io/style-labs/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://tamiloreo.github.io/style-labs/" />
+    <meta property="og:title" content="Style Lab by TamiloreO" />
+    <meta
+      property="og:description"
+      content="One page, {{countWord}} design styles. Compare them and find ideas for your next site."
+    />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="TamiloreO’s Style Lab" />
+    <meta name="twitter:description" content="One page, {{countWord}} styles. Play, compare, and find a direction for your next site." />
+    <meta property="og:site_name" content="TamiloreO’s Style Lab" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles/base.css" />
+    <script src="boot.js"></script>
+    <script src="registry.js"></script>
+    <noscript><link rel="stylesheet" href="styles/swiss.css" /></noscript>
+    <link rel="stylesheet" href="styles/controls.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="decor" aria-hidden="true">
+      <span class="decor__a"></span>
+      <span class="decor__b"></span>
+      <span class="decor__c"></span>
+      <span class="decor__d"></span>
+    </div>
+
+    <header class="site-header">
+      <div class="wrap site-header__inner">
+        <a class="brand" href="#top" aria-label="Style Lab by TamiloreO, home">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+              <rect x="3" y="3" width="11" height="11" rx="2.4" fill="currentColor" />
+              <rect x="18" y="3" width="11" height="11" rx="2.4" fill="currentColor" opacity="0.45" />
+              <rect x="3" y="18" width="11" height="11" rx="2.4" fill="currentColor" opacity="0.45" />
+              <rect x="18" y="18" width="11" height="11" rx="5.5" fill="currentColor" />
+            </svg>
+          </span>
+          <span class="brand__word">Style Lab</span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary">
+          <a href="#work">Styles</a>
+          <a href="#studio">How it works</a>
+          <a href="https://github.com/TamiloreO/style-labs" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </nav>
+
+        <a
+          class="btn btn--sm site-header__cta"
+          href="https://github.com/TamiloreO/style-labs"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+            <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+          </svg>
+          Star on GitHub
+        </a>
+
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
+          <span aria-hidden="true"></span>
+          <span class="nav-toggle__text">Menu</span>
+        </button>
+      </div>
+
+      <div class="mobile-nav" id="mobile-nav" hidden>
+        <a href="#work">Styles</a>
+        <a href="#studio">How it works</a>
+        <a href="https://github.com/TamiloreO/style-labs" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="https://github.com/TamiloreO/style-labs" target="_blank" rel="noopener noreferrer">Star on GitHub</a>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero wrap" id="top">
+        <div class="hero__copy">
+          <p class="eyebrow">
+            <span class="eyebrow__dot" aria-hidden="true"></span>
+            TamiloreO · Style Lab
+          </p>
+          <h1 class="hero__title">
+            Same page. {{CountWord}} ways to <em>see</em> it.
+          </h1>
+          <p class="hero__lede">
+            Style Lab holds the words still and changes everything around them: type, color,
+            surfaces, motion. Pick a skin from the bar below, compare how it behaves on your
+            phone, then borrow whatever helps your next site.
+          </p>
+          <div class="hero__actions">
+            <button class="btn" type="button" data-open-sheet>Browse all {{count}} styles</button>
+            <a
+              class="btn btn--ghost"
+              href="https://github.com/TamiloreO/style-labs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                <path d="M8 .9l2.1 4.3 4.7.7-3.4 3.3.8 4.7L8 11.7l-4.2 2.2.8-4.7L1.2 5.9l4.7-.7L8 .9Z" />
+              </svg>
+              Star on GitHub
+            </a>
+          </div>
+          <dl class="hero__meta">
+            <div><dt>Styles</dt><dd>{{count}}</dd></div>
+            <div><dt>Markup</dt><dd>1 page</dd></div>
+            <div><dt>npm packages</dt><dd>0</dd></div>
+          </dl>
+        </div>
+
+        <figure class="hero__art">
+          <div class="art">
+            <div class="art__head">
+              <span class="art__dot" aria-hidden="true"></span>
+              <span class="art__label">Style comparison</span>
+              <span class="art__num">01</span>
+            </div>
+            <div class="art__stat">
+              <b>{{count}}</b>
+              <span>skins, one page</span>
+            </div>
+            <div class="art__bars" aria-hidden="true">
+              <i style="--h: 38%"></i>
+              <i style="--h: 62%"></i>
+              <i style="--h: 51%"></i>
+              <i style="--h: 84%"></i>
+              <i style="--h: 70%"></i>
+              <i style="--h: 96%"></i>
+            </div>
+            <div class="art__list" aria-hidden="true">
+              <span></span><span></span><span></span>
+            </div>
+          </div>
+          <figcaption>Fig. 01 <span>Same content, every skin</span></figcaption>
+        </figure>
+      </section>
+
+      <section class="ticker" aria-hidden="true">
+        <div class="ticker__track">
+          {{ticker}}
+        </div>
+      </section>
+
+      <section class="section wrap" id="work">
+        <header class="section__head">
+          <p class="section__index">01 / How it works</p>
+          <h2 class="section__title">Play, compare, borrow</h2>
+          <p class="section__note">
+            Every skin runs on this same markup. Switching takes one click, or one arrow key.
+          </p>
+        </header>
+
+        <div class="cards">
+          <article class="card">
+            <span class="card__index">A</span>
+            <h3 class="card__title">Switch the skin</h3>
+            <p class="card__body">
+              The bar at the bottom switches between {{countWord}} design styles. No reload, no
+              settings to learn, and your choice is waiting next time you visit.
+            </p>
+            <ul class="card__list">
+              <li>Bottom switcher</li>
+              <li>Arrow keys</li>
+              <li>Saved preference</li>
+            </ul>
+            <a class="card__link" href="#style-rail" data-open-sheet>
+              See all {{count}} styles <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="card">
+            <span class="card__index">B</span>
+            <h3 class="card__title">Read the decisions</h3>
+            <p class="card__body">
+              Each skin is one CSS file with its own type scale, palette, corners and surfaces.
+              Open a file and the reasoning is all there, nothing compiled away.
+            </p>
+            <ul class="card__list">
+              <li>One file per style</li>
+              <li>Plain CSS</li>
+              <li>Easy to diff</li>
+            </ul>
+            <a
+              class="card__link"
+              href="https://github.com/TamiloreO/style-labs/tree/main/src/styles"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Browse the stylesheets <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="card">
+            <span class="card__index">C</span>
+            <h3 class="card__title">Take what fits</h3>
+            <p class="card__body">
+              Use a palette, a heading treatment or a whole skin. The MIT licence allows reuse
+              and modification; keep the copyright and licence notice with the code.
+            </p>
+            <ul class="card__list">
+              <li>MIT licensed</li>
+              <li>Fork and remix</li>
+              <li>No framework</li>
+            </ul>
+            <a
+              class="card__link"
+              href="https://github.com/TamiloreO/style-labs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Clone the repo <span aria-hidden="true">→</span>
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="section wrap" id="studio">
+        <header class="section__head">
+          <p class="section__index">02 / The lab</p>
+          <h2 class="section__title">Same words, different rules</h2>
+          <p class="section__note">
+            The copy never changes. Typography, color, spacing and surfaces do. That is the
+            whole trick.
+          </p>
+        </header>
+
+        <div class="bento">
+          <article class="tile tile--wide">
+            <p class="tile__label">Styles in the lab</p>
+            <p class="tile__figure">{{count}}</p>
+            <p class="tile__note">All {{count}} skins, one click apart.</p>
+          </article>
+          <article class="tile">
+            <p class="tile__label">Shared markup</p>
+            <p class="tile__figure">100<span>%</span></p>
+            <p class="tile__note">One HTML skeleton behind every skin.</p>
+          </article>
+          <article class="tile">
+            <p class="tile__label">npm packages</p>
+            <p class="tile__figure">0</p>
+            <p class="tile__note">No framework, no backend, no accounts.</p>
+          </article>
+          <article class="tile tile--tall">
+            <p class="tile__label">Part one</p>
+            <p class="tile__quote">
+              A front page for trying out visual directions before building something bigger.
+            </p>
+            <p class="tile__note">This is part one.</p>
+          </article>
+          <article class="tile tile--accent">
+            <p class="tile__label">Reuse</p>
+            <p class="tile__quote">
+              Take a stylesheet, a palette or one heading treatment. Keep whatever earns its
+              place.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="quote wrap" id="journal">
+        <p class="quote__text">
+          A screenshot shows one moment. Here, you can resize the page, press the buttons,
+          and see how each design behaves before choosing a direction.
+        </p>
+        <footer class="quote__cite">
+          <span class="quote__avatar" aria-hidden="true"></span>
+          <span><b>Why Style Lab exists</b> Try the design, not just the screenshot</span>
+        </footer>
+      </section>
+
+      <section class="closing wrap" id="contact">
+        <div class="closing__inner">
+          <p class="closing__eyebrow">03 / Next</p>
+          <h2 class="closing__title">Found a direction you like?</h2>
+          <p class="closing__body">
+            Take the CSS, keep what works, delete the rest. If it saved you time, a star helps
+            other people find it.
+          </p>
+          <div class="closing__actions">
+            <a
+              class="btn"
+              href="https://github.com/TamiloreO/style-labs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+                <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+              </svg>
+              Star on GitHub
+            </a>
+            <a class="btn btn--ghost" href="#top">Back to top</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap site-footer__inner">
+        <div class="site-footer__brand">
+          <span class="brand__word">Style Lab</span>
+          <p>A playground for interface styles, built by TamiloreO.</p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Footer">
+          <a href="#work">Styles</a>
+          <a href="#studio">How it works</a>
+          <a href="https://github.com/TamiloreO/style-labs" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="#top">Back to top</a>
+        </nav>
+        <p class="site-footer__legal">© 2026 TamiloreO</p>
+      </div>
+    </footer>
+
+    <nav class="switcher" id="switcher" aria-label="Design style">
+      <div class="switcher__bar">
+        <button class="switcher__arrow" id="prev-style" type="button" aria-label="Previous style">
+          <span aria-hidden="true">‹</span>
+        </button>
+
+        <div class="switcher__current" aria-live="polite" aria-atomic="true">
+          <span class="switcher__count" id="style-count">01/{{count}}</span>
+          <span class="switcher__name" id="style-name">Swiss design</span>
+        </div>
+
+        <div class="switcher__rail" id="style-rail" role="group" aria-label="All styles"></div>
+
+        <button class="switcher__arrow" id="next-style" type="button" aria-label="Next style">
+          <span aria-hidden="true">›</span>
+        </button>
+
+        <button class="switcher__all" id="open-sheet" type="button" aria-expanded="false" aria-controls="style-sheet">
+          All styles
+        </button>
+      </div>
+    </nav>
+
+    <div class="sheet" id="style-sheet" hidden>
+      <div class="sheet__scrim" data-close-sheet></div>
+      <div class="sheet__panel" role="dialog" aria-modal="true" aria-labelledby="sheet-title">
+        <header class="sheet__head">
+          <div>
+            <p class="sheet__eyebrow">TamiloreO · Style Lab</p>
+            <h2 class="sheet__title" id="sheet-title">{{CountWord}} directions, one page</h2>
+          </div>
+          <button class="sheet__close" type="button" data-close-sheet aria-label="Close style list">×</button>
+        </header>
+        <div class="sheet__grid" id="style-grid"></div>
+        <footer class="sheet__foot">
+          <p>Explore the styles, then see how they are built on GitHub.</p>
+          <a
+            class="btn btn--sm"
+            href="https://github.com/TamiloreO/style-labs"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <svg class="icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+              <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.4 7.4 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+            </svg>
+            Star on GitHub
+          </a>
+        </footer>
+      </div>
+    </div>
+
+    <script src="app.js" defer></script>
+  </body>
+</html>

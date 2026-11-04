@@ -11,20 +11,16 @@ import { fileURLToPath } from "node:url";
 const here = dirname(fileURLToPath(import.meta.url));
 const root = join(here, "..");
 const readmePath = join(root, "README.md");
-const appPath = join(root, "public", "app.js");
+const registryPath = join(root, "src", "registry.json");
 const shotDir = join(root, "assets", "screenshots");
 const START = "<!-- samples:start -->";
 const END = "<!-- samples:end -->";
 const COUNT = 5;
 const SITE = "https://tamiloreo.github.io/style-labs/?s=";
 
-const appJs = await readFile(appPath, "utf8");
-const styles = [...appJs.matchAll(/id:\s*"([a-z0-9-]+)",\s*\n\s*name:\s*"([^"]+)"/g)].map((m) => ({
-  id: m[1],
-  name: m[2],
-}));
-if (styles.length < COUNT) {
-  console.error(`Only found ${styles.length} styles in public/app.js`);
+const styles = JSON.parse(await readFile(registryPath, "utf8"));
+if (!Array.isArray(styles) || styles.length < COUNT) {
+  console.error(`src/registry.json must list at least ${COUNT} styles`);
   process.exit(1);
 }
 

@@ -11,7 +11,7 @@
 }[data-style="maximalism"] .decor__b {
   width: 120px; height: 120px; top: 40%; right: -77px; transform: rotate(24deg); background: var(--surface-2);
 }[data-style="maximalism"] .decor__c {
-  width: 92px; height: 92px; bottom: 19%; left: 8%; border-radius: 50%; background: var(--accent);
+  width: 92px; height: 92px; bottom: 7%; left: -46px; border-radius: 50%; background: var(--accent);
 }[data-style="maximalism"] .decor__d {
   width: 72px; height: 72px; right: 12%; bottom: 28%; transform: rotate(45deg); background: var(--accent-2);
 }[data-style="maximalism"] .site-header {

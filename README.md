@@ -6,7 +6,7 @@ Live at **https://tamiloreo.github.io/style-labs/**
 
 ## Samples
 
-Five of the twenty-two styles. Each image opens that style, and a daily GitHub Action swaps in a fresh set.
+Five of the styles in the lab. Each image opens that style, and a daily GitHub Action swaps in a fresh set.
 
 <!-- samples:start -->
 <table>
@@ -29,9 +29,12 @@ Five of the twenty-two styles. Each image opens that style, and a daily GitHub A
 
 | Path | Purpose |
 | --- | --- |
-| `public/index.html` | Page content and structure |
+| `src/index.html` | Page template; counts and the ticker are filled in at build time |
+| `src/registry.json` | The only list of styles: id, name, note, swatch and fonts |
+| `public/index.html` | Generated page with every count already resolved |
+| `public/registry.js` | Generated style list the page and runtime read |
 | `public/boot.js` | Picks the saved style and loads its sheet before first paint |
-| `public/app.js` | Style list, switching, prefetching and saved preference |
+| `public/app.js` | Switcher, prefetching and saved preference |
 | `public/styles/base.css` | Shared layout and tokens |
 | `public/styles/<style-id>.css` | One stylesheet per style, loaded on demand |
 | `public/styles/controls.css` | Responsive and accessibility safeguards |
@@ -40,7 +43,7 @@ Five of the twenty-two styles. Each image opens that style, and a daily GitHub A
 | `src/styles/00-base.css` | Source for the shared layout and tokens |
 | `src/styles/<style-id>.css` | Source for each design system |
 | `src/styles/zz-controls.css` | Source for the safeguards |
-| `build.mjs` | Splits and minifies the CSS, writes `boot.js` and `sw.js` |
+| `build.mjs` | Splits and minifies the CSS, renders the page, writes `registry.js`, `boot.js` and `sw.js` |
 | `scripts/rotate-gallery.mjs` | Rebuilds the sample gallery below |
 | `assets/screenshots/` | One screenshot per style |
 | `.github/workflows/pages.yml` | Builds and deploys to GitHub Pages |

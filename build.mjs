@@ -1,13 +1,12 @@
 /**
- * Builds the published CSS and generated support files.
+ * Builds the published site from src/.
  *
- * Output:
- *   public/styles/base.css      shared layout and tokens
- *   public/styles/controls.css  cross-skin safeguards, loaded after the skin
- *   public/styles/<id>.css      one independent design system per style
- *   public/styles.css           legacy full bundle, kept for compatibility
- *   public/boot.js              picks the style and loads its sheet before first paint
- *   public/sw.js                service worker with a build-versioned precache
+ * Sources:  src/registry.json (single list of styles), src/styles/*.css, src/index.html
+ * Output:   public/index.html, public/registry.js, public/styles/*.css,
+ *           public/styles.css (legacy bundle), public/boot.js, public/sw.js
+ *
+ * Every asset reference carries ?v=<build hash> so a new deploy can never pair
+ * fresh HTML with a stale service-worker cache.
  */
 import { readdir, readFile, writeFile, mkdir, stat } from "node:fs/promises";
 import { createHash } from "node:crypto";
@@ -18,6 +17,12 @@ const here = dirname(fileURLToPath(import.meta.url));
 const srcDir = join(here, "src", "styles");
 const publicDir = join(here, "public");
 const stylesOut = join(publicDir, "styles");
+
+const registry = JSON.parse(await readFile(join(here, "src", "registry.json"), "utf8"));
+if (!Array.isArray(registry) || !registry.length) {
+  console.error("src/registry.json must contain a non-empty array of styles");
+  process.exit(1);
+}
 
 /** Removes comments and redundant whitespace without touching quoted strings or calc(). */
 function minifyCss(css) {
@@ -63,15 +68,38 @@ function minifyCss(css) {
   return out.trim();
 }
 
-const files = (await readdir(srcDir)).filter((f) => f.endsWith(".css")).sort();
-if (!files.length) {
-  console.error("No style files found in src/styles");
-  process.exit(1);
+const numbers = {
+  0: "zero", 1: "one", 2: "two", 3: "three", 4: "four", 5: "five", 6: "six", 7: "seven",
+  8: "eight", 9: "nine", 10: "ten", 11: "eleven", 12: "twelve", 13: "thirteen",
+  14: "fourteen", 15: "fifteen", 16: "sixteen", 17: "seventeen", 18: "eighteen",
+  19: "nineteen", 20: "twenty", 30: "thirty", 40: "forty", 50: "fifty", 60: "sixty",
+  70: "seventy", 80: "eighty", 90: "ninety",
+};
+
+/** Spells whole numbers up to 999, which is plenty for a style count. */
+function spell(n) {
+  if (numbers[n]) return numbers[n];
+  if (n < 100) return `${numbers[Math.floor(n / 10) * 10]}-${numbers[n % 10]}`;
+  const hundreds = `${numbers[Math.floor(n / 100)]} hundred`;
+  const rest = n % 100;
+  return rest ? `${hundreds} ${spell(rest)}` : hundreds;
 }
 
+const files = (await readdir(srcDir)).filter((f) => f.endsWith(".css"));
 const baseFile = files.find((f) => f.startsWith("00-"));
 const controlsFile = files.find((f) => f.startsWith("zz-"));
 const skinFiles = files.filter((f) => f !== baseFile && f !== controlsFile);
+const skinIds = skinFiles.map((f) => f.replace(/\.css$/, "")).sort();
+const registryIds = registry.map((s) => s.id).sort();
+
+if (skinIds.join() !== registryIds.join()) {
+  const missingCss = registryIds.filter((id) => !skinIds.includes(id));
+  const missingEntry = skinIds.filter((id) => !registryIds.includes(id));
+  console.error("Registry and stylesheets disagree.");
+  if (missingCss.length) console.error(`  registry entries without CSS: ${missingCss.join(", ")}`);
+  if (missingEntry.length) console.error(`  stylesheets without registry entry: ${missingEntry.join(", ")}`);
+  process.exit(1);
+}
 
 await mkdir(stylesOut, { recursive: true });
 
@@ -87,24 +115,72 @@ for (const file of files) {
 }
 
 // Legacy single bundle, so an older cached page or external link still resolves.
+const ordered = [...files].sort((a, b) => {
+  if (a === baseFile) return -1;
+  if (b === baseFile) return 1;
+  if (a === controlsFile) return 1;
+  if (b === controlsFile) return -1;
+  return a.localeCompare(b);
+});
 const bundle =
   "/* Style Lab, generated file. Edit src/styles/*.css and rebuild. */\n" +
-  files.map((file) => written.get(outputName(file))).join("\n");
+  ordered.map((file) => written.get(outputName(file))).join("\n");
 await writeFile(join(publicDir, "styles.css"), bundle, "utf8");
 
-// Style ids come from the registry in app.js so there is one source of truth.
 const appJs = await readFile(join(publicDir, "app.js"), "utf8");
-const ids = [...appJs.matchAll(/^\s*id:\s*"([a-z0-9-]+)"/gm)].map((m) => m[1]);
-if (ids.length !== skinFiles.length) {
-  console.error(`Registry lists ${ids.length} styles but ${skinFiles.length} style sheets exist`);
+const ids = registry.map((s) => s.id);
+const count = registry.length;
+const registryJson = JSON.stringify(registry);
+
+const version = createHash("sha1")
+  .update(ordered.map((file) => written.get(outputName(file))).join(""))
+  .update(appJs)
+  .update(registryJson)
+  .digest("hex")
+  .slice(0, 10);
+
+const withVersion = (path) => `${path}?v=${version}`;
+
+const registryJs = `/* Generated by build.mjs from src/registry.json. */
+window.__stylelabVersion = "${version}";
+window.STYLE_REGISTRY = ${registryJson};
+`;
+await writeFile(join(publicDir, "registry.js"), registryJs, "utf8");
+
+const tickerGroup = registry
+  .map((style) => `<span>${style.name}</span><i aria-hidden="true">·</i>`)
+  .join("\n            ");
+
+const assetMap = [
+  [`href="styles/base.css"`, `href="${withVersion("styles/base.css")}"`],
+  [`href="styles/controls.css"`, `href="${withVersion("styles/controls.css")}"`],
+  [`href="styles/swiss.css"`, `href="${withVersion("styles/swiss.css")}"`],
+  [`src="boot.js"`, `src="${withVersion("boot.js")}"`],
+  [`src="registry.js"`, `src="${withVersion("registry.js")}"`],
+  [`src="app.js"`, `src="${withVersion("app.js")}"`],
+];
+
+const template = await readFile(join(here, "src", "index.html"), "utf8");
+let page = template
+  .replaceAll("{{CountWord}}", spell(count).replace(/\b\w/g, (c) => c.toUpperCase()))
+  .replaceAll("{{countWord}}", spell(count))
+  .replaceAll("{{count}}", String(count))
+  .replace(
+    "{{ticker}}",
+    `<div class="ticker__group">\n            ${tickerGroup}\n          </div>\n          <div class="ticker__group">\n            ${tickerGroup}\n          </div>`
+  );
+
+for (const [from, to] of assetMap) {
+  if (!page.includes(from)) console.error(`Asset reference not found in template: ${from}`);
+  page = page.replace(from, to);
+}
+
+if (/\{\{\w+\}\}/.test(page)) {
+  const leftover = [...new Set(page.matchAll(/\{\{\w+\}\}/g))].map((m) => m[0]);
+  console.error(`Unresolved template tokens: ${leftover.join(", ")}`);
   process.exit(1);
 }
-for (const id of ids) {
-  if (!written.has(`${id}.css`)) {
-    console.error(`Missing stylesheet for style id "${id}"`);
-    process.exit(1);
-  }
-}
+await writeFile(join(publicDir, "index.html"), page, "utf8");
 
 const boot = `/* Generated by build.mjs. Picks a style and loads its sheet before first paint. */
 (function () {
@@ -121,7 +197,7 @@ const boot = `/* Generated by build.mjs. Picks a style and loads its sheet befor
   var link = document.createElement("link");
   link.rel = "stylesheet";
   link.id = "skin-sheet";
-  link.href = "styles/" + pick + ".css";
+  link.href = "styles/" + pick + ".css?v=${version}";
   document.head.appendChild(link);
 })();
 `;
@@ -130,24 +206,18 @@ await writeFile(join(publicDir, "boot.js"), boot, "utf8");
 const precache = [
   "./",
   "index.html",
-  "app.js",
-  "boot.js",
+  withVersion("app.js"),
+  withVersion("boot.js"),
+  withVersion("registry.js"),
   "favicon.svg",
   "manus-routes.json",
-  "styles/base.css",
-  "styles/controls.css",
-  ...ids.map((id) => `styles/${id}.css`),
+  withVersion("styles/base.css"),
+  withVersion("styles/controls.css"),
+  ...ids.map((id) => withVersion(`styles/${id}.css`)),
 ];
 
-const hash = createHash("sha1")
-  .update([...written.values()].join(""))
-  .update(appJs)
-  .update(boot)
-  .digest("hex")
-  .slice(0, 10);
-
 const sw = `/* Generated by build.mjs. Cache-first shell, network-first pages. */
-const CACHE = "stylelab-${hash}";
+const CACHE = "stylelab-${version}";
 const ASSETS = ${JSON.stringify(precache, null, 2)};
 
 self.addEventListener("install", (event) => {
@@ -209,6 +279,6 @@ const skinsSize = (
   await Promise.all(ids.map(async (id) => (await stat(join(stylesOut, `${id}.css`))).size))
 ).reduce((a, b) => a + b, 0);
 
-console.log(`Built ${ids.length} skins + base + controls (minified).`);
-console.log(`Initial CSS per page: base ${baseSize} B + one skin (average ${Math.round(skinsSize / ids.length)} B)`);
-console.log(`Legacy bundle: ${bundleSize} B. Precache version: ${hash}`);
+console.log(`Built ${count} styles (${spell(count)}) from src/registry.json.`);
+console.log(`Initial CSS: base ${baseSize} B + one skin (average ${Math.round(skinsSize / count)} B)`);
+console.log(`Legacy bundle: ${bundleSize} B. Build version: ${version}`);
