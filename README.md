@@ -35,6 +35,7 @@ Five of the styles in the lab. Each image opens that style, and a daily GitHub A
 | `public/registry.js` | Generated style list the page and runtime read |
 | `public/boot.js` | Picks the saved style and loads its sheet before first paint |
 | `public/app.js` | Switcher, prefetching and saved preference |
+| `public/ripple.js` | Water field behind the liquid glass skin, driven by scroll and touch |
 | `public/styles/base.css` | Shared layout and tokens |
 | `public/styles/<style-id>.css` | One stylesheet per style, loaded on demand |
 | `public/styles/controls.css` | Responsive and accessibility safeguards |
