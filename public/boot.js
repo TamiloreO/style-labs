@@ -13,6 +13,6 @@
   var link = document.createElement("link");
   link.rel = "stylesheet";
   link.id = "skin-sheet";
-  link.href = "styles/" + pick + ".css?v=efe53f0792";
+  link.href = "styles/" + pick + ".css?v=a6765f553e";
   document.head.appendChild(link);
 })();

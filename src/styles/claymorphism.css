@@ -43,8 +43,8 @@
   --sw-bg: rgba(246, 241, 253, 0.92);
   --sw-ink: #3a3054;
   --sw-line: rgba(126, 108, 168, 0.26);
-  --sw-active-bg: #7050c8;
-  --sw-active-ink: #ffffff;
+  --sw-active-bg: #d8cbf6;
+  --sw-active-ink: #3a3054;
   --sw-font: "Nunito", system-ui, sans-serif;
 }
 
@@ -341,8 +341,18 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
-[data-style="claymorphism"] .chip {
+[data-style="claymorphism"] .chip:not([aria-pressed="true"]) {
   background: rgba(255, 255, 255, 0.55);
+}
+
+/* Keep the active fill explicit so the generic translucent chip cannot override
+   it. Dark plum text stays readable against the pale lavender. */
+[data-style="claymorphism"] .chip[aria-pressed="true"] {
+  background: var(--sw-active-bg);
+  color: var(--sw-active-ink);
+  border-color: rgba(112, 80, 200, 0.4);
+  font-weight: 700;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 4px 12px rgba(73, 49, 140, 0.28);
 }
 
 @media (max-width: 560px) {
