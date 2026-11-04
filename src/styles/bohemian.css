@@ -111,10 +111,13 @@
 [data-style="bohemian"] .hero__art { width: 100%; justify-self: end; }
 [data-style="bohemian"] .art {
   min-height: 350px;
-  padding: clamp(21px, 3vw, 34px);
+  /* The arch cuts the top corners, so the head row starts below the curve
+     instead of colliding with it. The vertical radius is kept shallow enough
+     that the padding always clears it. */
+  padding: clamp(74px, 8.5vw, 96px) clamp(26px, 3.6vw, 40px) clamp(24px, 3vw, 34px);
   border: 1px solid #d6c6ab;
-  border-radius: 49% 49% 24px 24px / 25% 25% 24px 24px;
-  background: radial-gradient(ellipse at 50% 15%, #fffaf0 0 28%, transparent 29%),
+  border-radius: 46% 46% 24px 24px / 18% 18% 24px 24px;
+  background: radial-gradient(ellipse 30% 19% at 50% 0%, #fffaf0 0 99%, transparent 100%),
     repeating-linear-gradient(135deg, rgba(120,131,79,.055) 0 1px, transparent 1px 12px),
     #e7dcc5;
   box-shadow: 0 12px 30px rgba(74,54,32,.1);
@@ -124,8 +127,8 @@
   position: absolute;
   width: 72px;
   height: 72px;
-  right: 12%;
-  top: 20%;
+  right: 10%;
+  top: 36%;
   border: 1px solid rgba(169,81,54,.42);
   border-radius: 50%;
   box-shadow: 0 0 0 8px rgba(169,81,54,.07), 0 0 0 16px rgba(169,81,54,.045);
@@ -246,7 +249,7 @@
 @media (max-width: 560px) {
   [data-style="bohemian"] .hero { padding-top: 42px; }
   [data-style="bohemian"] .hero__title { max-width: 12ch; font-size: clamp(2.55rem, 12vw, 3.65rem); }
-  [data-style="bohemian"] .art { min-height: 320px; border-radius: 44% 44% 22px 22px / 17% 17% 22px 22px; }
+  [data-style="bohemian"] .art { min-height: 320px; border-radius: 42% 42% 22px 22px / 15% 15% 22px 22px; }
   [data-style="bohemian"] .cards { grid-template-columns: minmax(0, 1fr); }
   [data-style="bohemian"] .card:nth-child(1),
   [data-style="bohemian"] .card:nth-child(2) { transform: none; }
