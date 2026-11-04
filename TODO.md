@@ -36,11 +36,12 @@ The initial version was pushed to GitHub and the Manus canonical repository afte
 - Keep the existing design systems and switching behavior intact. This is the first part of the project, not a promise of unrequested future features.
 - New copy and entry points passed structural checks, functional checks, and 110 layout measurements at 320px, 375px, 768px, 900px, and 1280px.
 
-## [ ] 6. GitHub Pages deployment
+## [x] 6. GitHub Pages deployment
 
 - Publish the project at `https://tamiloreo.github.io/style-labs/` using a main-branch GitHub Actions build and deploy pipeline.
 - Keep asset paths relative so the `/style-labs/` namespace works.
-- Repository public visibility, optional MIT licensing, and new source pushes await the user’s explicit approval.
-- GitHub Pages settings are currently inaccessible to the connector; setup may require the user’s authenticated browser.
-- No custom domain is purchased or configured. Document how to add one later through GitHub Pages settings and DNS.
-- Confirm successful workflow deployment and check the public HTML and asset responses before marking this outcome complete.
+- The repository is public under the MIT licence, and the workflow file was added through the signed-in GitHub session because the connector lacks the Workflows permission.
+- Pages source was set to GitHub Actions. Run 41858847318 completed successfully for commit 4d9631b.
+- Live at https://tamiloreo.github.io/style-labs/: index, styles.css and app.js all return 200, with no failed resources and no horizontal overflow.
+- On the live domain, all 22 chips render, switching applies a new theme, the choice persists in local storage, and the picker opens with 22 entries.
+- No custom domain is purchased or configured. A future domain needs the Pages custom-domain setting plus DNS records.

@@ -2,6 +2,8 @@
 
 A playground for comparing interface styles on one page. The content stays the same; the typography, color, spacing and surfaces change. Use the bar at the bottom to switch styles and borrow ideas for your next site.
 
+Live at **https://tamiloreo.github.io/style-labs/**
+
 ## Files
 
 | Path | Purpose |
