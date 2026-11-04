@@ -1,0 +1,279 @@
+/* Minimalism — quiet type, open space, and a few deliberate rules. */
+[data-style="minimalism"] { color-scheme: light; --bg: #fafaf8; --bg-2: #ffffff; --ink: #111110; --ink-2: #555550; --ink-3: #72726c; --line: #deded9; --surface: #fafaf8; --surface-2: #f2f2ef; --accent: #111110; --accent-2: #777771; --on-accent: #fafaf8; --radius: 0; --radius-sm: 0; --radius-lg: 0; --border-w: 1px; --shadow: none; --card-shadow: none; --font-display: "Inter Tight", "Helvetica Neue", Arial, sans-serif; --font-text: "Inter Tight", "Helvetica Neue", Arial, sans-serif; --font-label: "Inter Tight", "Helvetica Neue", Arial, sans-serif; --display-weight: 400; --display-wght: 400; --display-lh: 0.98; --display-track: -0.055em; --display-case: none; --display-size: clamp(3rem, 7.2vw, 6.3rem); --body-size: clamp(1rem, 0.35vw + 0.92rem, 1.08rem); --label-track: 0.11em; --label-case: uppercase; --label-size: 0.7rem; --label-weight: 500; --maxw: 1240px; --pad: clamp(22px, 5.2vw, 72px); --section-y: clamp(76px, 11vw, 156px); --gap: clamp(20px, 3vw, 42px); --btn-radius: 0; --btn-border: 1px solid var(--ink); --btn-bg: var(--ink); --btn-ink: var(--on-accent); --btn-pad: 0.88em 1.3em; --btn-weight: 500; --btn-track: 0.01em; --btn-case: none; --btn-shadow: none; --card-pad: clamp(20px, 2.7vw, 34px) 0; --tile-radius: 0; --sw-bg: rgba(250, 250, 248, 0.97); --sw-ink: #111110; --sw-line: #d6d6d0; --sw-active-bg: #111110; --sw-active-ink: #fafaf8; --sw-radius: 2px; --sw-font: "Inter Tight", "Helvetica Neue", Arial, sans-serif; --sw-blur: 14px; --swatch-1: #fafaf8; --swatch-2: #deded9; --swatch-3: #111110; --grid-line: rgba(0, 0, 0, 0.06); --ease: cubic-bezier(0.2, 0.65, 0.3, 1); }
+
+[data-style="minimalism"] body { background: var(--bg); color: var(--ink); font-weight: 350; line-height: 1.65; overflow-wrap: break-word; }
+
+[data-style="minimalism"] :focus-visible { outline: 2px solid var(--ink); outline-offset: 4px; }
+
+[data-style="minimalism"] .wrap { width: min(100% - (var(--pad) * 2), var(--maxw)); }
+
+[data-style="minimalism"] .decor__a, [data-style="minimalism"] .decor__b, [data-style="minimalism"] .decor__c, [data-style="minimalism"] .decor__d { display: none; }
+
+/* Header: restrained identity, no glass or extra chrome. */
+[data-style="minimalism"] .site-header { padding-block: 21px; border-bottom: 1px solid var(--line); background: var(--bg); backdrop-filter: none; }
+
+[data-style="minimalism"] .site-header__inner { min-width: 0; gap: clamp(14px, 2.4vw, 34px); }
+
+[data-style="minimalism"] .brand { gap: 9px; }
+
+[data-style="minimalism"] .brand__mark { width: 1.2em; height: 1.2em; }
+
+[data-style="minimalism"] .brand__word { font-weight: 500; font-size: 1.08rem; letter-spacing: -0.045em; }
+
+[data-style="minimalism"] .site-nav { gap: clamp(18px, 2.6vw, 38px); font-size: 0.87rem; }
+
+[data-style="minimalism"] .site-nav a, [data-style="minimalism"] .site-footer__nav a { padding-bottom: 3px; }
+
+[data-style="minimalism"] .nav-toggle { border-color: var(--line); border-radius: 0; padding: 9px 12px; font-size: 0.82rem; }
+
+[data-style="minimalism"] .mobile-nav { gap: 0; background: var(--bg); }
+
+[data-style="minimalism"] .mobile-nav a { border-color: var(--line); font-size: 1.05rem; padding-block: 12px; }
+
+/* Small, precise controls; hover only adds a quiet tonal shift. */
+[data-style="minimalism"] .btn { min-height: 44px; border-width: 1px; border-radius: 0; font-size: 0.85rem; font-weight: 500; transition: color 180ms var(--ease), background-color 180ms var(--ease), border-color 180ms var(--ease); will-change: auto; }
+
+[data-style="minimalism"] .btn:hover { transform: none; background: #3b3b38; border-color: #3b3b38; }
+
+[data-style="minimalism"] .btn--ghost { background: transparent; color: var(--ink); }
+
+[data-style="minimalism"] .btn--ghost:hover { background: var(--surface-2); border-color: var(--ink); }
+
+[data-style="minimalism"] .btn--sm { min-height: 38px; padding: 0.58em 1em; font-size: 0.78rem; }
+
+/* The lead statement carries the page; imagery is reduced to a typographic study. */
+[data-style="minimalism"] .hero { grid-template-columns: minmax(0, 1.12fr) minmax(260px, 0.72fr); gap: clamp(40px, 9vw, 132px); align-items: center; padding-block: clamp(72px, 10vw, 142px) clamp(88px, 12vw, 166px); }
+
+[data-style="minimalism"] .hero__copy { min-width: 0; }
+
+[data-style="minimalism"] .eyebrow { gap: 10px; margin-bottom: clamp(24px, 3vw, 42px); color: var(--ink-2); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.1em; }
+
+[data-style="minimalism"] .eyebrow__dot { width: 5px; height: 5px; background: var(--ink); }
+
+[data-style="minimalism"] .hero__title { max-width: 11ch; margin-bottom: clamp(22px, 3vw, 38px); font-weight: 350; line-height: 0.99; letter-spacing: -0.06em; text-wrap: balance; }
+
+[data-style="minimalism"] .hero__title em { font-weight: 350; }
+
+[data-style="minimalism"] .hero__lede { max-width: 38ch; margin-bottom: 30px; color: var(--ink-2); font-size: 1rem; line-height: 1.65; }
+
+[data-style="minimalism"] .hero__actions { gap: 10px; margin-bottom: clamp(34px, 4vw, 54px); }
+
+[data-style="minimalism"] .hero__meta { gap: clamp(20px, 3.5vw, 48px); padding-top: 18px; border-color: var(--line); }
+
+[data-style="minimalism"] .hero__meta dt { color: var(--ink-3); font-size: 0.66rem; letter-spacing: 0.09em; }
+
+[data-style="minimalism"] .hero__meta dd { font-size: 0.94rem; font-weight: 450; }
+
+[data-style="minimalism"] .hero__art { width: 100%; max-width: 440px; justify-self: end; }
+
+[data-style="minimalism"] .art { padding: clamp(18px, 2.5vw, 30px); border: 1px solid var(--line); border-radius: 0; background: transparent; box-shadow: none; }
+
+[data-style="minimalism"] .art__head { gap: 10px; padding-bottom: 16px; border-color: var(--line); }
+
+[data-style="minimalism"] .art__dot { width: 5px; height: 5px; background: var(--ink); }
+
+[data-style="minimalism"] .art__label, [data-style="minimalism"] .art__num { color: var(--ink-2); font-size: 0.68rem; letter-spacing: 0.06em; }
+
+[data-style="minimalism"] .art__stat { gap: 8px 12px; padding-block: 26px 20px; }
+
+[data-style="minimalism"] .art__stat b { font-weight: 350; letter-spacing: -0.065em; }
+
+[data-style="minimalism"] .art__stat span { color: var(--ink-2); font-size: 0.78rem; }
+
+[data-style="minimalism"] .art__bars { height: clamp(80px, 11vw, 118px); gap: clamp(8px, 1.3vw, 15px); border-bottom: 1px solid var(--line); }
+
+[data-style="minimalism"] .art__bars i, [data-style="minimalism"] .art__bars i:nth-child(2n) { border-radius: 0; background: var(--ink); opacity: 0.78; }
+
+[data-style="minimalism"] .art__bars i:nth-child(2n) { opacity: 0.28; }
+
+[data-style="minimalism"] .art__list { gap: 8px; margin-top: 17px; }
+
+[data-style="minimalism"] .art__list span { height: 2px; border-radius: 0; background: var(--line); }
+
+[data-style="minimalism"] .hero__art figcaption { margin-top: 11px; color: var(--ink-3); font-size: 0.65rem; letter-spacing: 0.08em; }
+
+/* The ticker acts as a fine typographic seam, not a banner. */
+[data-style="minimalism"] .ticker { padding-block: 15px; border-block: 1px solid var(--line); }
+
+[data-style="minimalism"] .ticker__group { gap: clamp(20px, 3vw, 42px); color: var(--ink-2); font-size: 0.7rem; font-weight: 450; letter-spacing: 0.1em; }
+
+[data-style="minimalism"] .ticker__group i { color: var(--ink-3); }
+
+[data-style="minimalism"] .section { padding-block: var(--section-y); }
+
+[data-style="minimalism"] .section__head { grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.72fr); gap: 18px clamp(24px, 7vw, 100px); margin-bottom: clamp(28px, 4vw, 48px); padding-bottom: 21px; border-color: var(--line); }
+
+[data-style="minimalism"] .section__index { color: var(--ink-3); font-size: 0.68rem; letter-spacing: 0.11em; }
+
+[data-style="minimalism"] .section__title { max-width: 17ch; font-weight: 400; font-size: clamp(2rem, 3.7vw, 3.25rem); line-height: 1.02; letter-spacing: -0.05em; }
+
+[data-style="minimalism"] .section__note { color: var(--ink-2); font-size: 0.92rem; line-height: 1.6; }
+
+[data-style="minimalism"] .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(22px, 4vw, 56px); }
+
+[data-style="minimalism"] .card { gap: 12px; padding: 20px 0 0; border: 0; border-top: 1px solid var(--ink); border-radius: 0; background: transparent; box-shadow: none; transition: none; }
+
+[data-style="minimalism"] .card__index { color: var(--ink-3); font-size: 0.67rem; letter-spacing: 0.11em; }
+
+[data-style="minimalism"] .card__title { margin-top: 5px; font-size: 1.22rem; font-weight: 450; letter-spacing: -0.035em; }
+
+[data-style="minimalism"] .card__body { color: var(--ink-2); font-size: 0.9rem; line-height: 1.62; }
+
+[data-style="minimalism"] .card__list { gap: 7px; margin-top: 5px; color: var(--ink-2); font-size: 0.83rem; }
+
+[data-style="minimalism"] .card__list li { gap: 9px; }
+
+[data-style="minimalism"] .card__list li::before { width: 3px; height: 3px; border-radius: 0; background: var(--ink-3); }
+
+[data-style="minimalism"] .card__link { gap: 8px; margin-top: auto; padding-top: 16px; border-color: var(--line); font-size: 0.73rem; letter-spacing: 0.07em; }
+
+[data-style="minimalism"] .card__link:hover { opacity: 1; }
+
+[data-style="minimalism"] .bento { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 3.4vw, 44px); }
+
+[data-style="minimalism"] .tile, [data-style="minimalism"] .tile--wide { grid-column: span 1; grid-row: auto; min-height: 170px; gap: 13px; padding: 20px 0 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; background: transparent; box-shadow: none; }
+
+[data-style="minimalism"] .tile--wide { grid-column: span 2; }
+
+[data-style="minimalism"] .tile--tall { grid-row: span 2; }
+
+[data-style="minimalism"] .tile__label { color: var(--ink-3); font-size: 0.67rem; letter-spacing: 0.1em; }
+
+[data-style="minimalism"] .tile__figure { font-size: clamp(2.7rem, 5vw, 4.2rem); font-weight: 350; letter-spacing: -0.065em; line-height: 0.98; }
+
+[data-style="minimalism"] .tile__note { color: var(--ink-2); font-size: 0.82rem; line-height: 1.55; }
+
+[data-style="minimalism"] .tile__quote { font-size: 1.02rem; font-weight: 400; line-height: 1.45; letter-spacing: -0.02em; }
+
+[data-style="minimalism"] .quote { width: min(100% - (var(--pad) * 2), var(--maxw)); margin-inline: auto; padding-block: clamp(72px, 10vw, 136px); border-block: 1px solid var(--line); gap: 26px; }
+
+[data-style="minimalism"] .quote__text { max-width: 28ch; font-weight: 350; font-size: clamp(1.8rem, 3.8vw, 3.25rem); line-height: 1.12; letter-spacing: -0.05em; }
+
+[data-style="minimalism"] .quote__cite { gap: 10px; color: var(--ink-2); font-size: 0.8rem; }
+
+[data-style="minimalism"] .quote__cite b { font-weight: 500; }
+
+[data-style="minimalism"] .quote__avatar { width: 6px; height: 6px; border-radius: 50%; background: var(--ink); }
+
+[data-style="minimalism"] .closing { padding-block: var(--section-y); }
+
+[data-style="minimalism"] .closing__inner { gap: 15px; justify-items: start; padding: 0; border: 0; border-radius: 0; background: transparent; box-shadow: none; }
+
+[data-style="minimalism"] .closing__eyebrow { color: var(--ink-3); font-size: 0.68rem; letter-spacing: 0.11em; }
+
+[data-style="minimalism"] .closing__title { max-width: 18ch; font-size: clamp(2.2rem, 5.3vw, 4.4rem); font-weight: 350; line-height: 1.02; letter-spacing: -0.06em; }
+
+[data-style="minimalism"] .closing__body { color: var(--ink-2); font-size: 0.98rem; }
+
+[data-style="minimalism"] .closing__actions { gap: 10px; margin-top: 12px; }
+
+[data-style="minimalism"] .site-footer { padding-block: 34px calc(38px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--line); }
+
+[data-style="minimalism"] .site-footer__inner { grid-template-columns: minmax(0, 1fr) auto auto; gap: clamp(22px, 4vw, 60px); }
+
+[data-style="minimalism"] .site-footer__brand .brand__word { font-size: 1rem; font-weight: 500; }
+
+[data-style="minimalism"] .site-footer__brand p { color: var(--ink-2); font-size: 0.8rem; }
+
+[data-style="minimalism"] .site-footer__nav { gap: 7px; font-size: 0.81rem; }
+
+[data-style="minimalism"] .site-footer__legal { color: var(--ink-3); font-size: 0.74rem; }
+
+/* Bottom style navigation stays light, legible, and horizontally contained. */
+[data-style="minimalism"] .switcher { padding: 9px clamp(8px, 2vw, 20px) calc(9px + env(safe-area-inset-bottom, 0px)); }
+
+[data-style="minimalism"] .switcher__bar { width: 100%; min-width: 0; gap: 5px; padding: 6px; border: 1px solid var(--sw-line); border-radius: 2px; background: var(--sw-bg); color: var(--sw-ink); box-shadow: 0 3px 18px rgba(0, 0, 0, 0.08); backdrop-filter: blur(var(--sw-blur)); -webkit-backdrop-filter: blur(var(--sw-blur)); }
+
+[data-style="minimalism"] .switcher__arrow { width: 34px; height: 34px; border-color: var(--sw-line); border-radius: 1px; font-size: 1rem; }
+
+[data-style="minimalism"] .switcher__arrow:hover, [data-style="minimalism"] .switcher__all:hover { background: var(--surface-2); }
+
+[data-style="minimalism"] .switcher__current { min-width: 86px; max-width: 136px; padding-inline: 5px 8px; }
+
+[data-style="minimalism"] .switcher__count { color: var(--ink-2); font-size: 0.62rem; letter-spacing: 0.1em; }
+
+[data-style="minimalism"] .switcher__name { font-size: 0.8rem; font-weight: 500; }
+
+[data-style="minimalism"] .switcher__rail { min-width: 0; gap: 4px; mask-image: linear-gradient(90deg, transparent, #000 10px, #000 calc(100% - 10px), transparent); }
+
+[data-style="minimalism"] .chip { min-height: 34px; gap: 6px; padding: 7px 9px; border-radius: 1px; border-color: transparent; background: transparent; font-size: 0.74rem; }
+
+[data-style="minimalism"] .chip:hover { background: var(--surface-2); }
+
+[data-style="minimalism"] .chip[aria-pressed="true"] { background: var(--sw-active-bg); color: var(--sw-active-ink); }
+
+[data-style="minimalism"] .chip__dot { width: 6px; height: 6px; border-radius: 50%; }
+
+[data-style="minimalism"] .switcher__all { min-height: 34px; padding: 7px 10px; border-color: var(--sw-line); border-radius: 1px; background: transparent; font-size: 0.74rem; font-weight: 500; }
+
+[data-style="minimalism"] .sheet__scrim { background: rgba(17, 17, 16, 0.32); backdrop-filter: blur(2px); }
+
+[data-style="minimalism"] .sheet__panel { border: 1px solid var(--line); border-radius: 0; box-shadow: none; }
+
+[data-style="minimalism"] .sheet__eyebrow, [data-style="minimalism"] .style-card__meta { color: var(--ink-3); }
+
+[data-style="minimalism"] .sheet__title { font-weight: 400; letter-spacing: -0.04em; }
+
+[data-style="minimalism"] .sheet__close { border-radius: 0; }
+
+[data-style="minimalism"] .style-card { border-radius: 0; background: transparent; }
+
+[data-style="minimalism"] .style-card[aria-pressed="true"] { border-color: var(--ink); box-shadow: 0 0 0 1px var(--ink) inset; }
+
+[data-style="minimalism"] .style-card__swatch { border-radius: 0; }
+
+[data-style="minimalism"] .style-card__name { font-weight: 500; }
+
+@media (max-width: 980px) {
+  [data-style="minimalism"] .hero { grid-template-columns: minmax(0, 1fr); gap: clamp(38px, 7vw, 68px); }
+
+  [data-style="minimalism"] .hero__art { max-width: 520px; justify-self: start; }
+
+  [data-style="minimalism"] .section__head { grid-template-columns: minmax(0, 1fr); align-items: start; }
+
+  [data-style="minimalism"] .bento { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  [data-style="minimalism"] .tile--wide { grid-column: span 2; }
+
+  [data-style="minimalism"] .tile--tall { grid-row: span 1; }
+
+  [data-style="minimalism"] .site-footer__inner { grid-template-columns: minmax(0, 1fr) auto; }
+
+  [data-style="minimalism"] .site-footer__legal { grid-column: 1 / -1; text-align: left; }
+}
+
+@media (max-width: 820px) {
+  [data-style="minimalism"] .switcher__bar { gap: 4px; }
+
+  [data-style="minimalism"] .switcher__current { display: none; }
+}
+
+@media (max-width: 560px) {
+  [data-style="minimalism"] .hero { padding-block: 66px 88px; }
+
+  [data-style="minimalism"] .hero__title { max-width: 10ch; font-size: clamp(2.8rem, 14vw, 4.2rem); }
+
+  [data-style="minimalism"] .hero__actions, [data-style="minimalism"] .closing__actions { align-items: stretch; }
+
+  [data-style="minimalism"] .hero__actions .btn, [data-style="minimalism"] .closing__actions .btn { flex: 1 1 auto; }
+
+  [data-style="minimalism"] .hero__meta { gap: 16px 23px; }
+
+  [data-style="minimalism"] .cards, [data-style="minimalism"] .bento { grid-template-columns: minmax(0, 1fr); }
+
+  [data-style="minimalism"] .tile, [data-style="minimalism"] .tile--wide { grid-column: 1 / -1; }
+
+  [data-style="minimalism"] .tile { min-height: 0; padding-block: 18px 8px; }
+
+  [data-style="minimalism"] .site-footer__inner { grid-template-columns: minmax(0, 1fr); }
+
+  [data-style="minimalism"] .site-footer__legal { grid-column: auto; }
+
+  [data-style="minimalism"] .switcher__bar { gap: 3px; padding: 5px; }
+
+  [data-style="minimalism"] .switcher__arrow { width: 32px; height: 34px; }
+
+  [data-style="minimalism"] .chip { padding-inline: 8px; font-size: 0.72rem; }
+
+  [data-style="minimalism"] .switcher__all { padding-inline: 8px; font-size: 0.7rem; }
+}
