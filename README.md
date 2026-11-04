@@ -11,15 +11,15 @@ Five of the twenty-two styles. Each image opens that style, and a daily GitHub A
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=synthwave"><img src="assets/screenshots/synthwave.webp" alt="Synthwave"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=editorial"><img src="assets/screenshots/editorial.webp" alt="Editorial design"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=wabi-sabi"><img src="assets/screenshots/wabi-sabi.webp" alt="Wabi-sabi"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=neo-brutalism"><img src="assets/screenshots/neo-brutalism.webp" alt="Neo-brutalism"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=maximalism"><img src="assets/screenshots/maximalism.webp" alt="Maximalism"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=neumorphism"><img src="assets/screenshots/neumorphism.webp" alt="Neumorphism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=y2k"><img src="assets/screenshots/y2k.webp" alt="Y2K aesthetic"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=cybercore"><img src="assets/screenshots/cybercore.webp" alt="Cybercore"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=victorian"><img src="assets/screenshots/victorian.webp" alt="Victorian"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=scrapbook"><img src="assets/screenshots/scrapbook.webp" alt="Scrapbook"></a></td>
     <td></td>
   </tr>
 </table>
