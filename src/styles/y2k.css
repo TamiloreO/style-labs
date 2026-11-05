@@ -628,3 +628,32 @@
     color: #c81f8e;
   }
 }
+
+/* One sheen per row: repeating the band every 1.12em let the seams drift and
+   slice through glyphs whenever the line box changed. Each row span now owns a
+   single gradient, so no seam can land inside a letter. */
+@media (min-width: 761px) {
+  [data-style="y2k"] .hero__title {
+    background-image: none;
+    -webkit-text-fill-color: var(--ink);
+    color: var(--ink);
+  }
+  [data-style="y2k"] .hero__title .hl {
+    background-image: linear-gradient(
+      180deg,
+      #1c1035 0%,
+      #392959 30%,
+      #8fa0c8 44%,
+      #f7faff 47%,
+      #6c5a95 51%,
+      #2b1d50 64%,
+      #120a26 100%
+    );
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+}
