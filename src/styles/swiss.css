@@ -1,4 +1,4 @@
-/* Swiss International — measured type, open paper, black rules, one signal red. */
+/* Swiss International : measured type, open paper, black rules, one signal red. */
 [data-style="swiss"] {
   --bg: #fff;
   --bg-2: #fff;
@@ -245,4 +245,100 @@
   [data-style="swiss"] .switcher__arrow { width: 29px; height: 31px; }
   [data-style="swiss"] .switcher__all { padding-inline: 6px; }
   [data-style="swiss"] .hero__actions .btn { padding-inline: .85em; font-size: .76rem; }
+}
+/* ---------------------------------------------------------------------------
+   One derived twelve column track. The hero copy and art, the section head and
+   the card divisions all sit on the same twelve columns of the wrap.
+   --------------------------------------------------------------------------- */
+
+@media (min-width: 981px) {
+  [data-style="swiss"] .hero {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: calc(var(--gap) / 2);
+    row-gap: clamp(28px, 4vw, 52px);
+    align-items: start;
+  }
+
+  [data-style="swiss"] .hero__copy {
+    grid-column: 1 / span 7;
+  }
+
+  [data-style="swiss"] .hero__art {
+    grid-column: 8 / span 5;
+    align-self: start;
+    justify-self: stretch;
+    transform: none;
+  }
+
+  [data-style="swiss"] .section__head {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    column-gap: calc(var(--gap) / 2);
+    align-items: end;
+  }
+
+  [data-style="swiss"] .section__index {
+    grid-column: 1 / span 12;
+  }
+
+  [data-style="swiss"] .section__title {
+    grid-column: 1 / span 8;
+  }
+
+  [data-style="swiss"] .section__note {
+    grid-column: 10 / span 3;
+  }
+
+  [data-style="swiss"] .cards {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 0;
+  }
+
+  [data-style="swiss"] .cards .card {
+    grid-column: span 4;
+  }
+}
+
+/* The two standing rules are demoted and lifted clear of the headline, so the
+   type no longer sits behind them. */
+
+[data-style="swiss"] .decor__a,
+[data-style="swiss"] .decor__b {
+  width: 1px;
+  border-left: 0;
+  background: linear-gradient(to bottom, transparent 0 22vh, var(--grid-line) 22vh 100%);
+}
+
+/* The bars become a three by two grid of equal geometric cells, drawn in the
+   existing black and red ink. */
+
+[data-style="swiss"] .art__bars {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 2px;
+  height: clamp(96px, 13vw, 140px);
+  padding: 1px;
+  border: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  background: #fff;
+}
+
+[data-style="swiss"] .art__bars i,
+[data-style="swiss"] .art__bars i:nth-child(2n) {
+  height: auto;
+  border-radius: 0;
+  background: var(--ink);
+  opacity: 1;
+}
+
+[data-style="swiss"] .art__bars i:nth-child(2n) {
+  background: var(--accent-2);
+}
+
+@media (max-width: 560px) {
+  [data-style="swiss"] .art__bars {
+    height: clamp(88px, 30vw, 120px);
+    gap: 2px;
+  }
 }

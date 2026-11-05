@@ -1,4 +1,4 @@
-/* Glassmorphism — luminous blue/pink atmosphere, clear glass, deep-blue ink. */
+/* Glassmorphism : luminous blue/pink atmosphere, clear glass, deep-blue ink. */
 [data-style="glassmorphism"] {
   --bg: #edf4ff;
   --bg-2: rgba(248, 251, 255, 0.94);
@@ -321,4 +321,104 @@
 
 @media (prefers-reduced-motion: reduce) {
   [data-style="glassmorphism"] .ticker__track { animation: none; }
+}
+
+/* ---------------------------------------------------------------------------
+   Pane hierarchy. The art plate is the brightest foreground pane. Cards and
+   tiles are lighter secondary glazing. The quote becomes a restrained pane
+   instead of a tinted stripe. Only blur, fill opacity and border contrast are
+   tuned per selector.
+   --------------------------------------------------------------------------- */
+
+[data-style="glassmorphism"] .art {
+  border-color: rgba(255, 255, 255, 0.97);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.93), rgba(224, 237, 255, 0.66));
+  backdrop-filter: blur(28px) saturate(158%);
+  -webkit-backdrop-filter: blur(28px) saturate(158%);
+}
+
+[data-style="glassmorphism"] .card {
+  border-color: rgba(255, 255, 255, 0.68);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.57), rgba(231, 241, 255, 0.41));
+  backdrop-filter: blur(13px) saturate(126%);
+  -webkit-backdrop-filter: blur(13px) saturate(126%);
+}
+
+[data-style="glassmorphism"] .card:hover {
+  border-color: rgba(255, 255, 255, 0.84);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.68), rgba(233, 243, 255, 0.5));
+}
+
+[data-style="glassmorphism"] .tile {
+  border-color: rgba(255, 255, 255, 0.64);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.53), rgba(228, 239, 255, 0.39));
+  backdrop-filter: blur(13px) saturate(124%);
+  -webkit-backdrop-filter: blur(13px) saturate(124%);
+}
+
+[data-style="glassmorphism"] .tile--wide {
+  border-color: rgba(255, 255, 255, 0.7);
+  background: linear-gradient(120deg, rgba(221, 235, 255, 0.62), rgba(255, 255, 255, 0.47));
+}
+
+[data-style="glassmorphism"] .tile--accent {
+  border-color: rgba(255, 255, 255, 0.72);
+  background: linear-gradient(135deg, rgba(255, 225, 241, 0.6), rgba(255, 255, 255, 0.44));
+}
+
+[data-style="glassmorphism"] .quote {
+  padding: clamp(42px, 6vw, 76px) clamp(20px, 4vw, 48px);
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  border-radius: 26px;
+  background: linear-gradient(160deg, rgba(255, 255, 255, 0.58), rgba(228, 238, 255, 0.32));
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+}
+
+[data-style="glassmorphism"] .quote__cite b {
+  color: #1d3f72;
+}
+
+/* Laminate the hero plate: a clipped offset translucent plane behind the
+   content, and a fine double rim above it. Both layers are inert. */
+
+[data-style="glassmorphism"] .art::before {
+  content: "";
+  position: absolute;
+  width: 64%;
+  height: 78%;
+  right: -15%;
+  bottom: -24%;
+  transform: rotate(-9deg);
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 26px;
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.42), rgba(205, 226, 255, 0.24) 56%, rgba(255, 214, 237, 0.2));
+  pointer-events: none;
+}
+
+[data-style="glassmorphism"] .art::after {
+  content: "";
+  position: absolute;
+  inset: 7px;
+  border: 1px solid rgba(255, 255, 255, 0.66);
+  border-radius: calc(var(--radius-lg) - 7px);
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.17), inset 0 0 0 4px rgba(255, 255, 255, 0.34);
+  pointer-events: none;
+}
+
+@media (max-width: 560px) {
+  [data-style="glassmorphism"] .art::after {
+    inset: 5px;
+    border-radius: calc(var(--radius-lg) - 5px);
+  }
+}
+
+/* The laminate plane read as a hard white box through the glass; a soft
+   edge keeps it reading as a second sheet behind the panel. */
+[data-style="glassmorphism"] .art::before {
+  opacity: 0.55;
+  right: -8%;
+  bottom: -18%;
+  border-radius: 32px;
+  filter: blur(7px);
 }

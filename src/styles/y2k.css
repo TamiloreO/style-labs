@@ -430,3 +430,201 @@
     transform: none;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Capsule pass: one edge grammar across buttons, chips, the console and the
+   card markers, a recessed selection, clearer small labels, and an art object
+   rebuilt as a moulded device instead of a flat white card.
+   -------------------------------------------------------------------------- */
+
+[data-style="y2k"] .btn {
+  border-radius: 999px;
+  box-shadow: 0 10px 24px -10px rgba(255, 46, 166, 0.8),
+    inset 0 2px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -3px 0 rgba(120, 40, 140, 0.3),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.55),
+    0 0 0 3px rgba(255, 255, 255, 0.7),
+    0 0 0 4px rgba(96, 74, 150, 0.16);
+}
+
+[data-style="y2k"] .btn--ghost {
+  box-shadow: 0 8px 18px -10px rgba(120, 80, 200, 0.5),
+    inset 0 2px 0 #fff,
+    inset 0 -2px 0 rgba(120, 80, 200, 0.18),
+    0 0 0 2px rgba(255, 255, 255, 0.85);
+}
+
+[data-style="y2k"] .switcher__bar {
+  border-radius: 999px;
+  padding: 6px 9px;
+  box-shadow: 0 18px 40px -18px rgba(120, 80, 200, 0.55),
+    inset 0 2px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -3px 0 rgba(96, 74, 150, 0.24),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+}
+
+[data-style="y2k"] .chip {
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(226, 232, 255, 0.9));
+  color: #372656;
+  font-weight: 600;
+  box-shadow: inset 0 1px 0 #fff, 0 2px 5px -3px rgba(120, 80, 200, 0.7);
+}
+
+[data-style="y2k"] .chip[aria-pressed="true"] {
+  background: linear-gradient(180deg, #ff2ea6, #b06bff 58%, #29e6ff);
+  color: #1b0e33;
+  border-color: rgba(255, 255, 255, 0.9);
+  font-weight: 700;
+  box-shadow: inset 0 3px 7px rgba(45, 8, 60, 0.42),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.55),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.7);
+}
+
+[data-style="y2k"] .card__index {
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  background: linear-gradient(150deg, #ffffff, #d7e0ff 62%, #eef2ff);
+  box-shadow: inset 0 1px 0 #fff,
+    inset 0 -2px 0 rgba(120, 80, 200, 0.26),
+    0 0 0 2px rgba(255, 255, 255, 0.8),
+    0 4px 9px -5px rgba(120, 80, 200, 0.6);
+  color: #5c3ba8;
+}
+
+/* Small labels were too pale against the pastel field. */
+[data-style="y2k"] .switcher__count {
+  opacity: 1;
+  color: #4b3a72;
+}
+
+[data-style="y2k"] .art__num {
+  color: #5a4a7e;
+}
+
+[data-style="y2k"] .art__label,
+[data-style="y2k"] .tile__label,
+[data-style="y2k"] .hero__meta dt,
+[data-style="y2k"] .closing__eyebrow {
+  color: #5a4a7e;
+}
+
+[data-style="y2k"] .switcher__all {
+  border-radius: 999px;
+}
+
+/* The art object becomes a device: shell, raised count capsule, inset display. */
+[data-style="y2k"] .art {
+  border-radius: 34px;
+  background: linear-gradient(170deg, #e7ebff, #ccd6f6 48%, #eef1ff);
+  box-shadow: 0 30px 60px -30px rgba(90, 60, 160, 0.6),
+    inset 0 2px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -4px 0 rgba(96, 74, 150, 0.22),
+    0 0 0 1px rgba(255, 255, 255, 0.9);
+}
+
+[data-style="y2k"] .art__stat {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 10px;
+  padding: 9px 18px 10px;
+  border-radius: 999px;
+  background: linear-gradient(160deg, #ffffff, #e4eaff);
+  box-shadow: inset 0 1px 0 #fff,
+    inset 0 -2px 0 rgba(140, 120, 200, 0.25),
+    0 8px 16px -10px rgba(90, 60, 160, 0.7);
+}
+
+[data-style="y2k"] .art__stat span {
+  color: #4b3a72;
+}
+
+[data-style="y2k"] .art__bars {
+  position: relative;
+  padding: 14px 13px 12px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  background: linear-gradient(180deg, #c9d3f4, #e9eeff 62%, #f6f8ff);
+  box-shadow: inset 0 4px 9px rgba(96, 74, 150, 0.3),
+    inset 0 -2px 0 rgba(255, 255, 255, 0.9),
+    0 1px 0 #fff;
+}
+
+[data-style="y2k"] .art__bars::before {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.85);
+  box-shadow: 0 0 0 1px rgba(96, 74, 150, 0.14);
+  pointer-events: none;
+}
+
+[data-style="y2k"] .art__bars i {
+  min-width: 0;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.75),
+    inset 0 -4px 6px rgba(90, 50, 130, 0.14);
+}
+
+[data-style="y2k"] .art__list span {
+  box-shadow: inset 0 1px 2px rgba(96, 74, 150, 0.16);
+}
+
+@media (max-width: 560px) {
+  [data-style="y2k"] .art__stat {
+    padding: 8px 14px 9px;
+  }
+
+  [data-style="y2k"] .art__bars {
+    padding: 12px 10px 10px;
+  }
+}
+
+/* The sheen used to stretch across the whole heading, which left the second
+   line white on a pale page. One band per line keeps the chrome read. */
+[data-style="y2k"] .hero__title {
+  background-image: linear-gradient(
+    180deg,
+    #241640 0%,
+    #4b3a72 22%,
+    #b9c6e6 38%,
+    #ffffff 46%,
+    #b9c6e6 54%,
+    #4b3a72 72%,
+    #1b1035 100%
+  );
+  background-size: 100% 1.12em;
+  background-position: 0 0.04em;
+  background-repeat: repeat-y;
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* The pale bubble sat over the primary button and the meta row. */
+[data-style="y2k"] .decor__b {
+  width: 12vw;
+  height: 12vw;
+  left: -5%;
+  bottom: 3%;
+  opacity: 0.45;
+}
+
+[data-style="y2k"] .art__label {
+  margin-left: 12px;
+}
+
+/* The per-line sheen bands land mid-glyph once the line box changes on small
+   screens, so phones get the plum ink with a light emboss instead. */
+@media (max-width: 760px) {
+  [data-style="y2k"] .hero__title {
+    background-image: none;
+    -webkit-text-fill-color: #241640;
+    color: #241640;
+    filter: drop-shadow(0 2px 0 rgba(255, 255, 255, 0.9));
+  }
+  [data-style="y2k"] .hero__title em {
+    -webkit-text-fill-color: #c81f8e;
+    color: #c81f8e;
+  }
+}

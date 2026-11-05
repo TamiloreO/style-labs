@@ -407,3 +407,108 @@
 [data-style="cybercore"] .chip[aria-pressed="true"] {
   box-shadow: 0 0 16px rgba(184, 243, 106, 0.35);
 }
+
+/* --------------------------------------------------------------------------
+   Instrument pass: the specimen becomes six equal segmented channel bays,
+   and the three cards hang their markers from one shared top rail.
+   The inline --h height is overridden so every bay reads as a channel.
+   -------------------------------------------------------------------------- */
+
+[data-style="cybercore"] .art__bars {
+  align-items: stretch;
+  gap: 4px;
+  padding-top: 0;
+  height: clamp(88px, 12vw, 136px);
+}
+
+[data-style="cybercore"] .art__bars i {
+  height: 100% !important;
+  border: 1px solid rgba(184, 243, 106, 0.28);
+  border-radius: 0;
+  background-color: rgba(184, 243, 106, 0.06);
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(184, 243, 106, 0.86) 0 5px,
+    transparent 5px 11px
+  );
+  box-shadow: inset 0 0 0 1px rgba(6, 10, 8, 0.6);
+  opacity: 1;
+}
+
+[data-style="cybercore"] .art__bars i:nth-child(2n) {
+  border-color: rgba(110, 242, 192, 0.3);
+  background-color: rgba(110, 242, 192, 0.05);
+  background-image: repeating-linear-gradient(
+    0deg,
+    rgba(110, 242, 192, 0.82) 0 5px,
+    transparent 5px 11px
+  );
+}
+
+/* One divider per bay, narrow and dim, so the row reads as separated channels. */
+[data-style="cybercore"] .art__bars i::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 1px;
+  margin-inline-start: 3px;
+  background: rgba(184, 243, 106, 0.22);
+}
+
+[data-style="cybercore"] .art__bars i:nth-child(2n)::before {
+  background: rgba(110, 242, 192, 0.22);
+}
+
+[data-style="cybercore"] .cards {
+  align-items: stretch;
+}
+
+[data-style="cybercore"] .card {
+  position: relative;
+  padding-top: calc(var(--card-pad) + 16px);
+}
+
+/* Rail: hairline through the markers with edge ticks, no connecting spine. */
+[data-style="cybercore"] .card::before {
+  content: "";
+  position: absolute;
+  left: var(--card-pad);
+  right: var(--card-pad);
+  top: calc(var(--card-pad) + 6px);
+  height: 1px;
+  background: rgba(184, 243, 106, 0.26);
+  pointer-events: none;
+}
+
+[data-style="cybercore"] .card::after {
+  content: "";
+  position: absolute;
+  left: var(--card-pad);
+  right: var(--card-pad);
+  top: calc(var(--card-pad) + 2px);
+  height: 9px;
+  background: linear-gradient(
+    90deg,
+    rgba(184, 243, 106, 0.6) 0 1px,
+    transparent 1px calc(100% - 1px),
+    rgba(184, 243, 106, 0.6) calc(100% - 1px) 100%
+  );
+  pointer-events: none;
+}
+
+[data-style="cybercore"] .card__index {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  min-width: 40px;
+  padding: 4px 7px 3px;
+  border: 1px solid rgba(184, 243, 106, 0.36);
+  background: rgba(184, 243, 106, 0.09);
+  line-height: 1;
+}
+
+[data-style="cybercore"] .card:nth-child(2) .card__index,
+[data-style="cybercore"] .card:nth-child(3) .card__index {
+  border-color: rgba(184, 243, 106, 0.26);
+}

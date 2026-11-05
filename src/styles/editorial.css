@@ -197,3 +197,128 @@
 @media (prefers-reduced-motion:reduce) {
   [data-style="editorial"] .ticker__track { animation:none; }
 }
+/* ---------------------------------------------------------------------------
+   The bars are recast as column and rule specimens. The baseline and the
+   ruled gridlines are removed, the caption stays. Odd items are printed
+   columns with interior column rules, even items are single rules with a cap.
+   --------------------------------------------------------------------------- */
+
+[data-style="editorial"] .art__bars {
+  align-items: stretch;
+  height: clamp(96px, 13vw, 140px);
+  gap: clamp(10px, 1.8vw, 22px);
+  border-bottom: 0;
+  background-image: none;
+  background-color: transparent;
+}
+
+[data-style="editorial"] .art__bars i,
+[data-style="editorial"] .art__bars i:nth-child(2n) {
+  position: relative;
+  height: 100%;
+  border: 1px solid var(--ink);
+  border-top-width: 3px;
+  border-radius: 0;
+  background-color: transparent;
+  background-image: repeating-linear-gradient(90deg, transparent 0 8px, rgba(33, 27, 25, 0.15) 8px 9px);
+  opacity: 1;
+}
+
+[data-style="editorial"] .art__bars i:nth-child(2n) {
+  border: 0;
+  background-image: linear-gradient(
+    90deg,
+    transparent calc(50% - 0.5px),
+    var(--accent) calc(50% - 0.5px),
+    var(--accent) calc(50% + 0.5px),
+    transparent calc(50% + 0.5px)
+  );
+}
+
+[data-style="editorial"] .art__bars i:nth-child(2n)::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 1px;
+  background: var(--accent);
+  pointer-events: none;
+}
+
+/* Folio column: the section index moves into a narrow outer column beside the
+   title and the note. Below the tablet breakpoint it stacks above the title. */
+
+@media (min-width: 821px) {
+  [data-style="editorial"] .section__head {
+    grid-template-columns: minmax(52px, 0.16fr) minmax(0, 1.02fr) minmax(178px, 0.6fr);
+    align-items: start;
+    column-gap: clamp(16px, 2.6vw, 44px);
+  }
+
+  [data-style="editorial"] .section__index {
+    grid-column: 1;
+    grid-row: 1;
+    padding-right: 12px;
+    border-right: 1px solid var(--line);
+    line-height: 1.55;
+  }
+
+  [data-style="editorial"] .section__title {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  [data-style="editorial"] .section__note {
+    grid-column: 3;
+    grid-row: 1;
+  }
+}
+
+/* Printed switcher: paper stock with a double rule, burgundy rule on the
+   selected chip, and the rail keeps its horizontal touch scrolling. */
+
+[data-style="editorial"] .switcher__bar {
+  border: 3px double #241b1a;
+  background: #f3ebdf;
+  color: var(--ink);
+  box-shadow: 0 3px 0 rgba(36, 27, 26, 0.16);
+}
+
+[data-style="editorial"] .switcher__arrow {
+  border-color: rgba(36, 27, 26, 0.36);
+  color: var(--ink);
+}
+
+[data-style="editorial"] .switcher__arrow:hover,
+[data-style="editorial"] .switcher__all:hover {
+  background: rgba(100, 31, 43, 0.12);
+}
+
+[data-style="editorial"] .switcher__count {
+  color: #6d5e57;
+  opacity: 1;
+}
+
+[data-style="editorial"] .switcher__name {
+  color: #241b1a;
+}
+
+[data-style="editorial"] .chip {
+  background: rgba(36, 27, 26, 0.05);
+  color: #3b302c;
+  border-bottom: 2px solid transparent;
+}
+
+[data-style="editorial"] .chip:hover {
+  background: rgba(100, 31, 43, 0.12);
+}
+
+[data-style="editorial"] .chip[aria-pressed="true"] {
+  background: transparent;
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+[data-style="editorial"] .switcher__all {
+  border-color: rgba(36, 27, 26, 0.36);
+  color: var(--ink);
+}

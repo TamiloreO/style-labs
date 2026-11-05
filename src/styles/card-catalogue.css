@@ -387,3 +387,7 @@
 [data-style="card-catalogue"] .style-card {
   border-radius: 2px;
 }
+
+[data-style="card-catalogue"] .hero__art figcaption {
+  color: #4a463c;
+}

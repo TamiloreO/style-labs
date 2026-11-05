@@ -1,4 +1,4 @@
-/* Y2K chrome — everything is metal: brushed plates, bevelled edges, mirrored
+/* Y2K chrome: everything is metal: brushed plates, bevelled edges, mirrored
    type and cold specular highlights. One palette, zero colour. */
 [data-style="y2k-chrome"] {
   --bg: #dfe3e8;
@@ -625,4 +625,148 @@
 
 @media (prefers-reduced-motion: reduce) {
   [data-style="y2k-chrome"] .ticker__track { animation: none; }
+}
+
+/* --------------------------------------------------------------------------
+   Machined pass: a static optical disc behind the count, section openings set
+   as serial plates with an etched lead-in rule, and the chip rail sunk into a
+   channel so the chosen cap sits inside it.
+   -------------------------------------------------------------------------- */
+
+[data-style="y2k-chrome"] .art__stat {
+  position: relative;
+  isolation: isolate;
+}
+
+[data-style="y2k-chrome"] .art__stat::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: clamp(-14px, -1.6vw, -6px);
+  top: 50%;
+  width: clamp(116px, 46%, 230px);
+  aspect-ratio: 1;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background:
+    repeating-radial-gradient(
+      circle at 50% 50%,
+      rgba(21, 24, 30, 0.1) 0 1px,
+      rgba(255, 255, 255, 0) 1px 7px
+    ),
+    conic-gradient(
+      from 210deg,
+      rgba(255, 255, 255, 0.85),
+      rgba(151, 161, 174, 0.4) 22%,
+      rgba(255, 255, 255, 0.95) 38%,
+      rgba(122, 132, 146, 0.45) 56%,
+      rgba(255, 255, 255, 0.9) 72%,
+      rgba(140, 150, 164, 0.38) 88%,
+      rgba(255, 255, 255, 0.85)
+    );
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* Serial plate: index beside title and note, with an etched rule leading in. */
+[data-style="y2k-chrome"] .section__head {
+  grid-template-columns: auto minmax(0, 1.4fr) minmax(0, 1fr);
+  column-gap: clamp(14px, 2.4vw, 34px);
+  align-items: end;
+  border-bottom-color: rgba(21, 24, 30, 0.24);
+  box-shadow: inset 0 -4px 0 -3px rgba(255, 255, 255, 0.85);
+}
+
+[data-style="y2k-chrome"] .section__index {
+  position: relative;
+  grid-column: auto;
+  grid-row: 1;
+  align-self: end;
+  padding: 5px 11px 4px 10px;
+  border: 1px solid rgba(21, 24, 30, 0.24);
+  border-radius: 3px;
+  background: linear-gradient(180deg, #f8fafc, #cfd5dd);
+  box-shadow: inset 0 1px 0 #fff, inset 0 -1px 0 rgba(21, 24, 30, 0.14),
+    0 1px 0 rgba(21, 24, 30, 0.16);
+  font-size: 0.56rem;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+[data-style="y2k-chrome"] .section__index::after {
+  content: "";
+  position: absolute;
+  left: 100%;
+  bottom: 50%;
+  width: clamp(14px, 2.6vw, 40px);
+  height: 1px;
+  background: linear-gradient(90deg, rgba(21, 24, 30, 0.55), rgba(21, 24, 30, 0.06));
+  box-shadow: 0 2px 0 rgba(255, 255, 255, 0.9);
+  pointer-events: none;
+}
+
+[data-style="y2k-chrome"] .section__title {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+[data-style="y2k-chrome"] .section__note {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+/* Rail as a recessed channel; the chosen cap is seated inside it. */
+[data-style="y2k-chrome"] .switcher__rail {
+  padding: 3px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #97a1ad, #d7dde4);
+  box-shadow: inset 0 2px 4px rgba(21, 24, 30, 0.36),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.85);
+}
+
+[data-style="y2k-chrome"] .chip {
+  border-radius: 6px;
+  border-color: rgba(255, 255, 255, 0.9);
+  box-shadow: inset 0 1px 0 #fff, 0 1px 2px rgba(21, 24, 30, 0.22);
+}
+
+[data-style="y2k-chrome"] .chip[aria-pressed="true"] {
+  transform: translateY(1px);
+  background: linear-gradient(180deg, #2c313a, #14181e);
+  color: #f4f7fa;
+  border-color: #0f1216;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.6),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 980px) {
+  [data-style="y2k-chrome"] .section__head {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  [data-style="y2k-chrome"] .section__index,
+  [data-style="y2k-chrome"] .section__title,
+  [data-style="y2k-chrome"] .section__note {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+
+  [data-style="y2k-chrome"] .section__index {
+    justify-self: start;
+  }
+
+  [data-style="y2k-chrome"] .section__index::after {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  [data-style="y2k-chrome"] .art__stat::before {
+    width: clamp(88px, 40%, 120px);
+    opacity: 0.3;
+  }
+
+  [data-style="y2k-chrome"] .switcher__rail {
+    padding: 2px;
+  }
 }

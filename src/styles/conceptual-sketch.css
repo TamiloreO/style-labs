@@ -1,4 +1,4 @@
-/* Conceptual sketch — a graphite study on white drafting paper. */
+/* Conceptual sketch : a graphite study on white drafting paper. */
 [data-style="conceptual-sketch"] {
   --bg: #fbfaf6;
   --bg-2: #fffefa;
@@ -214,4 +214,137 @@
   [data-style="conceptual-sketch"] .switcher__arrow { width: 28px; height: 28px; }
   [data-style="conceptual-sketch"] .switcher__all { padding-inline: 7px; }
   [data-style="conceptual-sketch"] .hero__actions .btn { width: 100%; }
+}
+/* ---------------------------------------------------------------------------
+   The specimen is drawn as a study. Outlined shapes over faint alignment
+   guides, a couple of dashed underdrawings, and measurement ticks along the
+   top edge. No axes and no numbers are added.
+   --------------------------------------------------------------------------- */
+
+[data-style="conceptual-sketch"] .art__bars {
+  align-items: flex-end;
+  height: clamp(100px, 13vw, 138px);
+  padding-top: 13px;
+  border-bottom: 1px dashed rgba(73, 91, 100, 0.45);
+  background-image: repeating-linear-gradient(90deg, rgba(94, 119, 131, 0.12) 0 1px, transparent 1px 26px);
+}
+
+[data-style="conceptual-sketch"] .art__bars::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 7px;
+  border-bottom: 1px solid rgba(73, 91, 100, 0.14);
+  background-image: repeating-linear-gradient(90deg, rgba(73, 91, 100, 0.5) 0 1px, transparent 1px 19px);
+  pointer-events: none;
+}
+
+[data-style="conceptual-sketch"] .art__bars i,
+[data-style="conceptual-sketch"] .art__bars i:nth-child(2n) {
+  position: relative;
+  border: 1.2px solid #49565b;
+  border-radius: 2px 4px 2px 3px;
+  background-color: rgba(104, 130, 144, 0.12);
+  opacity: 1;
+  transform: skewY(-0.5deg);
+}
+
+[data-style="conceptual-sketch"] .art__bars i:nth-child(2n) {
+  background-color: rgba(83, 105, 117, 0.16);
+}
+
+[data-style="conceptual-sketch"] .art__bars i:nth-child(3),
+[data-style="conceptual-sketch"] .art__bars i:nth-child(5) {
+  background-color: rgba(255, 255, 252, 0.6);
+}
+
+[data-style="conceptual-sketch"] .art__bars i::after {
+  content: "";
+  position: absolute;
+  inset: 6px -4px -4px 4px;
+  border: 1px dashed rgba(73, 91, 100, 0.3);
+  pointer-events: none;
+  opacity: 0;
+}
+
+[data-style="conceptual-sketch"] .art__bars i:nth-child(2)::after,
+[data-style="conceptual-sketch"] .art__bars i:nth-child(5)::after {
+  opacity: 1;
+}
+
+[data-style="conceptual-sketch"] .art__list span {
+  height: 1px;
+  background: #8f9da0;
+  opacity: 0.44;
+}
+
+/* Annotated from the margin. Each card gains a construction margin with
+   dimension ticks and a corner callout keyed to its own index, with no line
+   drawn across the card. */
+
+[data-style="conceptual-sketch"] .card {
+  padding-left: calc(var(--card-pad) + 20px);
+  background-image: linear-gradient(90deg, rgba(113, 137, 154, 0.24) 0 1px, transparent 1px);
+  background-position: 12px 0;
+  background-repeat: no-repeat;
+  background-size: 1px 100%;
+}
+
+[data-style="conceptual-sketch"] .card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 6px;
+  bottom: 6px;
+  width: 12px;
+  background-image: repeating-linear-gradient(to bottom, rgba(73, 91, 100, 0.36) 0 1px, transparent 1px 13px);
+  pointer-events: none;
+}
+
+[data-style="conceptual-sketch"] .card::after {
+  content: "";
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  pointer-events: none;
+}
+
+[data-style="conceptual-sketch"] .card:nth-child(1)::after {
+  top: 10px;
+  right: 10px;
+  border-top: 1px solid rgba(73, 91, 100, 0.42);
+  border-right: 1px solid rgba(73, 91, 100, 0.42);
+}
+
+[data-style="conceptual-sketch"] .card:nth-child(2)::after {
+  bottom: 10px;
+  right: 10px;
+  border-bottom: 1px solid rgba(73, 91, 100, 0.42);
+  border-right: 1px solid rgba(73, 91, 100, 0.42);
+}
+
+[data-style="conceptual-sketch"] .card:nth-child(3)::after {
+  top: 10px;
+  right: 10px;
+  border-top: 1px solid rgba(73, 91, 100, 0.42);
+  border-left: 1px solid rgba(73, 91, 100, 0.42);
+}
+
+/* The switcher is ruled like a drafting ruler. Ticks stay sparse and the
+   active chip reads as a sketched tab. The small screen grid is untouched. */
+
+[data-style="conceptual-sketch"] .switcher__bar {
+  border: 1px solid #aeb9bc;
+  background-image: repeating-linear-gradient(90deg, rgba(73, 91, 100, 0.38) 0 1px, transparent 1px 24px);
+  background-repeat: no-repeat;
+  background-position: 0 calc(100% - 3px);
+  background-size: 100% 5px;
+}
+
+[data-style="conceptual-sketch"] .chip[aria-pressed="true"] {
+  border: 1px dashed rgba(251, 250, 246, 0.8);
+  background: var(--sw-active-bg);
+  color: var(--sw-active-ink);
+  box-shadow: 2px 2px 0 rgba(41, 44, 46, 0.2);
+  transform: rotate(-0.7deg);
 }

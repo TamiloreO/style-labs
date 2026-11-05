@@ -268,3 +268,159 @@
     padding-top: calc(var(--card-pad) + 16px);
   }
 }
+
+/* --------------------------------------------------------------------------
+   Refinement: the card titles become real title bars with an icon cell, the
+   art panel is a palette specimen rather than a chart, and the taskbar reads
+   the current app as one selected item.
+   -------------------------------------------------------------------------- */
+
+[data-style="retro-desktop"] .card {
+  display: grid;
+  grid-template-columns: 26px minmax(0, 1fr);
+  gap: 10px 0;
+  padding: 0;
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.24), inset -1px -1px 0 #7b7b73,
+    inset 1px 1px 0 #ffffff;
+}
+
+[data-style="retro-desktop"] .card::before,
+[data-style="retro-desktop"] .card::after {
+  content: none;
+}
+
+[data-style="retro-desktop"] .card__index {
+  grid-column: 1;
+  grid-row: 1;
+  display: grid;
+  place-items: center;
+  background: #c0c0c0;
+  color: #000080;
+  border: 1px solid #0a0a0a;
+  border-top: 0;
+  border-left: 0;
+  box-shadow: inset 1px 1px 0 #ffffff;
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  letter-spacing: 0;
+}
+
+[data-style="retro-desktop"] .card__title {
+  grid-column: 2;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  padding: 4px 10px 4px 7px;
+  min-height: 22px;
+  background: linear-gradient(90deg, #000080, #1c1cb0);
+  color: #ffffff;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+}
+
+[data-style="retro-desktop"] .card__body,
+[data-style="retro-desktop"] .card__list {
+  padding-inline: var(--card-pad);
+}
+
+[data-style="retro-desktop"] .card__link {
+  margin: 0 var(--card-pad) var(--card-pad);
+  padding-top: 10px;
+}
+
+/* Six equal palette swatches and three ruled rows. */
+[data-style="retro-desktop"] .art__bars {
+  height: auto;
+  align-items: stretch;
+  gap: 4px;
+  padding: 4px 16px 0;
+}
+
+[data-style="retro-desktop"] .art__bars i {
+  flex: 1 1 0;
+  height: 26px;
+  border: 1px solid #0a0a0a;
+  border-radius: 0;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.5),
+    inset -1px -1px 0 rgba(0, 0, 0, 0.28);
+  opacity: 1;
+}
+
+[data-style="retro-desktop"] .art__bars i:nth-child(1) {
+  background: #000080;
+}
+
+[data-style="retro-desktop"] .art__bars i:nth-child(2) {
+  background: #008080;
+}
+
+[data-style="retro-desktop"] .art__bars i:nth-child(3) {
+  background: #c0c0c0;
+}
+
+[data-style="retro-desktop"] .art__bars i:nth-child(4) {
+  background: #0d0d0d;
+}
+
+[data-style="retro-desktop"] .art__bars i:nth-child(5) {
+  background: #8f8f88;
+}
+
+[data-style="retro-desktop"] .art__bars i:nth-child(6) {
+  background: #d7d7ce;
+}
+
+[data-style="retro-desktop"] .art__list {
+  gap: 7px;
+  padding: 12px 16px 16px;
+}
+
+[data-style="retro-desktop"] .art__list span {
+  width: 100%;
+  height: 0;
+  border: 0;
+  border-top: 1px solid #8f8f88;
+  border-bottom: 1px solid #ffffff;
+  border-radius: 0;
+  background: none;
+}
+
+/* The current app and the pressed chip share one navy, beveled surface. */
+[data-style="retro-desktop"] .switcher__current {
+  padding: 3px 9px;
+  border: 1px solid #0a0a0a;
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: inset 1px 1px 0 rgba(255, 255, 255, 0.34);
+}
+
+[data-style="retro-desktop"] .switcher__count {
+  color: #c6d2ff;
+  opacity: 1;
+}
+
+[data-style="retro-desktop"] .chip[aria-pressed="true"] {
+  border: 1px solid #0a0a0a;
+  background: var(--accent);
+  color: #ffffff;
+  box-shadow: inset 1px 1px 0 rgba(0, 0, 0, 0.42),
+    inset -1px -1px 0 rgba(255, 255, 255, 0.32);
+}
+
+[data-style="retro-desktop"] .chip[aria-pressed="true"] .chip__dot {
+  background: #c0c0c0;
+  box-shadow: 0 0 0 1px #ffffff;
+}
+
+@media (max-width: 560px) {
+  [data-style="retro-desktop"] .card {
+    grid-template-columns: 24px minmax(0, 1fr);
+  }
+
+  [data-style="retro-desktop"] .card__title {
+    font-size: 0.9rem;
+    padding-right: 8px;
+  }
+}

@@ -1,4 +1,4 @@
-/* Luxury typography — warm charcoal, pale gold, and considered editorial rhythm. */
+/* Luxury typography : warm charcoal, pale gold, and considered editorial rhythm. */
 [data-style="luxury-typography"] {
   --bg:#171613;
   --bg-2:#201e19;
@@ -203,4 +203,110 @@
 }
 @media (prefers-reduced-motion:reduce) {
   [data-style="luxury-typography"] .ticker__track { animation:none; }
+}
+/* ---------------------------------------------------------------------------
+   The bars become six equal weight engraved strokes. Height no longer varies,
+   so the real count leads the plate. The head and the line marks are held back
+   as quiet framing.
+   --------------------------------------------------------------------------- */
+
+[data-style="luxury-typography"] .art__bars {
+  align-items: stretch;
+  height: clamp(72px, 9vw, 108px);
+  gap: clamp(12px, 2.2vw, 28px);
+  padding-top: 0;
+  border-bottom: 1px solid var(--line);
+}
+
+[data-style="luxury-typography"] .art__bars i,
+[data-style="luxury-typography"] .art__bars i:nth-child(2n) {
+  position: relative;
+  height: 100%;
+  border-radius: 0;
+  background-color: transparent;
+  background-image: linear-gradient(
+    90deg,
+    transparent calc(50% - 0.5px),
+    rgba(216, 201, 169, 0.78) calc(50% - 0.5px),
+    rgba(216, 201, 169, 0.78) calc(50% + 0.5px),
+    transparent calc(50% + 0.5px)
+  );
+  opacity: 1;
+}
+
+[data-style="luxury-typography"] .art__bars i::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 calc(50% + 4px);
+  width: 1px;
+  background: rgba(216, 201, 169, 0.26);
+  pointer-events: none;
+}
+
+[data-style="luxury-typography"] .art__stat b {
+  font-size: clamp(3.8rem, 8vw, 6.4rem);
+  letter-spacing: -0.07em;
+}
+
+[data-style="luxury-typography"] .art__stat span {
+  color: var(--ink-3);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+[data-style="luxury-typography"] .art__head {
+  padding-bottom: 12px;
+  border-color: rgba(216, 201, 169, 0.15);
+}
+
+[data-style="luxury-typography"] .art__label,
+[data-style="luxury-typography"] .art__num {
+  color: var(--ink-3);
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+}
+
+[data-style="luxury-typography"] .art__list {
+  gap: 12px;
+  margin-top: 18px;
+}
+
+[data-style="luxury-typography"] .art__list span {
+  height: 1px;
+  background: rgba(216, 201, 169, 0.15);
+}
+
+/* A folio rail. The index sits in a narrow aligned column beside the heading,
+   separated by a fine rule, with the note set subordinate beneath it. */
+
+@media (min-width: 981px) {
+  [data-style="luxury-typography"] .section__head {
+    grid-template-columns: minmax(84px, 0.16fr) minmax(0, 1fr);
+    column-gap: clamp(20px, 3vw, 46px);
+    row-gap: 12px;
+    align-items: start;
+  }
+
+  [data-style="luxury-typography"] .section__index {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+    padding-right: 16px;
+    border-right: 1px solid var(--line);
+    line-height: 1.7;
+  }
+
+  [data-style="luxury-typography"] .section__title {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  [data-style="luxury-typography"] .section__note {
+    grid-column: 2;
+    grid-row: 2;
+    max-width: 42ch;
+    color: var(--ink-3);
+    font-size: 0.86rem;
+    line-height: 1.7;
+  }
 }

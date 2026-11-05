@@ -129,6 +129,7 @@ await writeFile(join(publicDir, "styles.css"), bundle, "utf8");
 
 const appJs = await readFile(join(publicDir, "app.js"), "utf8");
 const rippleJs = await readFile(join(publicDir, "ripple.js"), "utf8");
+const stageJs = await readFile(join(publicDir, "stage.js"), "utf8");
 const ids = registry.map((s) => s.id);
 const count = registry.length;
 const registryJson = JSON.stringify(registry);
@@ -137,6 +138,7 @@ const version = createHash("sha1")
   .update(ordered.map((file) => written.get(outputName(file))).join(""))
   .update(appJs)
   .update(rippleJs)
+  .update(stageJs)
   .update(registryJson)
   .digest("hex")
   .slice(0, 10);
@@ -161,6 +163,7 @@ const assetMap = [
   [`src="registry.js"`, `src="${withVersion("registry.js")}"`],
   [`src="app.js"`, `src="${withVersion("app.js")}"`],
   [`src="ripple.js"`, `src="${withVersion("ripple.js")}"`],
+  [`src="stage.js"`, `src="${withVersion("stage.js")}"`],
 ];
 
 const template = await readFile(join(here, "src", "index.html"), "utf8");
@@ -215,6 +218,7 @@ const precache = [
   "index.html",
   withVersion("app.js"),
   withVersion("ripple.js"),
+  withVersion("stage.js"),
   withVersion("boot.js"),
   withVersion("registry.js"),
   "favicon.svg",

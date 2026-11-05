@@ -1,4 +1,4 @@
-/* Bento — an asymmetric, colorful modular skin for the shared Halcyon page. */
+/* Bento : an asymmetric, colorful modular skin for the shared Halcyon page. */
 :root[data-style="bento"] {
   --bg: #fffefa;
   --bg-2: #ffffff;
@@ -296,4 +296,135 @@ html[data-style="bento"] .style-card[aria-pressed="true"] { border-color: #7ca9e
   html[data-style="bento"] .switcher__bar { padding: 6px; }
   html[data-style="bento"] .switcher__arrow { width: 31px; height: 31px; }
   html[data-style="bento"] .switcher__all { padding: 8px 9px; font-size: 0.72rem; }
+}
+
+/* ---------------------------------------------------------------------------
+   Hero as a tile mosaic. The six bars become varied cells with different
+   column spans and row spans, so their heights come from the track sizes and
+   the inline --h values are overridden in CSS.
+   --------------------------------------------------------------------------- */
+
+[data-style="bento"] .hero__art .art__bars {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  grid-template-rows: repeat(3, minmax(0, 1fr));
+  grid-auto-flow: dense;
+  align-items: stretch;
+  height: clamp(132px, 16vw, 178px);
+  gap: 6px;
+  padding-top: 0;
+}
+
+[data-style="bento"] .art__bars i,
+[data-style="bento"] .art__bars i:nth-child(2n),
+[data-style="bento"] .art__bars i:nth-child(3n) {
+  height: auto;
+  min-height: 0;
+  border-radius: 9px;
+  opacity: 1;
+}
+
+[data-style="bento"] .art__bars i:nth-child(1) {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+[data-style="bento"] .art__bars i:nth-child(2) {
+  grid-column: span 3;
+}
+
+[data-style="bento"] .art__bars i:nth-child(3) {
+  grid-column: span 5;
+}
+
+[data-style="bento"] .art__bars i:nth-child(4) {
+  grid-column: span 3;
+}
+
+[data-style="bento"] .art__bars i:nth-child(5) {
+  grid-column: span 5;
+  grid-row: span 2;
+}
+
+[data-style="bento"] .art__bars i:nth-child(6) {
+  grid-column: span 7;
+}
+
+@media (max-width: 980px) {
+  [data-style="bento"] .hero__art .art__bars {
+    height: clamp(122px, 21vw, 160px);
+  }
+}
+
+@media (max-width: 560px) {
+  [data-style="bento"] .hero__art .art__bars {
+    height: clamp(104px, 34vw, 132px);
+    gap: 5px;
+  }
+}
+
+/* A twelve column desktop track for the cards, with deliberate unequal spans,
+   a two column tablet arrangement whose last card spans both tracks, and a
+   quote split into a broad text module and a compact citation module. */
+
+@media (min-width: 981px) {
+  [data-style="bento"] .section .cards {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: start;
+  }
+
+  [data-style="bento"] .cards .card:nth-child(1) {
+    grid-column: span 4;
+  }
+
+  [data-style="bento"] .cards .card:nth-child(2) {
+    grid-column: span 5;
+  }
+
+  [data-style="bento"] .cards .card:nth-child(3) {
+    grid-column: span 3;
+  }
+
+  [data-style="bento"] .quote.wrap {
+    grid-template-columns: minmax(0, 1.6fr) minmax(190px, 0.4fr);
+    column-gap: clamp(24px, 4vw, 56px);
+    row-gap: 18px;
+    align-items: end;
+    justify-items: start;
+  }
+
+  [data-style="bento"] .quote.wrap .quote__text {
+    grid-column: 1;
+  }
+
+  [data-style="bento"] .quote.wrap .quote__cite {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 980px) {
+  [data-style="bento"] .section .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  [data-style="bento"] .cards .card:nth-child(1),
+  [data-style="bento"] .cards .card:nth-child(2) {
+    grid-column: span 1;
+  }
+
+  [data-style="bento"] .cards .card:nth-child(3) {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 560px) {
+  [data-style="bento"] .section .cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  [data-style="bento"] .cards .card:nth-child(1),
+  [data-style="bento"] .cards .card:nth-child(2),
+  [data-style="bento"] .cards .card:nth-child(3) {
+    grid-column: 1 / -1;
+  }
 }

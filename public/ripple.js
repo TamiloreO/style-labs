@@ -276,4 +276,24 @@
     attributes: true,
     attributeFilter: ["data-style"],
   });
+
+  /* A single bounded impulse under a real control, fired when the skin is
+     chosen from the switcher. Pointer, touch and keyboard all land here. */
+  function pulse(clientX, clientY) {
+    if (document.documentElement.getAttribute("data-style") !== STYLE) return;
+    if (reduce && reduce.matches) return;
+    if (!running) start();
+    if (!running) return;
+    var x = (clientX / (window.innerWidth || 1)) * cols;
+    var y = (clientY / (window.innerHeight || 1)) * rows;
+    drop(x, y, 5.5, 4.2, 0.85);
+  }
+
+  window.addEventListener("stylelab:stylepulse", function (event) {
+    var detail = event.detail || {};
+    pulse(
+      typeof detail.x === "number" ? detail.x : window.innerWidth / 2,
+      typeof detail.y === "number" ? detail.y : window.innerHeight - 56
+    );
+  });
 })();

@@ -1,4 +1,4 @@
-/* Neumorphism — quiet, orderly surfaces in cool grey-blue. */
+/* Neumorphism : quiet, orderly surfaces in cool grey-blue. */
 [data-style="neumorphism"] {
   --bg: #e5eaf1;
   --bg-2: #e5eaf1;
@@ -285,4 +285,132 @@
   [data-style="neumorphism"] .switcher__bar { gap: 4px; padding: 6px; }
   [data-style="neumorphism"] .switcher__arrow { width: 30px; height: 30px; }
   [data-style="neumorphism"] .switcher__all { padding: 8px 9px; font-size: 0.72rem; }
+}
+
+/* ---------------------------------------------------------------------------
+   The cards sit on one shallow recessed tray, and each card is a low relief
+   module on that tray. The link reads as a small inset ledge on hover and on
+   keyboard focus.
+   --------------------------------------------------------------------------- */
+
+[data-style="neumorphism"] .cards {
+  gap: clamp(13px, 1.7vw, 20px);
+  padding: clamp(13px, 1.7vw, 20px);
+  border-radius: 30px;
+  background: var(--bg);
+  box-shadow: inset 7px 7px 16px #c5ccd8, inset -7px -7px 16px #ffffff;
+}
+
+[data-style="neumorphism"] .card {
+  border-radius: 18px;
+  background: var(--surface);
+  box-shadow: 5px 5px 12px #c7ceda, -5px -5px 12px #ffffff;
+}
+
+[data-style="neumorphism"] .card__link {
+  padding: 7px 12px;
+  border: 0;
+  border-radius: 11px;
+  background: transparent;
+  box-shadow: none;
+  transition: box-shadow 200ms var(--ease), background-color 200ms var(--ease);
+}
+
+[data-style="neumorphism"] .card__link:hover,
+[data-style="neumorphism"] .card__link:focus-visible {
+  background: var(--bg);
+  box-shadow: inset 2px 2px 5px #c4ccd8, inset -2px -2px 5px #ffffff;
+}
+
+/* Hero rebuilt as an instrument panel. The head spans the full width, the
+   count and label take a compact side bay, and the bars with the rule marks
+   fill the larger recessed well. */
+
+[data-style="neumorphism"] .art {
+  display: grid;
+  grid-template-columns: minmax(0, 0.56fr) minmax(0, 1.44fr);
+  grid-template-areas:
+    "head head"
+    "stat bars"
+    "stat list";
+  column-gap: clamp(12px, 1.6vw, 18px);
+  row-gap: 8px;
+  align-items: stretch;
+}
+
+[data-style="neumorphism"] .art__head {
+  grid-area: head;
+  margin-bottom: clamp(10px, 1.4vw, 16px);
+}
+
+[data-style="neumorphism"] .art__stat {
+  grid-area: stat;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2px;
+  margin: 0 0 0;
+  padding: clamp(14px, 1.8vw, 20px);
+  border-radius: 18px;
+  background: var(--bg);
+  box-shadow: inset 4px 4px 9px #c6cdd9, inset -4px -4px 9px #ffffff;
+}
+
+[data-style="neumorphism"] .art__stat b {
+  font-size: clamp(2.1rem, 3.4vw, 2.9rem);
+}
+
+[data-style="neumorphism"] .art__stat span {
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+[data-style="neumorphism"] .art__bars {
+  grid-area: bars;
+  align-items: flex-end;
+  height: clamp(112px, 14vw, 158px);
+  padding: 12px 12px 8px;
+  border-radius: 16px 16px 4px 4px;
+  background: #e1e7ef;
+  box-shadow: inset 5px 5px 10px #c4ccd8, inset -5px -5px 10px #ffffff;
+}
+
+[data-style="neumorphism"] .art__list {
+  grid-area: list;
+  gap: 9px;
+  margin-top: 0;
+  padding: 8px 12px 12px;
+  border-radius: 4px 4px 16px 16px;
+  background: #e1e7ef;
+  box-shadow: inset 0 -6px 10px #c4ccd8, inset 0 6px 8px rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 560px) {
+  [data-style="neumorphism"] .art {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "head"
+      "stat"
+      "bars"
+      "list";
+    row-gap: 10px;
+  }
+
+  [data-style="neumorphism"] .art__stat {
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 12px 14px;
+  }
+
+  [data-style="neumorphism"] .art__bars {
+    height: clamp(96px, 34vw, 128px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-style="neumorphism"] .card__link {
+    transition: none;
+  }
 }

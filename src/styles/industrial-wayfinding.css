@@ -374,3 +374,239 @@
     margin-right: 0;
   }
 }
+
+/* --------------------------------------------------------------------------
+   The bars become a route key: one line, one arrow head, six ticks. Built
+   from borders and one element's own box, with the count and label intact.
+   -------------------------------------------------------------------------- */
+
+[data-style="industrial-wayfinding"] .art__bars {
+  position: relative;
+  height: 52px;
+  gap: 0;
+  padding: 0 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  margin-top: 6px;
+}
+
+[data-style="industrial-wayfinding"] .art__bars::before {
+  content: "";
+  position: absolute;
+  left: 18px;
+  right: 46px;
+  top: 50%;
+  height: 2px;
+  margin-top: -1px;
+  background: var(--ink);
+}
+
+[data-style="industrial-wayfinding"] .art__bars::after {
+  content: "";
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  width: 0;
+  height: 0;
+  margin-top: -8px;
+  border-left: 14px solid var(--ink);
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+}
+
+[data-style="industrial-wayfinding"] .art__bars i {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  width: 3px;
+  height: 18px;
+  border-radius: 0;
+  background: var(--ink);
+  opacity: 1;
+  box-shadow: 0 0 0 4px var(--surface);
+}
+
+[data-style="industrial-wayfinding"] .art__bars i:nth-child(2n) {
+  background: var(--ink);
+  height: 12px;
+  opacity: 0.55;
+}
+
+/* --------------------------------------------------------------------------
+   The A/B/C markers become route stations. On desktop one 2px rule runs from
+   each station to the card edge, so the three cards share a single spine.
+   -------------------------------------------------------------------------- */
+
+[data-style="industrial-wayfinding"] .card__index {
+  position: absolute;
+  top: 0;
+  left: 12px;
+  right: 12px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: var(--ink);
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  font-size: 0.7rem;
+}
+
+[data-style="industrial-wayfinding"] .card__index::before {
+  content: "";
+  flex: none;
+  width: 10px;
+  height: 10px;
+  background: var(--ink);
+  border: 2px solid var(--ink);
+}
+
+[data-style="industrial-wayfinding"] .card__index::after {
+  content: "";
+  flex: 1 1 auto;
+  height: 2px;
+  background: var(--ink);
+  opacity: 0.55;
+}
+
+/* --------------------------------------------------------------------------
+   The picker is a directory board of sign plates: aligned number, name and
+   note, with only the real pressed state marked.
+   -------------------------------------------------------------------------- */
+
+[data-style="industrial-wayfinding"] .sheet__grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 250px), 1fr));
+  gap: 0;
+  border-top: 2px solid var(--ink);
+  border-left: 2px solid var(--ink);
+}
+
+[data-style="industrial-wayfinding"] .style-card {
+  position: relative;
+  display: grid;
+  grid-template-columns: 10px 38px minmax(0, 1fr);
+  grid-template-areas:
+    "sw num name"
+    "sw num note";
+  align-items: center;
+  column-gap: 10px;
+  row-gap: 2px;
+  padding: 10px 12px;
+  border: 0;
+  border-right: 2px solid var(--ink);
+  border-bottom: 2px solid var(--ink);
+  border-radius: 0;
+  background: var(--surface);
+  text-align: left;
+  transition: background-color 160ms var(--ease);
+}
+
+[data-style="industrial-wayfinding"] .style-card:hover {
+  transform: none;
+  background: var(--surface-2);
+}
+
+[data-style="industrial-wayfinding"] .style-card__swatch {
+  grid-area: sw;
+  flex-direction: column;
+  width: 10px;
+  height: 100%;
+  min-height: 34px;
+  border-radius: 0;
+  overflow: hidden;
+}
+
+[data-style="industrial-wayfinding"] .style-card__swatch + .style-card__meta {
+  grid-area: num;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.66rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-2);
+}
+
+[data-style="industrial-wayfinding"] .style-card__name {
+  grid-area: name;
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+
+[data-style="industrial-wayfinding"] .style-card > .style-card__meta:last-child {
+  grid-area: note;
+  font-size: 0.64rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-3);
+  text-transform: none;
+}
+
+[data-style="industrial-wayfinding"] .style-card[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--ink);
+  box-shadow: none;
+}
+
+[data-style="industrial-wayfinding"] .style-card[aria-pressed="true"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 14px;
+  height: 14px;
+  background: var(--ink);
+}
+
+[data-style="industrial-wayfinding"] .style-card[aria-pressed="true"] .style-card__name,
+[data-style="industrial-wayfinding"] .style-card[aria-pressed="true"] .style-card__meta {
+  color: var(--ink);
+}
+
+@media (max-width: 560px) {
+  [data-style="industrial-wayfinding"] .art__bars {
+    height: 44px;
+    padding-inline: 14px;
+  }
+
+  [data-style="industrial-wayfinding"] .art__bars::before {
+    left: 14px;
+    right: 38px;
+  }
+
+  [data-style="industrial-wayfinding"] .art__bars::after {
+    right: 14px;
+    border-left-width: 11px;
+    border-top-width: 7px;
+    border-bottom-width: 7px;
+    margin-top: -7px;
+  }
+
+  [data-style="industrial-wayfinding"] .art__bars i {
+    height: 14px;
+    box-shadow: 0 0 0 3px var(--surface);
+  }
+
+  /* Stacked, the route turns: the left border of the list is the spine and
+     each station drops a short vertical connector into its card. */
+  [data-style="industrial-wayfinding"] .card__index::after {
+    position: absolute;
+    left: 4px;
+    top: 30px;
+    width: 2px;
+    height: 26px;
+    flex: none;
+    background: var(--ink);
+    opacity: 0.45;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-style="industrial-wayfinding"] .style-card {
+    transition: none;
+  }
+}

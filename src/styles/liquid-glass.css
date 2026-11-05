@@ -1,4 +1,4 @@
-/* Liquid glass — saturated light behind thick refractive panes, lensed edges,
+/* Liquid glass : saturated light behind thick refractive panes, lensed edges,
    specular rims and floating capsule controls. Type leans tight and quiet so the
    material does the talking. */
 [data-style="liquid-glass"] {
@@ -549,3 +549,41 @@
     animation: none;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Optical structure at rest.
+   CSS blur is frosted plastic, not refraction, so the lens read has to come
+   from geometry and edge light before any water moves.
+   -------------------------------------------------------------------------- */
+
+[data-style="liquid-glass"] .art__bars {
+  position: relative;
+  display: block;
+  height: clamp(104px, 14vw, 156px);
+  padding-top: 0;
+}
+
+[data-style="liquid-glass"] .art__bars i {
+  position: absolute;
+  width: 42%;
+  height: 70%;
+  border-radius: 999px;
+  opacity: 0.95;
+  background: linear-gradient(
+    98deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(186, 224, 255, 0.34) 46%,
+    rgba(255, 255, 255, 0.68)
+  );
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  box-shadow: inset 0 1px 14px rgba(255, 255, 255, 0.92), 0 12px 26px rgba(23, 62, 116, 0.16);
+  backdrop-filter: blur(2px) saturate(1.2);
+  -webkit-backdrop-filter: blur(2px) saturate(1.2);
+}
+
+[data-style="liquid-glass"] .art__bars i:nth-child(1) { left: 0; top: 18%; transform: rotate(-9deg); }
+[data-style="liquid-glass"] .art__bars i:nth-child(2) { left: 11%; top: 4%; transform: rotate(-5deg); }
+[data-style="liquid-glass"] .art__bars i:nth-child(3) { left: 22%; top: 22%; transform: rotate(-2deg); }
+[data-style="liquid-glass"] .art__bars i:nth-child(4) { left: 33%; top: 2%; transform: rotate(2deg); }
+[data-style="liquid-glass"] .art__bars i:nth-child(5) { left: 44%; top: 16%; transform: rotate(5deg); }
+[data-style="liquid-glass"] .art__bars i:nth-child(6) { left: 55%; top: 6%; transform: rotate(8deg); }

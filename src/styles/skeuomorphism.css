@@ -272,3 +272,194 @@
   background: #f7f0de;
   border-top: 6px solid #4a3222;
 }
+
+/* --------------------------------------------------------------------------
+   Refinement: cards and tiles are bound as a folio on one shared spine, the
+   six marks are cut as index tabs and the controls press like real keys.
+   -------------------------------------------------------------------------- */
+
+[data-style="skeuomorphism"] .cards,
+[data-style="skeuomorphism"] .bento {
+  position: relative;
+  padding-left: clamp(16px, 2vw, 24px);
+}
+
+[data-style="skeuomorphism"] .cards::before,
+[data-style="skeuomorphism"] .bento::before {
+  content: "";
+  position: absolute;
+  inset: 4px auto 4px 0;
+  width: 9px;
+  border-radius: 4px;
+  background: linear-gradient(90deg, #3a2718, #6b4a31 58%, #33220f);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.24), 2px 0 5px rgba(47, 36, 24, 0.2);
+  pointer-events: none;
+}
+
+[data-style="skeuomorphism"] .cards::after,
+[data-style="skeuomorphism"] .bento::after {
+  content: "";
+  position: absolute;
+  inset: 4px auto 4px 0;
+  width: 9px;
+  background-image: radial-gradient(
+    circle at 50% 4px,
+    rgba(244, 232, 210, 0.55) 0 1px,
+    transparent 1.4px
+  );
+  background-size: 9px 16px;
+  background-repeat: repeat-y;
+  pointer-events: none;
+}
+
+/* Successive leaves peeking below each panel. */
+[data-style="skeuomorphism"] .card::before,
+[data-style="skeuomorphism"] .tile::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: -4px;
+  height: 4px;
+  border: 1px solid rgba(195, 177, 147, 0.85);
+  border-top: 0;
+  border-radius: 0 0 5px 5px;
+  background: linear-gradient(#f0e5cd, #e2d4b6);
+  box-shadow: 0 3px 6px rgba(70, 48, 28, 0.16);
+  pointer-events: none;
+}
+
+[data-style="skeuomorphism"] .card:nth-child(2)::before {
+  bottom: -9px;
+  height: 9px;
+  left: 16px;
+  right: 16px;
+  background: linear-gradient(#eee2c9, #dccdad);
+}
+
+[data-style="skeuomorphism"] .card:nth-child(3)::before {
+  bottom: -7px;
+  height: 7px;
+  left: 22px;
+  right: 22px;
+}
+
+[data-style="skeuomorphism"] .tile:nth-child(3n)::before {
+  bottom: -7px;
+  height: 7px;
+}
+
+/* Six index tabs and three embossed page rules. */
+[data-style="skeuomorphism"] .art__bars {
+  align-items: stretch;
+  gap: 5px;
+  height: auto;
+  padding-bottom: 4px;
+  border-bottom: 2px solid rgba(217, 184, 119, 0.4);
+  box-shadow: 0 2px 0 rgba(0, 0, 0, 0.22);
+}
+
+[data-style="skeuomorphism"] .art__bars i {
+  flex: 1 1 0;
+  height: 46px;
+  border-radius: 7px 7px 2px 2px;
+  background-image: linear-gradient(#efdcb2, #cba96b 62%, #b08f52);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), inset 0 -2px 0 rgba(94, 70, 38, 0.28),
+    0 -2px 4px rgba(0, 0, 0, 0.16);
+  opacity: 1;
+}
+
+[data-style="skeuomorphism"] .art__bars i:nth-child(2n) {
+  background-image: linear-gradient(#f6ead0, #e0cda6 62%, #c7b287);
+  opacity: 1;
+}
+
+[data-style="skeuomorphism"] .art__list {
+  gap: 11px;
+}
+
+[data-style="skeuomorphism"] .art__list span {
+  width: 100%;
+  height: 2px;
+  border-radius: 1px;
+  background: rgba(244, 234, 212, 0.14);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.26), 0 -1px 0 rgba(0, 0, 0, 0.24);
+}
+
+/* Controls press immediately and latch clearly. */
+[data-style="skeuomorphism"] .btn:active {
+  transform: none;
+  transition: none;
+  filter: none;
+  box-shadow: inset 0 3px 6px rgba(56, 20, 14, 0.5), 0 1px 0 #6d241d;
+}
+
+[data-style="skeuomorphism"] .btn--ghost:active {
+  box-shadow: inset 0 3px 6px rgba(90, 74, 56, 0.28);
+}
+
+[data-style="skeuomorphism"] .switcher__arrow {
+  width: 38px;
+  height: 38px;
+}
+
+[data-style="skeuomorphism"] .switcher__all {
+  min-height: 38px;
+}
+
+[data-style="skeuomorphism"] .switcher__arrow:active,
+[data-style="skeuomorphism"] .switcher__all:active {
+  transition: none;
+  background: rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+[data-style="skeuomorphism"] .chip {
+  min-height: 38px;
+}
+
+[data-style="skeuomorphism"] .chip[aria-pressed="true"] {
+  color: #2f2418;
+  background: linear-gradient(#e6c98d, #c6a462);
+  border-color: rgba(90, 66, 34, 0.6);
+  box-shadow: inset 0 2px 4px rgba(70, 48, 28, 0.42),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.4);
+}
+
+[data-style="skeuomorphism"] .switcher__arrow:focus-visible,
+[data-style="skeuomorphism"] .switcher__all:focus-visible,
+[data-style="skeuomorphism"] .chip:focus-visible {
+  outline: 2px solid #f2d9a4;
+  outline-offset: 2px;
+}
+
+@media (max-width: 560px) {
+  [data-style="skeuomorphism"] .cards,
+  [data-style="skeuomorphism"] .bento {
+    padding-left: 14px;
+  }
+
+  [data-style="skeuomorphism"] .cards::before,
+  [data-style="skeuomorphism"] .bento::before,
+  [data-style="skeuomorphism"] .cards::after,
+  [data-style="skeuomorphism"] .bento::after {
+    width: 8px;
+  }
+
+  [data-style="skeuomorphism"] .switcher__arrow {
+    width: 36px;
+    height: 38px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-style="skeuomorphism"] .btn:active,
+  [data-style="skeuomorphism"] .switcher__arrow:active,
+  [data-style="skeuomorphism"] .switcher__all:active {
+    transition: none;
+  }
+}
+
+[data-style="skeuomorphism"] .hero__art figcaption {
+  color: #5a442d;
+}

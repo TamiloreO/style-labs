@@ -119,6 +119,7 @@
   }
 
   function apply(id, opts) {
+    var fromId = root.getAttribute("data-style");
     var index = byId(id);
     if (index < 0) index = byId("swiss");
     current = index;
@@ -149,7 +150,43 @@
       root.setAttribute("data-style", entry.id);
       if (previous && previous.parentNode) previous.parentNode.removeChild(previous);
       paintState();
+      announce(entry, fromId, opts && opts.user);
     });
+  }
+
+  var enterTimer = 0;
+
+  /* Tells the rest of the page that a switch finished, so scoped modules can
+     mount or tear down without polling the data-style attribute. */
+  function announce(entry, fromId, fromUser) {
+    if (fromUser) {
+      root.classList.remove("style-entering");
+      // A style flush lets the entrance gesture run again on every switch.
+      void root.offsetWidth;
+      root.classList.add("style-entering");
+      clearTimeout(enterTimer);
+      enterTimer = setTimeout(function () {
+        root.classList.remove("style-entering");
+      }, 1400);
+    }
+
+    document.dispatchEvent(
+      new CustomEvent("stylelab:stylechange", {
+        detail: { id: entry.id, previous: fromId, user: !!fromUser },
+      })
+    );
+
+    if (fromUser && entry.id === "liquid-glass") {
+      var chip = rail.querySelector('[data-style-id="liquid-glass"]');
+      var box = chip ? chip.getBoundingClientRect() : null;
+      document.dispatchEvent(
+        new CustomEvent("stylelab:stylepulse", {
+          detail: box
+            ? { x: box.left + box.width / 2, y: box.top + box.height / 2 }
+            : { x: window.innerWidth / 2, y: window.innerHeight - 56 },
+        })
+      );
+    }
   }
 
   function build() {
@@ -168,7 +205,7 @@
         chip.style.setProperty("--swatch-" + (idx + 1), color);
       });
       chip.addEventListener("click", function () {
-        apply(entry.id);
+        apply(entry.id, { user: true });
       });
       chip.addEventListener("mouseenter", function () {
         loadFonts(entry);
@@ -202,7 +239,7 @@
         entry.note +
         "</span>";
       card.addEventListener("click", function () {
-        apply(entry.id);
+        apply(entry.id, { user: true });
         closeSheet();
       });
       gridFrag.appendChild(card);
@@ -213,7 +250,7 @@
   }
 
   function step(delta) {
-    apply(STYLES[(current + delta + STYLES.length) % STYLES.length].id);
+    apply(STYLES[(current + delta + STYLES.length) % STYLES.length].id, { user: true });
   }
 
   document.getElementById("prev-style").addEventListener("click", function () {

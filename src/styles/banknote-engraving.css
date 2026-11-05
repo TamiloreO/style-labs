@@ -372,3 +372,27 @@
     opacity: 0.32;
   }
 }
+
+/* The guilloche field is a ground, not a veil: it sits under the panel text. */
+[data-style="banknote-engraving"] .art {
+  position: relative;
+  z-index: 0;
+}
+
+[data-style="banknote-engraving"] .art::before {
+  z-index: 0;
+}
+
+[data-style="banknote-engraving"] .art__head,
+[data-style="banknote-engraving"] .art__stat,
+[data-style="banknote-engraving"] .art__bars,
+[data-style="banknote-engraving"] .art__list {
+  position: relative;
+  z-index: 1;
+}
+
+[data-style="banknote-engraving"] .art::before {
+  top: -62%;
+  left: -48%;
+  opacity: 0.18;
+}

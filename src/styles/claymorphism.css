@@ -360,3 +360,135 @@
     transform: none;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Relief pass: one moulded specimen in a shared cradle, a clearer hierarchy
+   between raised shells and pressed wells, and a chip that sits when chosen.
+   Heights are set here because the markup carries an inline --h value.
+   -------------------------------------------------------------------------- */
+
+[data-style="claymorphism"] .art__bars {
+  height: clamp(96px, 13vw, 144px);
+  padding: 16px 16px 13px;
+  gap: clamp(7px, 1.1vw, 14px);
+  border-radius: 30px;
+  background: linear-gradient(180deg, #e3daf5, #f4effc);
+  box-shadow: inset 9px 10px 20px rgba(120, 100, 165, 0.22),
+    inset -7px -7px 18px rgba(255, 255, 255, 0.95),
+    0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+[data-style="claymorphism"] .art__bars i {
+  flex: 1 1 0;
+  height: 62% !important;
+  min-width: 0;
+  border-radius: 999px;
+  transform-origin: bottom center;
+  box-shadow: inset -2px -3px 7px rgba(80, 50, 160, 0.32),
+    inset 3px 3px 6px rgba(255, 255, 255, 0.65),
+    0 3px 5px rgba(120, 100, 165, 0.16);
+}
+
+[data-style="claymorphism"] .art__bars i:nth-child(1) {
+  height: 44% !important;
+  flex-grow: 0.82;
+  border-radius: 999px 999px 24px 24px;
+}
+
+[data-style="claymorphism"] .art__bars i:nth-child(2) {
+  height: 76% !important;
+  flex-grow: 1.14;
+}
+
+[data-style="claymorphism"] .art__bars i:nth-child(3) {
+  height: 58% !important;
+  border-radius: 999px 999px 20px 20px;
+}
+
+[data-style="claymorphism"] .art__bars i:nth-child(4) {
+  height: 100% !important;
+  flex-grow: 1.2;
+}
+
+[data-style="claymorphism"] .art__bars i:nth-child(5) {
+  height: 66% !important;
+  flex-grow: 0.9;
+  border-radius: 999px 999px 26px 26px;
+}
+
+[data-style="claymorphism"] .art__bars i:nth-child(6) {
+  height: 87% !important;
+  flex-grow: 1.06;
+}
+
+/* Outer shells stay raised but stop sharing one silhouette. */
+[data-style="claymorphism"] .card {
+  border-radius: 30px 22px 28px 20px;
+}
+
+[data-style="claymorphism"] .card:nth-child(2) {
+  border-radius: 20px 32px 22px 30px;
+}
+
+[data-style="claymorphism"] .card:nth-child(3) {
+  border-radius: 26px 24px 34px 22px;
+}
+
+[data-style="claymorphism"] .tile {
+  border-radius: 34px 20px 28px 24px;
+}
+
+[data-style="claymorphism"] .tile:nth-child(3) {
+  border-radius: 22px 30px 20px 32px;
+}
+
+[data-style="claymorphism"] .tile:nth-child(5) {
+  border-radius: 28px 26px 20px 34px;
+}
+
+[data-style="claymorphism"] .closing__inner {
+  border-radius: 40px 24px 36px 26px;
+}
+
+/* Pressed wells: figures and rules sit below the shell, not on it. */
+[data-style="claymorphism"] .tile__figure {
+  width: fit-content;
+  padding: 10px 16px 8px;
+  margin-inline-start: -2px;
+  border-radius: 18px;
+  background: rgba(120, 100, 165, 0.12);
+  box-shadow: inset 6px 6px 13px rgba(120, 100, 165, 0.24),
+    inset -5px -5px 12px rgba(255, 255, 255, 0.92);
+}
+
+[data-style="claymorphism"] .tile--accent .tile__figure {
+  background: rgba(140, 80, 110, 0.14);
+  box-shadow: inset 6px 6px 13px rgba(140, 80, 110, 0.22),
+    inset -5px -5px 12px rgba(255, 255, 255, 0.62);
+  color: #4d2340;
+}
+
+[data-style="claymorphism"] .art__list span {
+  height: 13px;
+  border-radius: 999px;
+  background: #e0d5f3;
+  box-shadow: inset 3px 3px 7px rgba(120, 100, 165, 0.3),
+    inset -3px -3px 7px rgba(255, 255, 255, 0.9);
+}
+
+/* Switcher chips: soft seat when idle, pressed seat when chosen. */
+[data-style="claymorphism"] .chip:not([aria-pressed="true"]) {
+  background: rgba(255, 255, 255, 0.78);
+  border-color: rgba(126, 108, 168, 0.16);
+  box-shadow: 2px 3px 7px rgba(120, 100, 165, 0.24),
+    -2px -2px 6px rgba(255, 255, 255, 0.9),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+[data-style="claymorphism"] .chip[aria-pressed="true"] {
+  background: var(--sw-active-bg);
+  color: var(--sw-active-ink);
+  border-color: rgba(112, 80, 200, 0.45);
+  box-shadow: inset 4px 4px 9px rgba(96, 72, 160, 0.42),
+    inset -3px -3px 8px rgba(255, 255, 255, 0.55);
+}

@@ -240,3 +240,130 @@
     box-shadow: 4px 4px 0 rgba(255, 74, 28, 0.75);
   }
 }
+/* --------------------------------------------------------------------------
+   Refinement: the six marks are a screened ink proof, dots over flat ink with
+   density falling across the row, and the ticker takes one static second
+   colour halftone patch plus a hairline offset, clear of the scrolling text.
+   -------------------------------------------------------------------------- */
+
+[data-style="risograph-overprint"] .art__bars {
+  gap: clamp(6px, 1vw, 11px);
+  align-items: flex-end;
+}
+
+[data-style="risograph-overprint"] .art__bars i {
+  border-radius: 0;
+  opacity: 1;
+  background-color: var(--accent);
+  background-image: radial-gradient(
+      circle at 50% 50%,
+      rgba(250, 245, 231, .92) 0 1.1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(20, 18, 15, .38) 0 1.6px,
+      transparent 2px
+    );
+  background-size: 5px 5px, 11px 11px;
+  background-position: 0 0, 2px 3px;
+  box-shadow: 2px 2px 0 rgba(255, 74, 28, .5);
+}
+
+[data-style="risograph-overprint"] .art__bars i:nth-child(2n) {
+  background-color: var(--accent-2);
+  opacity: 1;
+  box-shadow: -2px 2px 0 rgba(31, 79, 191, .4);
+}
+
+[data-style="risograph-overprint"] .art__bars i:nth-child(1) {
+  background-size: 4px 4px, 9px 9px;
+}
+
+[data-style="risograph-overprint"] .art__bars i:nth-child(2) {
+  background-size: 5px 5px, 12px 12px;
+}
+
+[data-style="risograph-overprint"] .art__bars i:nth-child(3) {
+  background-size: 6px 6px, 10px 10px;
+  background-position: 1px 2px, 3px 1px;
+}
+
+[data-style="risograph-overprint"] .art__bars i:nth-child(4) {
+  background-size: 7px 7px, 13px 13px;
+  background-position: 2px 1px, 0 2px;
+}
+
+[data-style="risograph-overprint"] .art__bars i:nth-child(5) {
+  background-size: 8px 8px, 11px 11px;
+}
+
+[data-style="risograph-overprint"] .art__bars i:nth-child(6) {
+  background-size: 9px 9px, 14px 14px;
+  background-position: 3px 0, 1px 4px;
+}
+
+[data-style="risograph-overprint"] .art__list span {
+  height: 4px;
+  border-radius: 0;
+  background-color: rgba(31, 79, 191, .18);
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    rgba(20, 18, 15, .5) 0 0.9px,
+    transparent 1.3px
+  );
+  background-size: 5px 5px;
+}
+
+/* The ticker keeps a solid ink bed for the text and two static press marks. */
+[data-style="risograph-overprint"] .ticker {
+  position: relative;
+  background-color: var(--accent);
+  background-image: none;
+}
+
+[data-style="risograph-overprint"] .ticker::before {
+  content: "";
+  position: absolute;
+  inset: 3px 0 auto;
+  height: 4px;
+  background-image: radial-gradient(
+    circle at 50% 50%,
+    rgba(255, 74, 28, .9) 0 1.1px,
+    transparent 1.5px
+  );
+  background-size: 5px 5px;
+  pointer-events: none;
+}
+
+[data-style="risograph-overprint"] .ticker::after {
+  content: "";
+  position: absolute;
+  inset: auto 4px 3px;
+  height: 1px;
+  background: rgba(255, 74, 28, .95);
+  pointer-events: none;
+}
+
+[data-style="risograph-overprint"] .ticker__group {
+  color: #fdf8ea;
+}
+
+[data-style="risograph-overprint"] .ticker__group i {
+  color: #ffd7c9;
+}
+
+@media (max-width: 560px) {
+  [data-style="risograph-overprint"] .ticker::before {
+    height: 3px;
+    background-size: 4px 4px;
+  }
+
+  [data-style="risograph-overprint"] .art__bars i {
+    background-size: 4px 4px, 9px 9px;
+  }
+
+  [data-style="risograph-overprint"] .art__bars i:nth-child(n + 4) {
+    background-size: 5px 5px, 10px 10px;
+  }
+}

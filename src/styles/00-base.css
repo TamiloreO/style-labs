@@ -191,6 +191,29 @@ main,
 }
 
 /* --------------------------------------------------------------------------
+   Behaviour hooks
+   The artwork viewport, the staged figure slot and the zoom controls exist in
+   every skin but stay inert until a scoped sheet enables them.
+   -------------------------------------------------------------------------- */
+
+.art__viewport {
+  position: relative;
+}
+
+.work-stage {
+  display: none;
+}
+
+.art__zoom {
+  display: none;
+}
+
+.art__zoom-btn {
+  font: inherit;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------------------------
    Header
    -------------------------------------------------------------------------- */
 

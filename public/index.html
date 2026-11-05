@@ -24,11 +24,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="stylesheet" href="styles/base.css?v=5308c5c0b0" />
-    <script src="boot.js?v=5308c5c0b0"></script>
-    <script src="registry.js?v=5308c5c0b0"></script>
-    <noscript><link rel="stylesheet" href="styles/swiss.css?v=5308c5c0b0" /></noscript>
-    <link rel="stylesheet" href="styles/controls.css?v=5308c5c0b0" />
+    <link rel="stylesheet" href="styles/base.css?v=afb5485147" />
+    <script src="boot.js?v=afb5485147"></script>
+    <script src="registry.js?v=afb5485147"></script>
+    <noscript><link rel="stylesheet" href="styles/swiss.css?v=afb5485147" /></noscript>
+    <link rel="stylesheet" href="styles/controls.css?v=afb5485147" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -94,7 +94,9 @@
             TamiloreO · Style Lab
           </p>
           <h1 class="hero__title">
-            Same page. <span class="no-break">Forty-two</span> ways to <em>see</em> it.
+            <span class="hl"><span class="hw">Same</span> <span class="hw">page.</span></span>
+            <span class="hl"><span class="hw"><span class="no-break">Forty-two</span></span> <span class="hw">ways</span></span>
+            <span class="hl"><span class="hw">to</span> <em>see</em> <span class="hw">it.</span></span>
           </h1>
           <p class="hero__lede">
             Style Lab holds the words still and changes everything around them: type, color,
@@ -123,27 +125,34 @@
         </div>
 
         <figure class="hero__art">
-          <div class="art">
-            <div class="art__head">
-              <span class="art__dot" aria-hidden="true"></span>
-              <span class="art__label">Style comparison</span>
-              <span class="art__num">01</span>
+          <div class="art__viewport" id="art-viewport" tabindex="-1" aria-label="Hero artwork">
+            <div class="art" id="art-panel">
+              <div class="art__head">
+                <span class="art__dot" aria-hidden="true"></span>
+                <span class="art__label">Style comparison</span>
+                <span class="art__num">01</span>
+              </div>
+              <div class="art__stat">
+                <b>42</b>
+                <span>skins, one page</span>
+              </div>
+              <div class="art__bars" aria-hidden="true">
+                <i style="--h: 38%"></i>
+                <i style="--h: 62%"></i>
+                <i style="--h: 51%"></i>
+                <i style="--h: 84%"></i>
+                <i style="--h: 70%"></i>
+                <i style="--h: 96%"></i>
+              </div>
+              <div class="art__list" aria-hidden="true">
+                <span></span><span></span><span></span>
+              </div>
             </div>
-            <div class="art__stat">
-              <b>42</b>
-              <span>skins, one page</span>
-            </div>
-            <div class="art__bars" aria-hidden="true">
-              <i style="--h: 38%"></i>
-              <i style="--h: 62%"></i>
-              <i style="--h: 51%"></i>
-              <i style="--h: 84%"></i>
-              <i style="--h: 70%"></i>
-              <i style="--h: 96%"></i>
-            </div>
-            <div class="art__list" aria-hidden="true">
-              <span></span><span></span><span></span>
-            </div>
+          </div>
+          <div class="art__zoom" role="group" aria-label="Artwork view">
+            <button class="art__zoom-btn" type="button" data-art-zoom="in" aria-label="Zoom in">+</button>
+            <button class="art__zoom-btn" type="button" data-art-zoom="out" aria-label="Zoom out">&#8722;</button>
+            <button class="art__zoom-btn art__zoom-btn--text" type="button" data-art-zoom="reset">Reset</button>
           </div>
           <figcaption>Fig. 01 <span>Same content, every skin</span></figcaption>
         </figure>
@@ -250,6 +259,8 @@
             Every skin runs on this same markup. Switching takes one click, or one arrow key.
           </p>
         </header>
+
+        <div class="work-stage" data-figure-slot hidden></div>
 
         <div class="cards">
           <article class="card">
@@ -360,8 +371,9 @@
 
       <section class="quote wrap" id="journal">
         <p class="quote__text">
-          A screenshot shows one moment. Here, you can resize the page, press the buttons,
-          and see how each design behaves before choosing a direction.
+          <span class="qp">A screenshot shows one moment.</span>
+          <span class="qp">Here, you can resize the page, press the buttons,</span>
+          <span class="qp">and see how each design behaves before choosing a direction.</span>
         </p>
         <footer class="quote__cite">
           <span class="quote__avatar" aria-hidden="true"></span>
@@ -462,7 +474,8 @@
       </div>
     </div>
 
-    <script src="app.js?v=5308c5c0b0" defer></script>
-    <script src="ripple.js?v=5308c5c0b0" defer></script>
+    <script src="app.js?v=afb5485147" defer></script>
+    <script src="ripple.js?v=afb5485147" defer></script>
+    <script src="stage.js?v=afb5485147" defer></script>
   </body>
 </html>

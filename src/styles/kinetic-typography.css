@@ -298,3 +298,53 @@
     transform: none;
   }
 }
+
+/* --------------------------------------------------------------------------
+   Counter-shape specimen, and one entrance gesture instead of a loop.
+   The animation only runs while the page carries .style-entering, which the
+   style engine sets for a deliberate switch and never on a restored visit.
+   -------------------------------------------------------------------------- */
+
+[data-style="kinetic-typography"] .art__bars {
+  align-items: stretch;
+  height: clamp(112px, 15vw, 172px);
+  gap: clamp(3px, 0.7vw, 7px);
+  padding-top: 0;
+}
+
+[data-style="kinetic-typography"] .art__bars i {
+  height: 100%;
+  border-radius: 0;
+  opacity: 0.32;
+  clip-path: polygon(0 22%, 100% 0, 100% 78%, 0 100%);
+}
+
+[data-style="kinetic-typography"] .art__bars i:nth-child(2n) { opacity: 1; }
+[data-style="kinetic-typography"] .art__bars i:nth-child(1) { transform: translateY(-7%); }
+[data-style="kinetic-typography"] .art__bars i:nth-child(2) { transform: translateY(12%); }
+[data-style="kinetic-typography"] .art__bars i:nth-child(3) { transform: translateY(-15%); }
+[data-style="kinetic-typography"] .art__bars i:nth-child(4) { transform: translateY(19%); }
+[data-style="kinetic-typography"] .art__bars i:nth-child(5) { transform: translateY(-10%); }
+[data-style="kinetic-typography"] .art__bars i:nth-child(6) { transform: translateY(6%); }
+
+[data-style="kinetic-typography"] .hero__title em { animation: none; }
+
+@keyframes kinetic-press {
+  0% { transform: scale(1.03, 1.12) skewX(-2.5deg); opacity: 0.55; }
+  38% { transform: scale(1, 0.92) skewX(1.4deg); opacity: 1; }
+  100% { transform: none; opacity: 1; }
+}
+
+[data-style="kinetic-typography"].style-entering .hero__title {
+  animation: kinetic-press 900ms cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  transform-origin: left bottom;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-style="kinetic-typography"].style-entering .hero__title { animation: none; }
+}
+
+[data-style="kinetic-typography"] .hero__title {
+  max-width: 100%;
+  font-size: clamp(2.4rem, 5.9vw, 4.7rem);
+}

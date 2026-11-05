@@ -45,3 +45,11 @@ The initial version was pushed to GitHub and the Manus canonical repository afte
 - Live at https://tamiloreo.github.io/style-labs/: index, styles.css and app.js all return 200, with no failed resources and no horizontal overflow.
 - On the live domain, all 22 chips render, switching applies a new theme, the choice persists in local storage, and the picker opens with 22 entries.
 - No custom domain is purchased or configured. A future domain needs the Pages custom-domain setting plus DNS records.
+
+## Refinement round (42 skins)
+
+- [x] Every style carries its own deeper treatment: stronger type scale, structure and a distinct device in the artwork panel, not just recolouring.
+- [x] Shared behaviours added: staged figure for Scrollytelling, pan and zoom for Zoomable canvas, water impulse on style switch for Liquid glass, press animation for Kinetic type, and a word field for Concrete poetry.
+- [x] Desktop and phone layouts checked; no horizontal overflow, no clipped switcher, no stacked hero columns at 375px.
+- [x] Legibility regressions fixed: Synthwave and Y2K headlines, Constructivism panel margin, Banknote engraving field, and four faint captions.
+- [ ] Commit and push once the owner has reviewed it.

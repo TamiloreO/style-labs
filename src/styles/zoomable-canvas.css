@@ -357,3 +357,97 @@
     box-shadow: 6px 6px 0 var(--surface-2);
   }
 }
+
+/* --------------------------------------------------------------------------
+   A bounded viewport. The artwork pans and zooms; the page never does.
+   -------------------------------------------------------------------------- */
+
+[data-style="zoomable-canvas"] .art__viewport {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--bg-2);
+}
+
+[data-style="zoomable-canvas"] .art__viewport.is-zoomable { cursor: grab; touch-action: none; }
+[data-style="zoomable-canvas"] .art__viewport.is-dragging { cursor: grabbing; }
+[data-style="zoomable-canvas"] .art__viewport.is-zoomable:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+[data-style="zoomable-canvas"] .art__viewport .art {
+  border: 0;
+  transition: transform 200ms var(--ease);
+  will-change: transform;
+}
+
+[data-style="zoomable-canvas"] .art__zoom {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+[data-style="zoomable-canvas"] .art__zoom-btn {
+  min-width: 34px;
+  min-height: 30px;
+  padding: 0 9px;
+  border: 1px solid var(--ink);
+  background: var(--bg-2);
+  color: var(--ink);
+  font-family: var(--font-label);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+[data-style="zoomable-canvas"] .art__zoom-btn:hover {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--on-accent);
+}
+
+[data-style="zoomable-canvas"] .art__zoom-btn:active { transform: translateY(1px); }
+
+[data-style="zoomable-canvas"] .section__head {
+  position: relative;
+  border-top: 1px solid var(--line);
+  padding-top: clamp(14px, 2vw, 22px);
+}
+
+[data-style="zoomable-canvas"] .section__head::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -1px;
+  width: 128px;
+  height: 3px;
+  background: var(--accent);
+}
+
+[data-style="zoomable-canvas"] .section__head::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -1px;
+  width: 1px;
+  height: 9px;
+  background: var(--ink);
+  box-shadow: -12px 0 0 var(--ink), -24px 0 0 var(--ink);
+  opacity: 0.55;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-style="zoomable-canvas"] .art__viewport .art { transition: none; }
+}
+
+/* The control strip sits above the frame so the fixed switcher can never
+   cover it, and so the artwork keeps the full width of the column. */
+[data-style="zoomable-canvas"] .hero__art {
+  display: flex;
+  flex-direction: column;
+}
+[data-style="zoomable-canvas"] .art__zoom {
+  order: -1;
+  margin: 0 0 8px;
+}
