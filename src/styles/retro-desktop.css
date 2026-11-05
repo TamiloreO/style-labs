@@ -424,3 +424,53 @@
     padding-right: 8px;
   }
 }
+
+/* The window is a two column grid: index in one, title in the other. The body,
+   list and link used to auto-place into those two narrow rows, so the word
+   column collided with the bullet list. Each now takes a full width row of its
+   own, while the body keeps its one word per line measure. */
+[data-style="retro-desktop"] .card__body {
+  grid-column: 1 / -1;
+  width: 76px;
+  max-width: 100%;
+}
+
+[data-style="retro-desktop"] .card__list {
+  grid-column: 1 / -1;
+  list-style-position: inside;
+  padding-left: var(--card-pad);
+  margin-top: 10px;
+}
+
+[data-style="retro-desktop"] .card__link {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* The one word per line measure is a desktop device. On a phone the column is
+   too narrow to read, so the body takes the window width instead. */
+@media (max-width: 720px) {
+  [data-style="retro-desktop"] .card__body {
+    width: auto;
+  }
+}
+
+/* Every panel is a window, so the title bar carries the three controls at its
+   right end: minimise, maximise and close, drawn as one crisp sprite. */
+[data-style="retro-desktop"] .card__title {
+  position: relative;
+  padding-right: 62px;
+}
+
+[data-style="retro-desktop"] .card__title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 7px;
+  width: 45px;
+  height: 13px;
+  transform: translateY(-50%);
+  background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0NSIgaGVpZ2h0PSIxMyIgdmlld0JveD0iMCAwIDQ1IDEzIiBzaGFwZS1yZW5kZXJpbmc9ImNyaXNwRWRnZXMiPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgZmlsbD0iI2MwYzBjMCIgc3Ryb2tlPSIjMGEwYTBhIi8+PHBhdGggZD0iTTEgMWgxMSIgc3Ryb2tlPSIjZmZmZmZmIi8+PHBhdGggZD0iTTEgMXYxMSIgc3Ryb2tlPSIjZmZmZmZmIi8+PHBhdGggZD0iTTEyIDJ2MTFoLTExIiBzdHJva2U9IiM2ZjZmNjgiLz48cmVjdCB4PSIzLjUiIHk9IjguNSIgd2lkdGg9IjYiIGhlaWdodD0iMS40IiBmaWxsPSIjMTExIi8+PHJlY3QgeD0iMTYiIHk9IjAiIHdpZHRoPSIxMyIgaGVpZ2h0PSIxMyIgZmlsbD0iI2MwYzBjMCIgc3Ryb2tlPSIjMGEwYTBhIi8+PHBhdGggZD0iTTE3IDFoMTEiIHN0cm9rZT0iI2ZmZmZmZiIvPjxwYXRoIGQ9Ik0xNyAxdjExIiBzdHJva2U9IiNmZmZmZmYiLz48cGF0aCBkPSJNMjggMnYxMWgtMTEiIHN0cm9rZT0iIzZmNmY2OCIvPjxyZWN0IHg9IjQiIHk9IjQuNSIgd2lkdGg9IjUiIGhlaWdodD0iNC41IiBmaWxsPSJub25lIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMS4yIi8+PHJlY3QgeD0iNCIgeT0iNC41IiB3aWR0aD0iNSIgaGVpZ2h0PSIxLjQiIGZpbGw9IiMxMTEiLz48cmVjdCB4PSIzMiIgeT0iMCIgd2lkdGg9IjEzIiBoZWlnaHQ9IjEzIiBmaWxsPSIjYzBjMGMwIiBzdHJva2U9IiMwYTBhMGEiLz48cGF0aCBkPSJNMzMgMWgxMSIgc3Ryb2tlPSIjZmZmZmZmIi8+PHBhdGggZD0iTTMzIDF2MTEiIHN0cm9rZT0iI2ZmZmZmZiIvPjxwYXRoIGQ9Ik00NCAydjExaC0xMSIgc3Ryb2tlPSIjNmY2ZjY4Ii8+PHBhdGggZD0iTTMuNiAzLjYgTDkuNCA5LjQgTTkuNCAzLjYgTDMuNiA5LjQiIHN0cm9rZT0iIzExMSIgc3Ryb2tlLXdpZHRoPSIxLjQiLz48L3N2Zz4=") no-repeat center / 45px 13px;
+}

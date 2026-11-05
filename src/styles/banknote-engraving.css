@@ -396,3 +396,12 @@
   left: -48%;
   opacity: 0.18;
 }
+
+/* The active tab sits on a dark rail, and this skin's translucent chip fill
+   was cancelling the shared pressed state. Restore the token fill and ink at a
+   specificity the skin cannot lose. */
+[data-style="banknote-engraving"] .switcher .chip[aria-pressed="true"] {
+  background: var(--sw-active-bg);
+  color: var(--sw-active-ink);
+  border-color: transparent;
+}

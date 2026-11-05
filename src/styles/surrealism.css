@@ -511,3 +511,13 @@
     padding-inline-start: 0;
   }
 }
+
+/* The pressed chip is a peach disc with plum ink, not a translucent veil over
+   a dark rail: the veil plus plum text measured 1.72:1. */
+[data-style="surrealism"] .switcher .chip[aria-pressed="true"] {
+  background: var(--sw-active-bg);
+  color: var(--sw-active-ink);
+  border-color: transparent;
+  box-shadow: 0 6px 18px -10px rgba(59, 47, 77, 0.9),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.35);
+}

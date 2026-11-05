@@ -610,3 +610,12 @@
     transition: none;
   }
 }
+
+/* A safety sign is only a safety sign when the fill is the signal colour. The
+   skin's own chip rule was landing after the shared pressed state and keeping
+   the plate black, so the black label sat on a black plate. */
+[data-style="industrial-wayfinding"] .switcher .chip[aria-pressed="true"] {
+  background: var(--sw-active-bg);
+  color: var(--sw-active-ink);
+  border-color: transparent;
+}
