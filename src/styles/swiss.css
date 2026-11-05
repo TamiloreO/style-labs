@@ -342,3 +342,10 @@
     gap: 2px;
   }
 }
+
+/* White on the accent red measured 4.38:1. One step deeper on the same hue
+   clears the readable minimum without leaving the palette. */
+[data-style="swiss"] .switcher .chip[aria-pressed="true"] {
+  background: #a81c12;
+  color: #ffffff;
+}

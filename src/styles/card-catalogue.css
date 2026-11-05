@@ -391,3 +391,12 @@
 [data-style="card-catalogue"] .hero__art figcaption {
   color: #4a463c;
 }
+
+/* The active tab sits on a dark rail, and this skin's translucent chip fill
+   was cancelling the shared pressed state. Restore the token fill and ink at a
+   specificity the skin cannot lose. */
+[data-style="card-catalogue"] .switcher .chip[aria-pressed="true"] {
+  background: var(--sw-active-bg);
+  color: var(--sw-active-ink);
+  border-color: transparent;
+}

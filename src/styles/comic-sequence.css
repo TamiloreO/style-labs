@@ -461,3 +461,50 @@
     height: 46%;
   }
 }
+
+
+
+/* The opening panel is a thought bubble: a soft balloon with a three puff
+   trail, instead of a ruled box. Only the first card changes, so the sequence
+   still reads panel, reaction, close. */
+[data-style="comic-sequence"] .cards .card:first-child {
+  position: relative;
+  z-index: 1;
+  border: 3px solid var(--ink);
+  border-radius: 48% 52% 46% 54% / 40% 42% 58% 60%;
+  box-shadow: 6px 8px 0 rgba(17, 17, 17, 0.16);
+  padding: 52px 64px 70px;
+  background: var(--surface);
+}
+
+[data-style="comic-sequence"] .cards .card:first-child::after {
+  content: "";
+  position: absolute;
+  right: 108px;
+  bottom: -6px;
+  width: 26px;
+  height: 26px;
+  border: 3px solid var(--ink);
+  border-radius: 50%;
+  background: var(--surface);
+  box-shadow: 28px 16px 0 -8px var(--surface), 28px 16px 0 -5px var(--ink),
+    48px 27px 0 -13px var(--surface), 48px 27px 0 -10px var(--ink);
+}
+
+[data-style="comic-sequence"] .cards .card:first-child .card__link {
+  border-top: 0;
+  margin-top: 2px;
+}
+
+[data-style="comic-sequence"] .cards .card:first-child .card__index {
+  margin-bottom: 8px;
+}
+
+/* The active tab sits on a dark rail, and this skin's translucent chip fill
+   was cancelling the shared pressed state. Restore the token fill and ink at a
+   specificity the skin cannot lose. */
+[data-style="comic-sequence"] .switcher .chip[aria-pressed="true"] {
+  background: var(--sw-active-bg);
+  color: var(--sw-active-ink);
+  border-color: transparent;
+}
