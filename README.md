@@ -11,16 +11,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=retro-desktop"><img src="assets/screenshots/retro-desktop.webp" alt="Retro desktop"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=swiss"><img src="assets/screenshots/swiss.webp" alt="Swiss design"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=banknote-engraving"><img src="assets/screenshots/banknote-engraving.webp" alt="Banknote engraving"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=liquid-glass"><img src="assets/screenshots/liquid-glass.webp" alt="Liquid glass"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=glassmorphism"><img src="assets/screenshots/glassmorphism.webp" alt="Glassmorphism"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=concrete-poetry"><img src="assets/screenshots/concrete-poetry.webp" alt="Concrete poetry"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=victorian"><img src="assets/screenshots/victorian.webp" alt="Victorian"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=comic-sequence"><img src="assets/screenshots/comic-sequence.webp" alt="Comic layout"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=relationship-graph"><img src="assets/screenshots/relationship-graph.webp" alt="Relationship graph"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=administrative-form"><img src="assets/screenshots/administrative-form.webp" alt="Administrative form"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=y2k"><img src="assets/screenshots/y2k.webp" alt="Y2K aesthetic"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=skeuomorphism"><img src="assets/screenshots/skeuomorphism.webp" alt="Skeuomorphism"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
