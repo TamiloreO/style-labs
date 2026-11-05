@@ -471,26 +471,46 @@
   position: relative;
   z-index: 1;
   border: 3px solid var(--ink);
-  border-radius: 48% 52% 46% 54% / 40% 42% 58% 60%;
+  border-radius: 50%;
   box-shadow: 6px 8px 0 rgba(17, 17, 17, 0.16);
-  padding: 52px 64px 70px;
+  padding: clamp(64px, 7vw, 84px) 19% 64px;
+  /* The trail hangs below the balloon, so the panel reserves the room the
+     puffs need instead of letting them cross the next panel's border. */
+  margin-bottom: 14px;
   background: var(--surface);
 }
-
+/* The trail leaves the balloon where its curve is closest to the box edge, so
+   the puffs read as attached to the shape rather than floating below it. */
 [data-style="comic-sequence"] .cards .card:first-child::after {
   content: "";
   position: absolute;
-  right: 108px;
-  bottom: -6px;
+  right: 24%;
+  bottom: 2px;
   width: 26px;
   height: 26px;
   border: 3px solid var(--ink);
   border-radius: 50%;
   background: var(--surface);
-  box-shadow: 28px 16px 0 -8px var(--surface), 28px 16px 0 -5px var(--ink),
-    48px 27px 0 -13px var(--surface), 48px 27px 0 -10px var(--ink);
+  box-shadow: 26px 15px 0 -8px var(--surface), 26px 15px 0 -5px var(--ink),
+    42px 24px 0 -13px var(--surface), 42px 24px 0 -10px var(--ink);
 }
-
+[data-style="comic-sequence"] .cards {
+  align-items: start;
+}
+/* Below a phone-ish width the ellipse would need so much padding that the
+   balloon turned into a narrow egg, so the panel becomes a rounded balloon
+   with the same trail. */
+@media (max-width: 559px) {
+  [data-style="comic-sequence"] .cards .card:first-child {
+    border-radius: 96px;
+    padding: 40px 26px 44px;
+    margin-bottom: 22px;
+  }
+  [data-style="comic-sequence"] .cards .card:first-child::after {
+    right: 26%;
+    bottom: -4px;
+  }
+}
 [data-style="comic-sequence"] .cards .card:first-child .card__link {
   border-top: 0;
   margin-top: 2px;
