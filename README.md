@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=data-scrollytelling"><img src="assets/screenshots/data-scrollytelling.webp" alt="Scrollytelling"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=bento"><img src="assets/screenshots/bento.webp" alt="Bento grid"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=ethereal"><img src="assets/screenshots/ethereal.webp" alt="Ethereal"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=op-art"><img src="assets/screenshots/op-art.webp" alt="Op Art"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=glassmorphism"><img src="assets/screenshots/glassmorphism.webp" alt="Glassmorphism"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=claymorphism"><img src="assets/screenshots/claymorphism.webp" alt="Claymorphism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=liquid-glass"><img src="assets/screenshots/liquid-glass.webp" alt="Liquid glass"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=material-expressive"><img src="assets/screenshots/material-expressive.webp" alt="Material Expressive"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=swiss"><img src="assets/screenshots/swiss.webp" alt="Swiss design"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=maximalism"><img src="assets/screenshots/maximalism.webp" alt="Maximalism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=surrealism"><img src="assets/screenshots/surrealism.webp" alt="Surrealism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=y2k-chrome"><img src="assets/screenshots/y2k-chrome.webp" alt="Y2K chrome"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
