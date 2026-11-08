@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=constructivism"><img src="assets/screenshots/constructivism.webp" alt="Constructivism"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=synthwave"><img src="assets/screenshots/synthwave.webp" alt="Synthwave"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=cyberpunk"><img src="assets/screenshots/cyberpunk.webp" alt="Cyberpunk"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=scrapbook"><img src="assets/screenshots/scrapbook.webp" alt="Scrapbook"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=comic-sequence"><img src="assets/screenshots/comic-sequence.webp" alt="Comic layout"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=bento"><img src="assets/screenshots/bento.webp" alt="Bento grid"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=neumorphism"><img src="assets/screenshots/neumorphism.webp" alt="Neumorphism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=swiss"><img src="assets/screenshots/swiss.webp" alt="Swiss design"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=luxury-typography"><img src="assets/screenshots/luxury-typography.webp" alt="Luxury typography"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=conceptual-sketch"><img src="assets/screenshots/conceptual-sketch.webp" alt="Conceptual sketch"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=cybercore"><img src="assets/screenshots/cybercore.webp" alt="Cybercore"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=concrete-poetry"><img src="assets/screenshots/concrete-poetry.webp" alt="Concrete poetry"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
