@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=synthwave"><img src="assets/screenshots/synthwave.webp" alt="Synthwave"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=neumorphism"><img src="assets/screenshots/neumorphism.webp" alt="Neumorphism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=cloud-sky"><img src="assets/screenshots/cloud-sky.webp" alt="Cloud sky"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=luxury-typography"><img src="assets/screenshots/luxury-typography.webp" alt="Luxury typography"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=pixel-mosaics"><img src="assets/screenshots/pixel-mosaics.webp" alt="Pixel mosaics"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=minimalism"><img src="assets/screenshots/minimalism.webp" alt="Minimalism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=contour-lines"><img src="assets/screenshots/contour-lines.webp" alt="Contour lines"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=victorian"><img src="assets/screenshots/victorian.webp" alt="Victorian"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=timetable-grid"><img src="assets/screenshots/timetable-grid.webp" alt="Timetable grid"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=stippled-gradients"><img src="assets/screenshots/stippled-gradients.webp" alt="Stippled gradients"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=surrealism"><img src="assets/screenshots/surrealism.webp" alt="Surrealism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=cyberpunk"><img src="assets/screenshots/cyberpunk.webp" alt="Cyberpunk"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
