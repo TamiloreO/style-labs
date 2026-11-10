@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=constructivism"><img src="assets/screenshots/constructivism.webp" alt="Constructivism"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=wabi-sabi"><img src="assets/screenshots/wabi-sabi.webp" alt="Wabi-sabi"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=synthwave"><img src="assets/screenshots/synthwave.webp" alt="Synthwave"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=neumorphism"><img src="assets/screenshots/neumorphism.webp" alt="Neumorphism"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=administrative-form"><img src="assets/screenshots/administrative-form.webp" alt="Administrative form"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=claymorphism"><img src="assets/screenshots/claymorphism.webp" alt="Claymorphism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=pixel-mosaics"><img src="assets/screenshots/pixel-mosaics.webp" alt="Pixel mosaics"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=minimalism"><img src="assets/screenshots/minimalism.webp" alt="Minimalism"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=comic-sequence"><img src="assets/screenshots/comic-sequence.webp" alt="Comic layout"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=pixel-art"><img src="assets/screenshots/pixel-art.webp" alt="Pixel art"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=timetable-grid"><img src="assets/screenshots/timetable-grid.webp" alt="Timetable grid"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=stippled-gradients"><img src="assets/screenshots/stippled-gradients.webp" alt="Stippled gradients"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
