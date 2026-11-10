@@ -53,3 +53,13 @@ The initial version was pushed to GitHub and the Manus canonical repository afte
 - [x] Desktop and phone layouts checked; no horizontal overflow, no clipped switcher, no stacked hero columns at 375px.
 - [x] Legibility regressions fixed: Synthwave and Y2K headlines, Constructivism panel margin, Banknote engraving field, and four faint captions.
 - [ ] Commit and push once the owner has reviewed it.
+
+## Background texture round (22 new skins)
+
+- [x] Every background treatment in the reference video is a working skin, and the catalogue grew from 42 to 64 without editing any hard coded count.
+- [x] The registry drives the count, the switcher, the picker sheet, the page copy and the build, so a new skin needs one CSS file and one registry entry.
+- [x] Photographic grounds are real assets in public/assets/bg (felt, fluted glass, landscape, grass, sky, blurred, painting, paper, dithered), served relative to the compiled stylesheet and loaded only when that skin is active.
+- [x] All 22 render with no horizontal overflow, no console errors, no failed requests, and every declared display font actually loads.
+- [x] Active tab is legible on every new rail (checked by computed colour, plus a visual pass on the two gradient rails that the colour audit cannot read).
+- [x] Phone layouts hold at 320, 375, 430 and 768: the painting hero reflows to a banner, the landscape re-aims its horizon, and the Syne headline steps down rather than clipping.
+- [x] Thumbnails for all 64 skins exist in assets/screenshots for the README gallery rotation.
