@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=cloud-sky"><img src="assets/screenshots/cloud-sky.webp" alt="Cloud sky"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=luxury-typography"><img src="assets/screenshots/luxury-typography.webp" alt="Luxury typography"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=iridescent-shapes"><img src="assets/screenshots/iridescent-shapes.webp" alt="Iridescent shapes"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=liquid-glass"><img src="assets/screenshots/liquid-glass.webp" alt="Liquid glass"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=contour-lines"><img src="assets/screenshots/contour-lines.webp" alt="Contour lines"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=victorian"><img src="assets/screenshots/victorian.webp" alt="Victorian"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=bento"><img src="assets/screenshots/bento.webp" alt="Bento grid"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=industrial-wayfinding"><img src="assets/screenshots/industrial-wayfinding.webp" alt="Wayfinding"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=surrealism"><img src="assets/screenshots/surrealism.webp" alt="Surrealism"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=cyberpunk"><img src="assets/screenshots/cyberpunk.webp" alt="Cyberpunk"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=grainy-gradients"><img src="assets/screenshots/grainy-gradients.webp" alt="Grainy gradients"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=fluted-glass"><img src="assets/screenshots/fluted-glass.webp" alt="Fluted glass"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
