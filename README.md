@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=iridescent-shapes"><img src="assets/screenshots/iridescent-shapes.webp" alt="Iridescent shapes"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=liquid-glass"><img src="assets/screenshots/liquid-glass.webp" alt="Liquid glass"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=ascii-and-pixels"><img src="assets/screenshots/ascii-and-pixels.webp" alt="ASCII and pixels"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=swiss"><img src="assets/screenshots/swiss.webp" alt="Swiss design"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=bento"><img src="assets/screenshots/bento.webp" alt="Bento grid"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=industrial-wayfinding"><img src="assets/screenshots/industrial-wayfinding.webp" alt="Wayfinding"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=bohemian"><img src="assets/screenshots/bohemian.webp" alt="Bohemian"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=y2k"><img src="assets/screenshots/y2k.webp" alt="Y2K aesthetic"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=grainy-gradients"><img src="assets/screenshots/grainy-gradients.webp" alt="Grainy gradients"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=fluted-glass"><img src="assets/screenshots/fluted-glass.webp" alt="Fluted glass"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=wabi-sabi"><img src="assets/screenshots/wabi-sabi.webp" alt="Wabi-sabi"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=victorian"><img src="assets/screenshots/victorian.webp" alt="Victorian"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
