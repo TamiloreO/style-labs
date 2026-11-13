@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=ascii-and-pixels"><img src="assets/screenshots/ascii-and-pixels.webp" alt="ASCII and pixels"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=swiss"><img src="assets/screenshots/swiss.webp" alt="Swiss design"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=skeuomorphism"><img src="assets/screenshots/skeuomorphism.webp" alt="Skeuomorphism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=scrapbook"><img src="assets/screenshots/scrapbook.webp" alt="Scrapbook"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=bohemian"><img src="assets/screenshots/bohemian.webp" alt="Bohemian"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=y2k"><img src="assets/screenshots/y2k.webp" alt="Y2K aesthetic"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=pixel-art"><img src="assets/screenshots/pixel-art.webp" alt="Pixel art"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=timetable-grid"><img src="assets/screenshots/timetable-grid.webp" alt="Timetable grid"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=wabi-sabi"><img src="assets/screenshots/wabi-sabi.webp" alt="Wabi-sabi"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=victorian"><img src="assets/screenshots/victorian.webp" alt="Victorian"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=glassmorphism"><img src="assets/screenshots/glassmorphism.webp" alt="Glassmorphism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=conceptual-sketch"><img src="assets/screenshots/conceptual-sketch.webp" alt="Conceptual sketch"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
