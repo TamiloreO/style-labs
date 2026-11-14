@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=skeuomorphism"><img src="assets/screenshots/skeuomorphism.webp" alt="Skeuomorphism"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=scrapbook"><img src="assets/screenshots/scrapbook.webp" alt="Scrapbook"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=y2k"><img src="assets/screenshots/y2k.webp" alt="Y2K aesthetic"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=felt-texture"><img src="assets/screenshots/felt-texture.webp" alt="Felt texture"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=pixel-art"><img src="assets/screenshots/pixel-art.webp" alt="Pixel art"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=timetable-grid"><img src="assets/screenshots/timetable-grid.webp" alt="Timetable grid"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=card-catalogue"><img src="assets/screenshots/card-catalogue.webp" alt="Card catalogue"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=water-ripples"><img src="assets/screenshots/water-ripples.webp" alt="Water ripples"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=glassmorphism"><img src="assets/screenshots/glassmorphism.webp" alt="Glassmorphism"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=conceptual-sketch"><img src="assets/screenshots/conceptual-sketch.webp" alt="Conceptual sketch"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=minimalism"><img src="assets/screenshots/minimalism.webp" alt="Minimalism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=square-dot-grids"><img src="assets/screenshots/square-dot-grids.webp" alt="Square-dot grids"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
