@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=y2k"><img src="assets/screenshots/y2k.webp" alt="Y2K aesthetic"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=felt-texture"><img src="assets/screenshots/felt-texture.webp" alt="Felt texture"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=liquid-glass"><img src="assets/screenshots/liquid-glass.webp" alt="Liquid glass"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=skeuomorphism"><img src="assets/screenshots/skeuomorphism.webp" alt="Skeuomorphism"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=card-catalogue"><img src="assets/screenshots/card-catalogue.webp" alt="Card catalogue"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=water-ripples"><img src="assets/screenshots/water-ripples.webp" alt="Water ripples"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=speckled-graphite"><img src="assets/screenshots/speckled-graphite.webp" alt="Speckled graphite"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=synthwave"><img src="assets/screenshots/synthwave.webp" alt="Synthwave"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=minimalism"><img src="assets/screenshots/minimalism.webp" alt="Minimalism"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=square-dot-grids"><img src="assets/screenshots/square-dot-grids.webp" alt="Square-dot grids"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=material-expressive"><img src="assets/screenshots/material-expressive.webp" alt="Material Expressive"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=scrapbook"><img src="assets/screenshots/scrapbook.webp" alt="Scrapbook"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
