@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=liquid-glass"><img src="assets/screenshots/liquid-glass.webp" alt="Liquid glass"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=skeuomorphism"><img src="assets/screenshots/skeuomorphism.webp" alt="Skeuomorphism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=grainy-gradients"><img src="assets/screenshots/grainy-gradients.webp" alt="Grainy gradients"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=relationship-graph"><img src="assets/screenshots/relationship-graph.webp" alt="Relationship graph"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=speckled-graphite"><img src="assets/screenshots/speckled-graphite.webp" alt="Speckled graphite"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=synthwave"><img src="assets/screenshots/synthwave.webp" alt="Synthwave"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=op-art"><img src="assets/screenshots/op-art.webp" alt="Op Art"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=zoomable-canvas"><img src="assets/screenshots/zoomable-canvas.webp" alt="Zoomable canvas"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=material-expressive"><img src="assets/screenshots/material-expressive.webp" alt="Material Expressive"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=scrapbook"><img src="assets/screenshots/scrapbook.webp" alt="Scrapbook"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=glassmorphism"><img src="assets/screenshots/glassmorphism.webp" alt="Glassmorphism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=concrete-poetry"><img src="assets/screenshots/concrete-poetry.webp" alt="Concrete poetry"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
