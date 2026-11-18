@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=cloud-sky"><img src="assets/screenshots/cloud-sky.webp" alt="Cloud sky"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=speckled-graphite"><img src="assets/screenshots/speckled-graphite.webp" alt="Speckled graphite"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=comic-sequence"><img src="assets/screenshots/comic-sequence.webp" alt="Comic layout"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=dithered-images"><img src="assets/screenshots/dithered-images.webp" alt="Dithered images"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=timetable-grid"><img src="assets/screenshots/timetable-grid.webp" alt="Timetable grid"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=banknote-engraving"><img src="assets/screenshots/banknote-engraving.webp" alt="Banknote engraving"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=bento"><img src="assets/screenshots/bento.webp" alt="Bento grid"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=card-catalogue"><img src="assets/screenshots/card-catalogue.webp" alt="Card catalogue"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=data-scrollytelling"><img src="assets/screenshots/data-scrollytelling.webp" alt="Scrollytelling"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=fluted-glass"><img src="assets/screenshots/fluted-glass.webp" alt="Fluted glass"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=single-hue-landscape"><img src="assets/screenshots/single-hue-landscape.webp" alt="Single-hue landscape"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=retro-desktop"><img src="assets/screenshots/retro-desktop.webp" alt="Retro desktop"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
