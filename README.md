@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=blueprint-grids"><img src="assets/screenshots/blueprint-grids.webp" alt="Blueprint grids"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=water-ripples"><img src="assets/screenshots/water-ripples.webp" alt="Water ripples"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=impressionist-paintings"><img src="assets/screenshots/impressionist-paintings.webp" alt="Impressionist paintings"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=industrial-wayfinding"><img src="assets/screenshots/industrial-wayfinding.webp" alt="Wayfinding"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=blurred-photos"><img src="assets/screenshots/blurred-photos.webp" alt="Blurred photos"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=pixel-mosaics"><img src="assets/screenshots/pixel-mosaics.webp" alt="Pixel mosaics"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=glassmorphism"><img src="assets/screenshots/glassmorphism.webp" alt="Glassmorphism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=material-expressive"><img src="assets/screenshots/material-expressive.webp" alt="Material Expressive"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=liquid-glass"><img src="assets/screenshots/liquid-glass.webp" alt="Liquid glass"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=risograph-overprint"><img src="assets/screenshots/risograph-overprint.webp" alt="Risograph"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=conceptual-sketch"><img src="assets/screenshots/conceptual-sketch.webp" alt="Conceptual sketch"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=kinetic-typography"><img src="assets/screenshots/kinetic-typography.webp" alt="Kinetic type"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
