@@ -67,6 +67,22 @@ export function renderGallery(readme, picks) {
   return readme.slice(0, start) + block + readme.slice(end + END.length);
 }
 
+/** Guards the rendered block, because this script is what CI actually runs. */
+export function verifyGallery(readme) {
+  const { block } = galleryRange(readme);
+  const cells = [...block.matchAll(
+    /<td><a href="[^" ]+\?s=([a-z0-9-]+)"><img src="assets\/screenshots\/([a-z0-9-]+)\.webp(?:\?v=[^"]+)?"/g
+  )];
+  if (cells.length !== COUNT) throw new Error(`Gallery rendered ${cells.length} cells, expected ${COUNT}`);
+  if ((block.match(/<tr>/g) || []).length !== COUNT / 2) throw new Error("Gallery must fill three rows");
+  const ids = cells.map((cell) => cell[1]);
+  if (new Set(ids).size !== COUNT) throw new Error("Gallery repeated a style");
+  for (const [, link, image] of cells) {
+    if (link !== image) throw new Error(`Gallery link ${link} does not match image ${image}`);
+  }
+  return ids;
+}
+
 export async function rotateGallery(projectRoot = root) {
   const registry = JSON.parse(await readFile(join(projectRoot, "src", "registry.json"), "utf8"));
   if (!Array.isArray(registry)) throw new Error("Registry must be an array");
@@ -86,10 +102,13 @@ export async function rotateGallery(projectRoot = root) {
   const readme = await readFile(path, "utf8");
   const shown = currentIds(readme);
   const picks = pickStyles(available, shown);
-  if (available.filter((style) => !shown.has(style.id)).length >= COUNT && picks.some((style) => shown.has(style.id))) {
+  const next = renderGallery(readme, picks);
+  const ids = verifyGallery(next);
+  const fresh = available.filter((style) => !shown.has(style.id)).length;
+  if (fresh >= COUNT && ids.some((id) => shown.has(id))) {
     throw new Error("Rotation retained a previous sample despite six new options");
   }
-  await writeFile(path, renderGallery(readme, picks), "utf8");
+  await writeFile(path, next, "utf8");
   console.log(`All six samples replaced: ${picks.map((style) => style.name).join(", ")}`);
   return picks;
 }
