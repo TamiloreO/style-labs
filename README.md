@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=y2k-clear-plastic"><img src="assets/screenshots/y2k-clear-plastic.webp?v=a5f3c3c903" alt="Y2K clear plastic"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=zoomable-canvas"><img src="assets/screenshots/zoomable-canvas.webp?v=7df0c82e12" alt="Zoomable canvas"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=lens-distortion"><img src="assets/screenshots/lens-distortion.webp?v=c0cf08488d" alt="Lens distortion"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=bohemian"><img src="assets/screenshots/bohemian.webp?v=2b9472161f" alt="Bohemian"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=minimalism"><img src="assets/screenshots/minimalism.webp?v=91b1321303" alt="Minimalism"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=timetable-grid"><img src="assets/screenshots/timetable-grid.webp?v=bd1d0d2c66" alt="Timetable grid"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=banknote-engraving"><img src="assets/screenshots/banknote-engraving.webp?v=afa7ecc96a" alt="Banknote engraving"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=concrete-poetry"><img src="assets/screenshots/concrete-poetry.webp?v=d7a66856f2" alt="Concrete poetry"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=ascii-and-pixels"><img src="assets/screenshots/ascii-and-pixels.webp?v=ebc02bd83d" alt="ASCII and pixels"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=synthwave"><img src="assets/screenshots/synthwave.webp?v=9f5df1f498" alt="Synthwave"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=card-catalogue"><img src="assets/screenshots/card-catalogue.webp?v=999a0f1f90" alt="Card catalogue"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=material-expressive"><img src="assets/screenshots/material-expressive.webp?v=ac3b1f3ef6" alt="Material Expressive"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
