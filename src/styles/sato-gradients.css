@@ -1,0 +1,186 @@
+/* Sato-inspired gradients: a quiet gallery ground, isolated dark landform,
+   smooth magenta/cyan halo, vertical hairlines. No grain or borrowed poster. */
+:root[data-style="sato-gradients"] {
+  --bg: #eeeee6; --bg-2: #f7f7f0;
+  --ink: #141c20; --ink-2: #465155; --ink-3: #586467;
+  --line: #bbc4bf; --surface: transparent; --surface-2: #e2e7df;
+  --accent: #141c20; --accent-2: #366d69; --on-accent: #f7f7f0;
+  --font-display: "Zen Kaku Gothic New", sans-serif;
+  --font-text: "Noto Sans JP", sans-serif;
+  --font-label: "Noto Sans JP", sans-serif;
+  --display-size: clamp(2.1rem, 3.8vw, 3.6rem);
+  --display-weight: 300; --display-lh: 1.22;
+  --display-track: -.025em; --display-case: none; --body-size: 1rem;
+  --label-size: .75rem; --label-weight: 400; --label-track: .12em;
+  --radius: 0; --radius-sm: 0; --radius-lg: 0;
+  --shadow: none; --card-shadow: none;
+  --maxw: 1220px; --pad: clamp(18px, 4vw, 54px);
+  --section-y: clamp(74px, 10vw, 148px); --gap: clamp(20px, 4vw, 54px);
+  --card-pad: clamp(20px, 2.6vw, 34px); --tile-radius: 0;
+  --btn-bg: #141c20; --btn-ink: #f7f7f0; --btn-border: 1px solid #141c20;
+  --btn-radius: 0; --btn-pad: .9em 1.35em; --btn-weight: 400;
+  --btn-case: none; --btn-shadow: none;
+  --sw-bg: #141c20; --sw-ink: #f7f7f0; --sw-line: #647274;
+  --sw-active-bg: #7bf3e8; --sw-active-ink: #141c20;
+  --sw-radius: 2px; --sw-font: "Noto Sans JP", sans-serif; --sw-blur: 0px;
+  --swatch-1: #141c20; --swatch-2: #7bf3e8; --swatch-3: #ea62c8;
+}
+[data-style="sato-gradients"] body { line-height: 1.85; }
+[data-style="sato-gradients"] .site-header {
+  padding-block: 22px; background: var(--bg); backdrop-filter: none;
+}
+[data-style="sato-gradients"] .brand__word {
+  font-weight: 400; font-size: 1.3rem; letter-spacing: .06em;
+}
+[data-style="sato-gradients"] .brand__mark { width: 19px; height: 19px; }
+[data-style="sato-gradients"] .site-nav { font-size: .8rem; gap: 32px; }
+[data-style="sato-gradients"] .nav-toggle { font-size: .8rem; }
+[data-style="sato-gradients"] .mobile-nav a { font-weight: 400; }
+[data-style="sato-gradients"] .btn { min-height: 44px; font-size: .8rem; }
+[data-style="sato-gradients"] .btn:hover { background: #365451; color: #fff; }
+[data-style="sato-gradients"] .btn--ghost { background: transparent; color: var(--ink); }
+[data-style="sato-gradients"] .btn--ghost:hover { background: var(--surface-2); color: var(--ink); }
+
+/* Asymmetric poster: restrained title and a large, deliberately empty plate. */
+[data-style="sato-gradients"] .hero {
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  align-items: start; gap: clamp(38px, 7vw, 96px);
+  padding-block: clamp(70px, 10vw, 140px) var(--section-y);
+}
+[data-style="sato-gradients"] .hero__copy { border-left: 1px solid var(--line); padding-left: 22px; }
+[data-style="sato-gradients"] .eyebrow { margin-bottom: 42px; font-size: .75rem; letter-spacing: .1em; }
+[data-style="sato-gradients"] .eyebrow__dot { width: 4px; height: 16px; border-radius: 0; }
+[data-style="sato-gradients"] .hero__title { margin-bottom: 36px; text-wrap: initial; }
+[data-style="sato-gradients"] .hero__title .hl { display: block; }
+[data-style="sato-gradients"] .hero__title em { font-style: normal; color: #366d69; }
+[data-style="sato-gradients"] .hero__lede { max-width: 36ch; font-size: 1rem; line-height: 1.9; }
+[data-style="sato-gradients"] .hero__actions { gap: 10px; margin-block: 32px 46px; }
+[data-style="sato-gradients"] .hero__meta { gap: 22px; border-top: 0; padding-top: 0; }
+[data-style="sato-gradients"] .hero__meta div { border-left: 1px solid var(--line); padding-left: 12px; }
+[data-style="sato-gradients"] .hero__meta dt { font-size: .75rem; letter-spacing: .04em; }
+[data-style="sato-gradients"] .hero__meta dd { font-weight: 400; }
+[data-style="sato-gradients"] .hero__art { width: 100%; max-width: none; }
+[data-style="sato-gradients"] .hero__art::before {
+  content: ""; display: block; height: clamp(280px, 37vw, 490px);
+  margin-bottom: 28px; background-color: #080e10;
+  background-image:
+    radial-gradient(ellipse at 47% 47%, transparent 17%, #36cec43b 34%, transparent 57%),
+    radial-gradient(ellipse at 56% 54%, transparent 19%, #e94ecf3d 36%, transparent 60%),
+    url("../assets/classics/sato-gradients.webp");
+  background-position: center; background-size: 100% 100%, 100% 100%, auto 83%;
+  background-repeat: no-repeat; background-blend-mode: screen, screen, normal;
+  box-shadow: inset 1px 0 #7bf3e865, inset -1px 0 #ea62c865;
+}
+/* The image is in normal flow; all comparison labels stay below its plate. */
+[data-style="sato-gradients"] .art__viewport { padding-left: 20px; border-left: 1px solid var(--line); }
+[data-style="sato-gradients"] .art { border: 0; padding: 0; overflow: visible; background: transparent; }
+[data-style="sato-gradients"] .art__head { padding-bottom: 10px; }
+[data-style="sato-gradients"] .art__dot { width: 3px; height: 14px; border-radius: 0; }
+[data-style="sato-gradients"] .art__label,
+[data-style="sato-gradients"] .art__num { font-size: .75rem; letter-spacing: .08em; }
+[data-style="sato-gradients"] .art__stat { padding-block: 14px 10px; }
+[data-style="sato-gradients"] .art__stat b { font-size: 3.25rem; font-weight: 300; }
+[data-style="sato-gradients"] .art__stat span { font-size: .8rem; }
+[data-style="sato-gradients"] .art__bars { height: 65px; justify-content: space-between; border-bottom: 1px solid var(--line); }
+[data-style="sato-gradients"] .art__bars i { flex: none; width: 1px; opacity: 1; background: #366d69; }
+[data-style="sato-gradients"] .art__bars i:nth-child(2n) { background: #965283; }
+[data-style="sato-gradients"] .art__list { margin-top: 14px; gap: 7px; }
+[data-style="sato-gradients"] .art__list span { height: 1px; background: var(--line); border-radius: 0; }
+[data-style="sato-gradients"] .hero__art figcaption { font-size: .75rem; letter-spacing: .04em; margin-top: 20px; }
+[data-style="sato-gradients"] .ticker { padding-block: 17px; background: transparent; }
+[data-style="sato-gradients"] .ticker__track { animation: none; }
+[data-style="sato-gradients"] .ticker__group { font-size: .75rem; letter-spacing: .08em; }
+
+/* Vertical marginalia and unboxed columns leave breathing room for the copy. */
+[data-style="sato-gradients"] .section__head {
+  grid-template-columns: 28px minmax(0, 1.2fr) minmax(0, .8fr);
+  align-items: start; column-gap: 28px; border-bottom: 0; margin-bottom: 58px;
+}
+[data-style="sato-gradients"] .section__index {
+  grid-column: 1; grid-row: 1; writing-mode: vertical-rl;
+  border-left: 1px solid var(--line); padding-left: 9px; font-size: .75rem;
+}
+[data-style="sato-gradients"] .section__title { grid-column: 2; font-size: clamp(1.9rem, 3.4vw, 3rem); line-height: 1.25; }
+[data-style="sato-gradients"] .section__note { grid-column: 3; font-size: 1rem; }
+[data-style="sato-gradients"] .cards { gap: 32px; }
+[data-style="sato-gradients"] .card {
+  border: 0; border-left: 1px solid var(--line); padding: 0 0 0 24px;
+  gap: 16px; background: transparent;
+}
+[data-style="sato-gradients"] .card__index { font-family: var(--font-display); font-size: 1.4rem; font-weight: 300; }
+[data-style="sato-gradients"] .card__title { font-size: 1.5rem; font-weight: 400; }
+[data-style="sato-gradients"] .card__body { font-size: 1rem; }
+[data-style="sato-gradients"] .card__list { font-size: .9rem; gap: 8px; margin-bottom: 22px; }
+[data-style="sato-gradients"] .card__list li::before { width: 1px; height: 12px; border-radius: 0; }
+[data-style="sato-gradients"] .card__link { font-size: .75rem; letter-spacing: .04em; }
+[data-style="sato-gradients"] .bento { gap: 0; border-top: 1px solid var(--line); }
+[data-style="sato-gradients"] .tile {
+  border: 0; border-left: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  min-height: 230px; padding: 30px; gap: 20px;
+}
+[data-style="sato-gradients"] .tile--wide { background: #e2e7df; }
+[data-style="sato-gradients"] .tile--accent { background: #141c20; color: #f7f7f0; border-left-color: #7bf3e8; }
+[data-style="sato-gradients"] .tile__label { font-size: .75rem; letter-spacing: .08em; }
+[data-style="sato-gradients"] .tile--accent .tile__label { color: #7bf3e8; }
+[data-style="sato-gradients"] .tile__figure { font-size: clamp(3rem, 5vw, 5rem); font-weight: 300; }
+[data-style="sato-gradients"] .tile__note { font-size: .9rem; }
+[data-style="sato-gradients"] .tile__quote { font-size: 1.35rem; line-height: 1.6; }
+[data-style="sato-gradients"] .quote { border-block: 0; text-align: left; justify-items: start; padding-left: clamp(20px, 9vw, 110px); }
+[data-style="sato-gradients"] .quote__text { max-width: 33ch; font-size: clamp(1.75rem, 3vw, 2.8rem); line-height: 1.45; }
+[data-style="sato-gradients"] .quote__avatar { width: 2px; height: 46px; border-radius: 0; background: #366d69; }
+[data-style="sato-gradients"] .closing__inner { border: 0; border-left: 1px solid #366d69; background: transparent; padding-block: 0; gap: 26px; }
+[data-style="sato-gradients"] .closing__title { font-size: clamp(2rem, 4vw, 3.4rem); line-height: 1.2; }
+[data-style="sato-gradients"] .closing__body { max-width: 50ch; }
+[data-style="sato-gradients"] .site-footer__brand .brand__word { font-weight: 400; }
+[data-style="sato-gradients"] .site-footer__brand p { font-size: .9rem; }
+[data-style="sato-gradients"] .site-footer__legal { font-size: .75rem; }
+
+/* Opaque controls, not luminous text; shared 820px two-row layout stays intact. */
+[data-style="sato-gradients"] .switcher__bar { border-top: 1px solid #7bf3e8; box-shadow: 0 4px 22px #141c2026; }
+[data-style="sato-gradients"] .switcher__count { opacity: 1; color: #c3d1cf; font-size: .75rem; letter-spacing: .03em; }
+[data-style="sato-gradients"] .switcher__current { max-width: 210px; }
+[data-style="sato-gradients"] .switcher__name { font-weight: 400; white-space: normal; overflow: visible; line-height: 1.3; }
+[data-style="sato-gradients"] .chip { background: #283438; color: #f7f7f0; font-size: .75rem; }
+[data-style="sato-gradients"] .chip:hover { background: #405255; }
+[data-style="sato-gradients"] .chip[aria-pressed="true"],
+[data-style="sato-gradients"] .chip[aria-pressed="true"]:hover,
+[data-style="sato-gradients"] .chip[aria-pressed="true"]:focus-visible {
+  background: #7bf3e8; color: #141c20; border-color: #7bf3e8;
+  -webkit-text-fill-color: #141c20;
+}
+[data-style="sato-gradients"] .switcher__all { font-size: .75rem; }
+[data-style="sato-gradients"] .sheet__panel { border-radius: 0; border-top: 1px solid #366d69; }
+[data-style="sato-gradients"] .sheet__eyebrow { font-size: .75rem; }
+[data-style="sato-gradients"] .sheet__close { border-radius: 0; }
+[data-style="sato-gradients"] .style-card { border-radius: 0; background: #f7f7f0; }
+[data-style="sato-gradients"] .style-card__swatch { border-radius: 0; }
+[data-style="sato-gradients"] .style-card__name { font-weight: 400; }
+[data-style="sato-gradients"] .style-card__meta { font-size: .75rem; }
+@media (max-width: 980px) {
+  [data-style="sato-gradients"] .hero { grid-template-columns: minmax(0, 1fr); }
+  [data-style="sato-gradients"] .hero__copy { max-width: 620px; }
+  [data-style="sato-gradients"] .hero__art { max-width: 680px; }
+  [data-style="sato-gradients"] .hero__art::before { height: clamp(320px, 55vw, 490px); }
+  [data-style="sato-gradients"] .section__head { grid-template-columns: 28px minmax(0, 1fr); }
+  [data-style="sato-gradients"] .section__note { grid-column: 2; max-width: 44ch; }
+}
+@media (max-width: 560px) {
+  [data-style="sato-gradients"] { --display-size: clamp(2rem, 8vw, 2.8rem); --section-y: 74px; }
+  [data-style="sato-gradients"] .hero { padding-top: 58px; }
+  [data-style="sato-gradients"] .hero__copy { padding-left: 14px; }
+  [data-style="sato-gradients"] .eyebrow { margin-bottom: 30px; }
+  [data-style="sato-gradients"] .hero__art::before { height: 330px; margin-bottom: 22px; }
+  [data-style="sato-gradients"] .section__head { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  [data-style="sato-gradients"] .section__index { writing-mode: horizontal-tb; border-left: 0; padding-left: 0; }
+  [data-style="sato-gradients"] .section__title,
+  [data-style="sato-gradients"] .section__note { grid-column: 1; }
+  [data-style="sato-gradients"] .cards { grid-template-columns: minmax(0, 1fr); gap: 46px; }
+  [data-style="sato-gradients"] .tile { padding: 26px 22px; min-height: 200px; }
+  [data-style="sato-gradients"] .quote { padding-left: 18px; }
+  [data-style="sato-gradients"] .closing__inner { padding-inline: 20px 0; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-style="sato-gradients"] .btn,
+  [data-style="sato-gradients"] .card__link span,
+  [data-style="sato-gradients"] .art__bars i { transition: none; }
+}

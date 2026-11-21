@@ -18,7 +18,8 @@
   var openSheetBtn = document.getElementById("open-sheet");
   var fontCache = {};
   var skinSheet = document.getElementById("skin-sheet");
-  var controlsSheet = document.querySelector('link[href="styles/controls.css"]');
+  var pendingSkinSheet = null;
+  var controlsSheet = document.getElementById("controls-sheet");
   var prefetched = {};
   var applyToken = 0;
   var current = 0;
@@ -49,24 +50,38 @@
   // then drop the old sheet so at most two are ever in the document.
   function ensureSheet(id, done) {
     var href = sheetHref(id);
+    if (pendingSkinSheet) {
+      pendingSkinSheet.remove();
+      pendingSkinSheet = null;
+    }
     if (skinSheet && skinSheet.getAttribute("href") === href) {
-      done(null);
+      done(true);
       return;
     }
-    var previous = skinSheet;
     var link = document.createElement("link");
     link.rel = "stylesheet";
-    link.id = "skin-sheet";
+    link.setAttribute("data-pending-skin", id);
     link.href = href;
-    var settled = false;
-    function settle() {
-      if (settled) return;
-      settled = true;
+    pendingSkinSheet = link;
+    link.addEventListener("load", function () {
+      if (pendingSkinSheet !== link) {
+        link.remove();
+        return;
+      }
+      var previous = skinSheet;
+      pendingSkinSheet = null;
+      link.removeAttribute("data-pending-skin");
+      link.id = "skin-sheet";
       skinSheet = link;
-      done(previous);
-    }
-    link.addEventListener("load", settle);
-    link.addEventListener("error", settle);
+      if (previous) previous.remove();
+      done(true);
+    });
+    link.addEventListener("error", function () {
+      link.remove();
+      if (pendingSkinSheet !== link) return;
+      pendingSkinSheet = null;
+      done(false);
+    });
     // Insert before the shared controls so its safeguards still win the cascade.
     if (controlsSheet && controlsSheet.parentNode === document.head) {
       document.head.insertBefore(link, controlsSheet);
@@ -89,10 +104,38 @@
     return n < 10 ? "0" + n : String(n);
   }
 
+  function paintImageCredit(entry) {
+    var credit = document.getElementById("image-credit");
+    if (!credit) return;
+    credit.replaceChildren();
+    credit.hidden = !entry.image;
+    if (!entry.image) return;
+    var source = document.createElement("a");
+    source.href = entry.image.source;
+    source.target = "_blank";
+    source.rel = "noopener noreferrer";
+    source.textContent = entry.image.title + " · " + entry.image.creator;
+    var license = document.createElement("a");
+    license.href = entry.image.licenseUrl;
+    license.target = "_blank";
+    license.rel = "noopener noreferrer";
+    license.textContent = entry.image.license;
+    credit.append("Image: ", source, " / ", license, ". " + entry.image.changes);
+    if (entry.image.creatorUrl) {
+      var creator = document.createElement("a");
+      creator.href = entry.image.creatorUrl;
+      creator.target = "_blank";
+      creator.rel = "noopener noreferrer";
+      creator.textContent = " Creator website";
+      credit.append(creator);
+    }
+  }
+
   function paintState() {
     var entry = STYLES[current];
     nameEl.textContent = entry.name;
     countEl.textContent = pad(current + 1) + "/" + pad(STYLES.length);
+    paintImageCredit(entry);
 
     var rails = rail.querySelectorAll(".chip");
     for (var i = 0; i < rails.length; i++) {
@@ -122,33 +165,34 @@
     var fromId = root.getAttribute("data-style");
     var index = byId(id);
     if (index < 0) index = byId("swiss");
-    current = index;
     var entry = STYLES[index];
     var token = ++applyToken;
     var forward = STYLES[(index + 1) % STYLES.length];
     var backward = STYLES[(index + STYLES.length - 1) % STYLES.length];
-
-    try {
-      localStorage.setItem("stylelab:style", entry.id);
-    } catch (e) {}
-
-    if (!opts || opts.url !== false) {
-      try {
-        var url = new URL(window.location.href);
-        url.searchParams.set("s", entry.id);
-        history.replaceState(null, "", url);
-      } catch (e) {}
-    }
 
     loadFonts(entry);
     prefetchSheet(forward.id);
     loadFonts(forward);
     loadFonts(backward);
 
-    ensureSheet(entry.id, function (previous) {
+    ensureSheet(entry.id, function (loaded) {
       if (token !== applyToken) return;
+      var status = document.getElementById("style-status");
+      if (!loaded) {
+        if (status) status.textContent = "Could not load " + entry.name + ". Your previous style is unchanged. Select it again to retry.";
+        return;
+      }
+      if (status) status.textContent = "";
+      current = index;
       root.setAttribute("data-style", entry.id);
-      if (previous && previous.parentNode) previous.parentNode.removeChild(previous);
+      try {
+        localStorage.setItem("stylelab:style", entry.id);
+        if (!opts || opts.url !== false) {
+          var url = new URL(window.location.href);
+          url.searchParams.set("s", entry.id);
+          history.replaceState(null, "", url);
+        }
+      } catch (e) {}
       paintState();
       announce(entry, fromId, opts && opts.user);
     });

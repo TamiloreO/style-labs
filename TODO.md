@@ -63,3 +63,19 @@ The initial version was pushed to GitHub and the Manus canonical repository afte
 - [x] Active tab is legible on every new rail (checked by computed colour, plus a visual pass on the two gradient rails that the colour audit cannot read).
 - [x] Phone layouts hold at 320, 375, 430 and 768: the painting hero reflows to a banner, the landscape re-aims its horizon, and the Syne headline steps down rather than clipping.
 - [x] Thumbnails for all 64 skins exist in assets/screenshots for the README gallery rotation.
+
+## Classic graphic directions round (20 new skins)
+
+- [x] Add every one of the 20 directions in the latest reference reel, each as a distinct website treatment even when it belongs to an existing broad movement: Y2K Sony ads, Mexico 68 optical art, Patrick Nagel, NASA graphics manual, Googie signs, psychedelic pop ads, Dieter Rams/Braun, VHS covers, Dark Deco, jet-age airline posters, Koichi Sato gradients, Y2K clear plastic, French Open posters, vintage matchbooks, mission control rooms, one-colour perfume ads, Italian futurism ads, annual report covers, 50s Fortune covers, and moody corporate futurism.
+- [x] Find and visibly use an appropriate image for each new treatment. Store optimized local images with verified source and reuse attribution, while keeping reference-only reel captures outside the repository.
+- [x] Preserve shared copy, responsive phone/laptop layouts, readable active bottom navigation, client-side switching and registry-derived counts. The complete catalogue will contain 84 styles.
+- [x] Include one gallery thumbnail per new style, preserving the short README and six linked rotating samples.
+- [x] Complete source/build/asset checks and an independent read-only implementation review, fixing confirmed issues before Preview handoff.
+- [ ] Commit, push and deploy only after fresh explicit owner approval for this batch.
+
+## Six-image gallery rotation correction
+
+- [x] On every rotation replace all six README gallery cells with six distinct randomly selected catalogue styles, using the complete available screenshot inventory rather than changing only the first sample.
+- [x] Prefer styles absent from the previous six, keep each screenshot linked to its own skin, preserve the complete 3 × 2 grid, and protect this behavior with tests in the existing daily GitHub Action.
+
+Validation completed: 20 scoped stylesheets and unique local images; 60 initial responsive measurements and 22 focused post-fix measurements; minimum active-chip contrast 5.24:1. Independent review findings corrected and regression-tested: rapid switching leaves one skin sheet, failed loads retain the previous style, controls remain last, and legacy image URLs resolve under the GitHub Pages project path. All 84 thumbnails refreshed without page errors; all six selected README image/link pairs and hashes verified. These changes remain local in Preview until release approval.

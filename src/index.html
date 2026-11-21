@@ -28,7 +28,7 @@
     <script src="boot.js"></script>
     <script src="registry.js"></script>
     <noscript><link rel="stylesheet" href="styles/swiss.css" /></noscript>
-    <link rel="stylesheet" href="styles/controls.css" />
+    <link id="controls-sheet" rel="stylesheet" href="styles/controls.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -155,6 +155,7 @@
             <button class="art__zoom-btn art__zoom-btn--text" type="button" data-art-zoom="reset">Reset</button>
           </div>
           <figcaption>Fig. 01 <span>Same content, every skin</span></figcaption>
+          <p class="image-credit" id="image-credit" hidden></p>
         </figure>
       </section>
 
@@ -357,6 +358,7 @@
           All styles
         </button>
       </div>
+      <p class="style-status" id="style-status" role="status" aria-live="polite"></p>
     </nav>
 
     <div class="sheet" id="style-sheet" hidden>

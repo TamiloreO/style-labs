@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=impressionist-paintings"><img src="assets/screenshots/impressionist-paintings.webp" alt="Impressionist paintings"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=industrial-wayfinding"><img src="assets/screenshots/industrial-wayfinding.webp" alt="Wayfinding"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=y2k-clear-plastic"><img src="assets/screenshots/y2k-clear-plastic.webp?v=a5f3c3c903" alt="Y2K clear plastic"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=zoomable-canvas"><img src="assets/screenshots/zoomable-canvas.webp?v=7df0c82e12" alt="Zoomable canvas"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=glassmorphism"><img src="assets/screenshots/glassmorphism.webp" alt="Glassmorphism"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=material-expressive"><img src="assets/screenshots/material-expressive.webp" alt="Material Expressive"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=minimalism"><img src="assets/screenshots/minimalism.webp?v=91b1321303" alt="Minimalism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=timetable-grid"><img src="assets/screenshots/timetable-grid.webp?v=bd1d0d2c66" alt="Timetable grid"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=conceptual-sketch"><img src="assets/screenshots/conceptual-sketch.webp" alt="Conceptual sketch"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=kinetic-typography"><img src="assets/screenshots/kinetic-typography.webp" alt="Kinetic type"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=ascii-and-pixels"><img src="assets/screenshots/ascii-and-pixels.webp?v=ebc02bd83d" alt="ASCII and pixels"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=synthwave"><img src="assets/screenshots/synthwave.webp?v=9f5df1f498" alt="Synthwave"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
@@ -54,4 +54,4 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 
 ## License
 
-MIT. See [LICENSE](LICENSE).
+Code: MIT. See [LICENSE](LICENSE). Images retain their source licenses; see [image credits](public/assets/classics/credits.md).

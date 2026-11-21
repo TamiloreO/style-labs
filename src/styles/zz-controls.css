@@ -98,3 +98,25 @@ html {
   }
 }
 
+/* Source attribution follows the selected image from the shared registry. */
+.image-credit {
+  margin: 12px 0 0;
+  padding: 10px 12px;
+  background: var(--bg);
+  color: var(--ink);
+  font: 0.75rem/1.6 system-ui, sans-serif;
+  text-transform: none;
+  letter-spacing: normal;
+  overflow-wrap: anywhere;
+}
+.image-credit[hidden] { display: none !important; }
+.image-credit a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+.style-status {
+  margin: 6px 0 0;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background: var(--sw-bg);
+  color: var(--sw-ink);
+  font: 0.75rem/1.5 system-ui, sans-serif;
+}
+.style-status:empty { display: none; }

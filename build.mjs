@@ -107,8 +107,25 @@ const written = new Map();
 const outputName = (file) =>
   file === baseFile ? "base.css" : file === controlsFile ? "controls.css" : file;
 
+// Version local image URLs by their bytes, not only the stylesheet contents.
+// CSS paths stay relative, including on GitHub Pages' /style-labs/ subpath.
+const imageVersions = new Map();
+async function versionImages(css) {
+  const matches = [...css.matchAll(/url\(\s*["']?(\.\.\/assets\/[^\s"')?]+)(?:\?[^"')\s]*)?["']?\s*\)/g)];
+  for (const match of matches) {
+    const path = match[1];
+    if (!imageVersions.has(path)) {
+      const bytes = await readFile(join(stylesOut, path));
+      imageVersions.set(path, createHash("sha256").update(bytes).digest("hex").slice(0, 10));
+    }
+    css = css.replaceAll(match[0], `url("${path}?v=${imageVersions.get(path)}")`);
+  }
+  return css;
+}
+
 for (const file of files) {
-  const css = minifyCss((await readFile(join(srcDir, file), "utf8")).trimEnd()) + "\n";
+  const source = await versionImages(await readFile(join(srcDir, file), "utf8"));
+  const css = minifyCss(source.trimEnd()) + "\n";
   const name = outputName(file);
   written.set(name, css);
   await writeFile(join(stylesOut, name), css, "utf8");
@@ -124,7 +141,7 @@ const ordered = [...files].sort((a, b) => {
 });
 const bundle =
   "/* Style Lab, generated file. Edit src/styles/*.css and rebuild. */\n" +
-  ordered.map((file) => written.get(outputName(file))).join("\n");
+  ordered.map((file) => written.get(outputName(file)).replaceAll("../assets/", "assets/")).join("\n");
 await writeFile(join(publicDir, "styles.css"), bundle, "utf8");
 
 const appJs = await readFile(join(publicDir, "app.js"), "utf8");

@@ -1,76 +1,99 @@
 /**
- * Rebuilds the README sample gallery with six styles.
- *
- * Run daily by .github/workflows/rotate.yml. It avoids repeating any style that
- * is already in the gallery, so each morning shows six different skins, which
- * fills the two-column sample table exactly.
+ * Rebuild all six README samples from the registry and available screenshots.
+ * Prefer six styles absent from the previous gallery. Every cell is replaced.
  */
 import { readFile, writeFile, access } from "node:fs/promises";
-import { join, dirname } from "node:path";
+import { createHash, randomInt } from "node:crypto";
+import { join, dirname, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
-const here = dirname(fileURLToPath(import.meta.url));
-const root = join(here, "..");
-const readmePath = join(root, "README.md");
-const registryPath = join(root, "src", "registry.json");
-const shotDir = join(root, "assets", "screenshots");
-const START = "<!-- samples:start -->";
-const END = "<!-- samples:end -->";
-const COUNT = 6;
+const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+export const START = "<!-- samples:start -->";
+export const END = "<!-- samples:end -->";
+export const COUNT = 6;
 const SITE = "https://tamiloreo.github.io/style-labs/?s=";
 
-const styles = JSON.parse(await readFile(registryPath, "utf8"));
-if (!Array.isArray(styles) || styles.length < COUNT) {
-  console.error(`src/registry.json must list at least ${COUNT} styles`);
-  process.exit(1);
-}
-
-const available = [];
-for (const style of styles) {
-  try {
-    await access(join(shotDir, `${style.id}.webp`));
-    available.push(style);
-  } catch (e) {
-    console.warn(`No screenshot for ${style.id}, skipping`);
+export function galleryRange(readme) {
+  const start = readme.indexOf(START);
+  const end = readme.indexOf(END, start);
+  if (start < 0 || end < start || readme.indexOf(START, start + START.length) >= 0) {
+    throw new Error("README must contain one ordered samples:start / samples:end block");
   }
-}
-if (available.length < COUNT) {
-  console.error(`Only ${available.length} screenshots available, need ${COUNT}`);
-  process.exit(1);
+  return { start, end, block: readme.slice(start, end + END.length) };
 }
 
-const readme = await readFile(readmePath, "utf8");
-const startAt = readme.indexOf(START);
-const endAt = readme.indexOf(END);
-if (startAt === -1 || endAt === -1 || endAt < startAt) {
-  console.error(`README is missing the ${START} / ${END} markers`);
-  process.exit(1);
+export function currentIds(readme) {
+  const { block } = galleryRange(readme);
+  // Read both links and image filenames, so an out-of-sync cell is not retained.
+  return new Set([
+    ...[...block.matchAll(/\?s=([a-z0-9-]+)/g)].map((m) => m[1]),
+    ...[...block.matchAll(/assets\/screenshots\/([a-z0-9-]+)\.webp/g)].map((m) => m[1]),
+  ]);
 }
 
-const current = readme.slice(startAt, endAt);
-const shown = [...current.matchAll(/\?s=([a-z0-9-]+)/g)].map((m) => m[1]);
-const pool = available.filter((style) => !shown.includes(style.id));
-const deck = (pool.length >= COUNT ? pool : available).slice();
-
-// Fisher-Yates so the order also changes.
-for (let i = deck.length - 1; i > 0; i--) {
-  const j = Math.floor(Math.random() * (i + 1));
-  [deck[i], deck[j]] = [deck[j], deck[i]];
+export function pickStyles(available, shown, draw = randomInt) {
+  const unique = [...new Map(available.map((style) => [style.id, style])).values()];
+  if (unique.length < COUNT) throw new Error(`Need ${COUNT} distinct screenshots`);
+  const shuffle = (items) => {
+    const deck = items.slice();
+    for (let i = deck.length - 1; i > 0; i--) {
+      const j = draw(i + 1);
+      [deck[i], deck[j]] = [deck[j], deck[i]];
+    }
+    return deck;
+  };
+  const fresh = shuffle(unique.filter((style) => !shown.has(style.id)));
+  const repeats = fresh.length < COUNT ? shuffle(unique.filter((style) => shown.has(style.id))) : [];
+  return [...fresh, ...repeats].slice(0, COUNT);
 }
 
-const picks = deck.slice(0, COUNT);
+const escape = (value) => String(value).replace(/[&<>"']/g, (c) => ({
+  "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;",
+})[c]);
 
-const cell = (style) =>
-  `    <td><a href="${SITE}${style.id}"><img src="assets/screenshots/${style.id}.webp" alt="${style.name}"></a></td>`;
-const rows = [];
-for (let i = 0; i < picks.length; i += 2) {
-  const pair = picks.slice(i, i + 2);
-  const cells = pair.map(cell).join("\n");
-  rows.push(`  <tr>\n${cells}\n  </tr>`);
+export function renderGallery(readme, picks) {
+  if (picks.length !== COUNT || new Set(picks.map((style) => style.id)).size !== COUNT) {
+    throw new Error("Gallery must contain exactly six distinct styles");
+  }
+  if (picks.some((style) => !/^[a-z0-9-]+$/.test(style.id))) throw new Error("Invalid style ID");
+  const { start, end } = galleryRange(readme);
+  const cells = picks.map((style) => {
+    const version = style.imageVersion ? `?v=${encodeURIComponent(style.imageVersion)}` : "";
+    return `    <td><a href="${SITE}${style.id}"><img src="assets/screenshots/${style.id}.webp${version}" alt="${escape(style.name)}"></a></td>`;
+  });
+  const rows = [];
+  for (let i = 0; i < COUNT; i += 2) rows.push(`  <tr>\n${cells.slice(i, i + 2).join("\n")}\n  </tr>`);
+  const block = `${START}\n<table>\n${rows.join("\n")}\n</table>\n${END}`;
+  return readme.slice(0, start) + block + readme.slice(end + END.length);
 }
 
-const block = `${START}\n<table>\n${rows.join("\n")}\n</table>\n${END}`;
-const next = readme.slice(0, startAt) + block + readme.slice(endAt + END.length);
+export async function rotateGallery(projectRoot = root) {
+  const registry = JSON.parse(await readFile(join(projectRoot, "src", "registry.json"), "utf8"));
+  if (!Array.isArray(registry)) throw new Error("Registry must be an array");
+  const available = [];
+  for (const style of registry) {
+    const path = join(projectRoot, "assets", "screenshots", `${style.id}.webp`);
+    try {
+      await access(path);
+    } catch {
+      console.warn(`No screenshot for ${style.id}, skipping`);
+      continue;
+    }
+    const imageVersion = createHash("sha256").update(await readFile(path)).digest("hex").slice(0, 10);
+    available.push({ ...style, imageVersion });
+  }
+  const path = join(projectRoot, "README.md");
+  const readme = await readFile(path, "utf8");
+  const shown = currentIds(readme);
+  const picks = pickStyles(available, shown);
+  if (available.filter((style) => !shown.has(style.id)).length >= COUNT && picks.some((style) => shown.has(style.id))) {
+    throw new Error("Rotation retained a previous sample despite six new options");
+  }
+  await writeFile(path, renderGallery(readme, picks), "utf8");
+  console.log(`All six samples replaced: ${picks.map((style) => style.name).join(", ")}`);
+  return picks;
+}
 
-await writeFile(readmePath, next, "utf8");
-console.log(`Gallery now shows: ${picks.map((p) => p.name).join(", ")}`);
+if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  await rotateGallery();
+}

@@ -1,0 +1,201 @@
+/* Y2K Sony ads: a photographic catalog plate, not a reproduction of an ad.
+   Fine condensed type, cyan light, matte panels and deliberately uneven rules. */
+:root[data-style="y2k-sony-ads"] {
+  --bg: #237381;
+  --bg-2: #081d22;
+  --ink: #f1ffff;
+  --ink-2: #e4f3f5;
+  --ink-3: #d9eef0;
+  --line: #80b5bb;
+  --surface: #081d22;
+  --surface-2: #123c43;
+  --accent: #a5f4f0;
+  --accent-2: #a5f4f0;
+  --on-accent: #081d22;
+  --font-display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --font-text: "Barlow", Arial, sans-serif;
+  --font-label: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --display-size: clamp(2.8rem, 5.3vw, 4.5rem);
+  --display-weight: 300;
+  --display-lh: 0.98;
+  --display-track: -0.015em;
+  --display-case: uppercase;
+  --body-size: 1rem;
+  --label-size: 0.75rem;
+  --label-weight: 400;
+  --label-track: 0.16em;
+  --radius: 0px;
+  --radius-sm: 0px;
+  --radius-lg: 0px;
+  --shadow: none;
+  --card-shadow: none;
+  --maxw: 1120px;
+  --pad: clamp(18px, 4vw, 42px);
+  --section-y: clamp(52px, 7vw, 96px);
+  --gap: clamp(16px, 2vw, 24px);
+  --card-pad: clamp(20px, 2.6vw, 30px);
+  --tile-radius: 0px;
+  --btn-bg: #f1ffff;
+  --btn-ink: #081d22;
+  --btn-border: 1px solid #f1ffff;
+  --btn-radius: 0px;
+  --btn-pad: 0.8em 1.4em;
+  --btn-weight: 500;
+  --btn-case: uppercase;
+  --btn-track: 0.1em;
+  --btn-shadow: none;
+  --sw-bg: #081d22;
+  --sw-ink: #f1ffff;
+  --sw-line: #72999f;
+  --sw-active-bg: #a5f4f0;
+  --sw-active-ink: #081d22;
+  --sw-radius: 0px;
+  --sw-font: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --sw-blur: 0px;
+  --swatch-1: #237381;
+  --swatch-2: #081d22;
+  --swatch-3: #a5f4f0;
+  color-scheme: dark;
+}
+[data-style="y2k-sony-ads"] body { line-height: 1.65; }
+[data-style="y2k-sony-ads"] ::selection { background: #a5f4f0; color: #081d22; }
+[data-style="y2k-sony-ads"] :focus-visible { outline: 2px solid #a5f4f0; outline-offset: 4px; }
+[data-style="y2k-sony-ads"] .site-header {
+  background: #081d22;
+  border-bottom: 1px solid #f1ffff;
+  backdrop-filter: none;
+}
+[data-style="y2k-sony-ads"] .brand__word { font-size: 1.6rem; font-weight: 300; letter-spacing: 0.08em; text-transform: uppercase; }
+[data-style="y2k-sony-ads"] .brand__mark { width: 18px; height: 18px; }
+[data-style="y2k-sony-ads"] .site-nav { font: 400 0.875rem var(--font-label); letter-spacing: 0.1em; text-transform: uppercase; }
+[data-style="y2k-sony-ads"] .nav-toggle { border-color: #a5f4f0; font-family: var(--font-label); font-size: 0.875rem; }
+[data-style="y2k-sony-ads"] .mobile-nav { background: #081d22; }
+[data-style="y2k-sony-ads"] .hero { grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr); align-items: start; gap: clamp(24px, 4vw, 52px); }
+[data-style="y2k-sony-ads"] .hero__copy { padding-top: clamp(0px, 2vw, 26px); }
+[data-style="y2k-sony-ads"] .eyebrow { border-top: 1px solid #f1ffff; padding-top: 10px; color: #f1ffff; }
+[data-style="y2k-sony-ads"] .eyebrow__dot { width: 3px; height: 12px; border-radius: 0; }
+[data-style="y2k-sony-ads"] .hero__title .hl { display: block; }
+[data-style="y2k-sony-ads"] .hero__title em { font-style: normal; font-weight: 200; color: #a5f4f0; }
+[data-style="y2k-sony-ads"] .hero__lede { font-size: 1rem; max-width: 37ch; }
+[data-style="y2k-sony-ads"] .hero__actions { gap: 8px; }
+[data-style="y2k-sony-ads"] .btn { font-size: 0.875rem; }
+[data-style="y2k-sony-ads"] .btn:hover { transform: none; background: #a5f4f0; color: #081d22; }
+[data-style="y2k-sony-ads"] .btn--ghost { color: #f1ffff; }
+[data-style="y2k-sony-ads"] .hero__meta { border-top-color: #f1ffff; gap: 24px; }
+[data-style="y2k-sony-ads"] .hero__meta dt { font-size: 0.75rem; }
+[data-style="y2k-sony-ads"] .hero__meta dd { font-weight: 400; font-size: 1.2rem; }
+
+/* Both the image and comparison panel occupy normal flow: no obscured copy. */
+[data-style="y2k-sony-ads"] .hero__art { width: 100%; padding: 6px; border-top: 1px solid #f1ffff; border-right: 1px solid #f1ffff; }
+[data-style="y2k-sony-ads"] .hero__art::before {
+  content: "";
+  display: block;
+  width: 100%;
+  aspect-ratio: 3000 / 2121;
+  margin-bottom: 12px;
+  background: #081d22 url("../assets/classics/y2k-sony-ads.webp") center / contain no-repeat;
+}
+[data-style="y2k-sony-ads"] .art {
+  display: grid;
+  grid-template-columns: minmax(84px, 0.7fr) minmax(0, 1.3fr);
+  column-gap: 20px;
+  padding: 18px;
+  border: 0;
+  border-left: 1px solid #f1ffff;
+  overflow: visible;
+}
+[data-style="y2k-sony-ads"] .art__head { grid-column: 1 / -1; padding-bottom: 10px; border-bottom-color: #72999f; }
+[data-style="y2k-sony-ads"] .art__dot { width: 3px; height: 12px; border-radius: 0; }
+[data-style="y2k-sony-ads"] .art__label,
+[data-style="y2k-sony-ads"] .art__num { font-size: 0.75rem; }
+[data-style="y2k-sony-ads"] .art__stat { flex-direction: column; align-items: start; gap: 7px; padding-block: 18px 0; }
+[data-style="y2k-sony-ads"] .art__stat b { font-size: 4rem; font-weight: 200; color: #a5f4f0; }
+[data-style="y2k-sony-ads"] .art__stat span { font: 400 0.75rem var(--font-label); letter-spacing: 0.08em; text-transform: uppercase; }
+[data-style="y2k-sony-ads"] .art__bars { height: 106px; margin-top: 18px; gap: 9px; border-bottom: 1px solid #f1ffff; }
+[data-style="y2k-sony-ads"] .art__bars i { flex: 1; max-width: 12px; background: #a5f4f0; opacity: 1; }
+[data-style="y2k-sony-ads"] .art__bars i:nth-child(2n) { background: #5e9da6; opacity: 1; }
+[data-style="y2k-sony-ads"] .art__list { grid-column: 1 / -1; gap: 5px; margin-top: 18px; }
+[data-style="y2k-sony-ads"] .art__list span { height: 1px; border-radius: 0; background: #72999f; }
+[data-style="y2k-sony-ads"] .hero__art figcaption { margin-left: 12%; color: #f1ffff; font-size: 0.75rem; line-height: 1.3; }
+[data-style="y2k-sony-ads"] .ticker { background: #081d22; border-block-color: #f1ffff; padding-block: 9px; }
+[data-style="y2k-sony-ads"] .ticker__group { color: #d0eaed; font-size: 0.75rem; letter-spacing: 0.2em; }
+
+/* Offset section rules and spare matte catalog modules. */
+[data-style="y2k-sony-ads"] .section__head { border-bottom: 0; border-top: 1px solid #f1ffff; padding-block: 14px 0; gap: 12px 32px; }
+[data-style="y2k-sony-ads"] .section__index { color: #f1ffff; }
+[data-style="y2k-sony-ads"] .section__title { font-size: clamp(2rem, 3.5vw, 3rem); font-weight: 300; }
+[data-style="y2k-sony-ads"] .section__note { font-size: 1rem; }
+[data-style="y2k-sony-ads"] .card { border: 0; border-left: 1px solid #f1ffff; gap: 12px; }
+[data-style="y2k-sony-ads"] .card:nth-child(2) { border-left: 0; border-top: 1px solid #f1ffff; }
+[data-style="y2k-sony-ads"] .card:nth-child(3) { border-left: 0; border-right: 1px solid #f1ffff; }
+[data-style="y2k-sony-ads"] .card__index { align-self: start; border-bottom: 1px solid #a5f4f0; padding-bottom: 6px; width: 42px; font-size: 0.75rem; }
+[data-style="y2k-sony-ads"] .card__title { font-size: 1.65rem; font-weight: 400; }
+[data-style="y2k-sony-ads"] .card__body,
+[data-style="y2k-sony-ads"] .card__list { font-size: 1rem; }
+[data-style="y2k-sony-ads"] .card__list li::before { width: 9px; height: 1px; border-radius: 0; }
+[data-style="y2k-sony-ads"] .card__link { font-size: 0.875rem; border-top-color: #72999f; color: #a5f4f0; }
+[data-style="y2k-sony-ads"] .bento { gap: 12px; }
+[data-style="y2k-sony-ads"] .tile { border: 0; border-bottom: 1px solid #f1ffff; }
+[data-style="y2k-sony-ads"] .tile--wide { background: #a5f4f0; color: #081d22; border-bottom-color: #081d22; }
+[data-style="y2k-sony-ads"] .tile--wide .tile__label,
+[data-style="y2k-sony-ads"] .tile--wide .tile__note { color: #16424b; }
+[data-style="y2k-sony-ads"] .tile--tall { justify-content: space-between; border-right: 1px solid #f1ffff; border-bottom: 0; }
+[data-style="y2k-sony-ads"] .tile--accent { background: #123c43; }
+[data-style="y2k-sony-ads"] .tile__label { font-size: 0.75rem; }
+[data-style="y2k-sony-ads"] .tile__figure { font-size: clamp(3.5rem, 6vw, 6rem); font-weight: 200; }
+[data-style="y2k-sony-ads"] .tile__note { font-size: 1rem; }
+[data-style="y2k-sony-ads"] .tile__quote { font-size: 1.5rem; line-height: 1.25; font-weight: 300; }
+[data-style="y2k-sony-ads"] .quote { justify-items: start; text-align: left; border-top: 0; border-bottom-color: #f1ffff; padding-left: clamp(0px, 8vw, 100px); }
+[data-style="y2k-sony-ads"] .quote__text { max-width: 34ch; font-size: clamp(1.7rem, 3.8vw, 3.1rem); font-weight: 300; }
+[data-style="y2k-sony-ads"] .quote__cite { font-size: 1rem; }
+[data-style="y2k-sony-ads"] .quote__avatar { width: 28px; height: 1px; border-radius: 0; }
+[data-style="y2k-sony-ads"] .closing__inner { border: 0; border-top: 1px solid #f1ffff; border-right: 1px solid #f1ffff; }
+[data-style="y2k-sony-ads"] .closing__title { font-weight: 300; text-transform: uppercase; }
+[data-style="y2k-sony-ads"] .closing__body { max-width: 55ch; }
+[data-style="y2k-sony-ads"] .site-footer { background: #081d22; border-top-color: #f1ffff; }
+[data-style="y2k-sony-ads"] .site-footer__brand .brand__word { font-size: 1.6rem; }
+[data-style="y2k-sony-ads"] .site-footer__brand p { font-size: 1rem; }
+[data-style="y2k-sony-ads"] .site-footer__nav { font: 400 0.875rem var(--font-label); letter-spacing: 0.08em; }
+[data-style="y2k-sony-ads"] .site-footer__legal { font-size: 0.75rem; }
+
+/* Solid, high-contrast selection; no chrome, clipping or text-fill tricks. */
+[data-style="y2k-sony-ads"] .switcher__bar { box-shadow: none; border-color: #f1ffff; }
+[data-style="y2k-sony-ads"] .switcher__count { color: #b3d7dc; opacity: 1; letter-spacing: 0.08em; }
+[data-style="y2k-sony-ads"] .switcher__name { font-weight: 500; letter-spacing: 0.03em; }
+[data-style="y2k-sony-ads"] .chip { background: #123c43; color: #f1ffff; font-size: 0.8125rem; border: 1px solid #72999f; }
+[data-style="y2k-sony-ads"] .chip:hover { background: #28545d; }
+[data-style="y2k-sony-ads"] .chip[aria-pressed="true"],
+[data-style="y2k-sony-ads"] .chip[aria-pressed="true"]:hover,
+[data-style="y2k-sony-ads"] .chip[aria-pressed="true"]:focus-visible { background: #a5f4f0; color: #081d22; border-color: #a5f4f0; }
+[data-style="y2k-sony-ads"] .chip__dot { border-radius: 0; }
+[data-style="y2k-sony-ads"] .switcher__all { font-size: 0.8125rem; }
+[data-style="y2k-sony-ads"] .sheet__panel { border-radius: 0; border-top: 1px solid #f1ffff; }
+[data-style="y2k-sony-ads"] .sheet__eyebrow { font-size: 0.75rem; }
+[data-style="y2k-sony-ads"] .sheet__title { font-weight: 300; font-size: clamp(1.5rem, 3vw, 2rem); }
+[data-style="y2k-sony-ads"] .sheet__close { border-radius: 0; }
+[data-style="y2k-sony-ads"] .style-card { border-radius: 0; background: #123c43; }
+[data-style="y2k-sony-ads"] .style-card__swatch { border-radius: 0; }
+[data-style="y2k-sony-ads"] .style-card__name { font-size: 1.1rem; font-weight: 400; }
+[data-style="y2k-sony-ads"] .style-card__meta { font-size: 0.75rem; }
+[data-style="y2k-sony-ads"] .sheet__foot p { font-size: 1rem; }
+
+@media (max-width: 980px) {
+  [data-style="y2k-sony-ads"] .hero { grid-template-columns: minmax(0, 1fr); }
+  [data-style="y2k-sony-ads"] .hero__copy { padding-top: 0; }
+  [data-style="y2k-sony-ads"] .hero__art { max-width: 640px; justify-self: end; }
+  [data-style="y2k-sony-ads"] .hero__title { font-size: clamp(2.8rem, 7vw, 4.5rem); }
+}
+@media (max-width: 560px) {
+  [data-style="y2k-sony-ads"] .hero__title { font-size: clamp(2rem, 8vw, 2.8rem); letter-spacing: -0.02em; }
+  [data-style="y2k-sony-ads"] .hero__art { justify-self: stretch; }
+  [data-style="y2k-sony-ads"] .art { column-gap: 12px; padding: 16px 12px; }
+  [data-style="y2k-sony-ads"] .hero__art figcaption { margin-left: 0; letter-spacing: 0.02em; }
+  [data-style="y2k-sony-ads"] .quote { padding-left: 0; }
+  [data-style="y2k-sony-ads"] .closing__inner { padding: 24px 20px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-style="y2k-sony-ads"] .ticker__track { animation: none; }
+  [data-style="y2k-sony-ads"] .btn,
+  [data-style="y2k-sony-ads"] .card,
+  [data-style="y2k-sony-ads"] .art__bars i { transition: none; }
+}
