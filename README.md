@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=lens-distortion"><img src="assets/screenshots/lens-distortion.webp?v=c0cf08488d" alt="Lens distortion"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=bohemian"><img src="assets/screenshots/bohemian.webp?v=2b9472161f" alt="Bohemian"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=ascii-and-pixels"><img src="assets/screenshots/ascii-and-pixels.webp?v=ebc02bd83d" alt="ASCII and pixels"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=timetable-grid"><img src="assets/screenshots/timetable-grid.webp?v=bd1d0d2c66" alt="Timetable grid"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=banknote-engraving"><img src="assets/screenshots/banknote-engraving.webp?v=afa7ecc96a" alt="Banknote engraving"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=concrete-poetry"><img src="assets/screenshots/concrete-poetry.webp?v=d7a66856f2" alt="Concrete poetry"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=halftone"><img src="assets/screenshots/halftone.webp?v=07a658e1bf" alt="Halftone"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=swiss"><img src="assets/screenshots/swiss.webp?v=9736f1be1e" alt="Swiss design"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=card-catalogue"><img src="assets/screenshots/card-catalogue.webp?v=999a0f1f90" alt="Card catalogue"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=material-expressive"><img src="assets/screenshots/material-expressive.webp?v=ac3b1f3ef6" alt="Material Expressive"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=duotone-perfume"><img src="assets/screenshots/duotone-perfume.webp?v=7de619cb57" alt="One-colour perfume ads"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=cybercore"><img src="assets/screenshots/cybercore.webp?v=9df696aa6a" alt="Cybercore"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
