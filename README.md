@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=ascii-and-pixels"><img src="assets/screenshots/ascii-and-pixels.webp?v=ebc02bd83d" alt="ASCII and pixels"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=timetable-grid"><img src="assets/screenshots/timetable-grid.webp?v=bd1d0d2c66" alt="Timetable grid"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=blurred-photos"><img src="assets/screenshots/blurred-photos.webp?v=4ef2015a67" alt="Blurred photos"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=iridescent-shapes"><img src="assets/screenshots/iridescent-shapes.webp?v=24578e7d76" alt="Iridescent shapes"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=halftone"><img src="assets/screenshots/halftone.webp?v=07a658e1bf" alt="Halftone"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=swiss"><img src="assets/screenshots/swiss.webp?v=9736f1be1e" alt="Swiss design"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=scrapbook"><img src="assets/screenshots/scrapbook.webp?v=0f55ea942c" alt="Scrapbook"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=luxury-typography"><img src="assets/screenshots/luxury-typography.webp?v=df74890fa8" alt="Luxury typography"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=duotone-perfume"><img src="assets/screenshots/duotone-perfume.webp?v=7de619cb57" alt="One-colour perfume ads"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=cybercore"><img src="assets/screenshots/cybercore.webp?v=9df696aa6a" alt="Cybercore"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=annual-report"><img src="assets/screenshots/annual-report.webp?v=1afa17f053" alt="Annual report covers"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=victorian"><img src="assets/screenshots/victorian.webp?v=339e358773" alt="Victorian"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
