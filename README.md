@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=blurred-photos"><img src="assets/screenshots/blurred-photos.webp?v=4ef2015a67" alt="Blurred photos"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=iridescent-shapes"><img src="assets/screenshots/iridescent-shapes.webp?v=24578e7d76" alt="Iridescent shapes"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=stippled-gradients"><img src="assets/screenshots/stippled-gradients.webp?v=20c81563d1" alt="Stippled gradients"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=zoomable-canvas"><img src="assets/screenshots/zoomable-canvas.webp?v=7df0c82e12" alt="Zoomable canvas"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=scrapbook"><img src="assets/screenshots/scrapbook.webp?v=0f55ea942c" alt="Scrapbook"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=luxury-typography"><img src="assets/screenshots/luxury-typography.webp?v=df74890fa8" alt="Luxury typography"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=felt-texture"><img src="assets/screenshots/felt-texture.webp?v=e6ea24da44" alt="Felt texture"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=sato-gradients"><img src="assets/screenshots/sato-gradients.webp?v=0dcf9b7454" alt="Sato-inspired gradients"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=annual-report"><img src="assets/screenshots/annual-report.webp?v=1afa17f053" alt="Annual report covers"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=victorian"><img src="assets/screenshots/victorian.webp?v=339e358773" alt="Victorian"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=dithered-images"><img src="assets/screenshots/dithered-images.webp?v=36ee9216fe" alt="Dithered images"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=mission-control"><img src="assets/screenshots/mission-control.webp?v=b0e9723db8" alt="Mission control rooms"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
