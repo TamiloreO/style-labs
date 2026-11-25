@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=stippled-gradients"><img src="assets/screenshots/stippled-gradients.webp?v=20c81563d1" alt="Stippled gradients"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=zoomable-canvas"><img src="assets/screenshots/zoomable-canvas.webp?v=7df0c82e12" alt="Zoomable canvas"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=kinetic-typography"><img src="assets/screenshots/kinetic-typography.webp?v=5d1b05df13" alt="Kinetic type"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=grass-texture"><img src="assets/screenshots/grass-texture.webp?v=1a2d2461a0" alt="Grass texture"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=felt-texture"><img src="assets/screenshots/felt-texture.webp?v=e6ea24da44" alt="Felt texture"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=sato-gradients"><img src="assets/screenshots/sato-gradients.webp?v=0dcf9b7454" alt="Sato-inspired gradients"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=lens-distortion"><img src="assets/screenshots/lens-distortion.webp?v=c0cf08488d" alt="Lens distortion"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=contour-lines"><img src="assets/screenshots/contour-lines.webp?v=c4e30e283b" alt="Contour lines"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=dithered-images"><img src="assets/screenshots/dithered-images.webp?v=36ee9216fe" alt="Dithered images"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=mission-control"><img src="assets/screenshots/mission-control.webp?v=b0e9723db8" alt="Mission control rooms"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=swiss"><img src="assets/screenshots/swiss.webp?v=9736f1be1e" alt="Swiss design"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=iridescent-shapes"><img src="assets/screenshots/iridescent-shapes.webp?v=24578e7d76" alt="Iridescent shapes"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
