@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=kinetic-typography"><img src="assets/screenshots/kinetic-typography.webp?v=5d1b05df13" alt="Kinetic type"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=grass-texture"><img src="assets/screenshots/grass-texture.webp?v=1a2d2461a0" alt="Grass texture"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=conversational-navigation"><img src="assets/screenshots/conversational-navigation.webp?v=705add7229" alt="Conversational"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=stippled-gradients"><img src="assets/screenshots/stippled-gradients.webp?v=20c81563d1" alt="Stippled gradients"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=lens-distortion"><img src="assets/screenshots/lens-distortion.webp?v=c0cf08488d" alt="Lens distortion"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=contour-lines"><img src="assets/screenshots/contour-lines.webp?v=c4e30e283b" alt="Contour lines"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=rams-braun"><img src="assets/screenshots/rams-braun.webp?v=8a85137961" alt="Rams / Braun"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=retro-desktop"><img src="assets/screenshots/retro-desktop.webp?v=c3d1f02445" alt="Retro desktop"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=swiss"><img src="assets/screenshots/swiss.webp?v=9736f1be1e" alt="Swiss design"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=iridescent-shapes"><img src="assets/screenshots/iridescent-shapes.webp?v=24578e7d76" alt="Iridescent shapes"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=administrative-form"><img src="assets/screenshots/administrative-form.webp?v=a735aa064b" alt="Administrative form"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=editorial"><img src="assets/screenshots/editorial.webp?v=f07cae5b58" alt="Editorial design"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
