@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=conversational-navigation"><img src="assets/screenshots/conversational-navigation.webp?v=705add7229" alt="Conversational"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=stippled-gradients"><img src="assets/screenshots/stippled-gradients.webp?v=20c81563d1" alt="Stippled gradients"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=french-open-posters"><img src="assets/screenshots/french-open-posters.webp?v=bda3a9b5fd" alt="French Open posters"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=cybercore"><img src="assets/screenshots/cybercore.webp?v=9df696aa6a" alt="Cybercore"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=rams-braun"><img src="assets/screenshots/rams-braun.webp?v=8a85137961" alt="Rams / Braun"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=retro-desktop"><img src="assets/screenshots/retro-desktop.webp?v=c3d1f02445" alt="Retro desktop"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=impressionist-paintings"><img src="assets/screenshots/impressionist-paintings.webp?v=2ecbd47c6e" alt="Impressionist paintings"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=fortune-50s"><img src="assets/screenshots/fortune-50s.webp?v=f963bf7e6b" alt="50s Fortune covers"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=administrative-form"><img src="assets/screenshots/administrative-form.webp?v=a735aa064b" alt="Administrative form"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=editorial"><img src="assets/screenshots/editorial.webp?v=f07cae5b58" alt="Editorial design"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=vhs-covers"><img src="assets/screenshots/vhs-covers.webp?v=94e557a671" alt="VHS tape covers"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=kinetic-typography"><img src="assets/screenshots/kinetic-typography.webp?v=5d1b05df13" alt="Kinetic type"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
