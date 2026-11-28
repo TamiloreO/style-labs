@@ -13,16 +13,16 @@ Six of the styles in the lab. Each image opens that style, and a daily GitHub Ac
 <!-- samples:start -->
 <table>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=french-open-posters"><img src="assets/screenshots/french-open-posters.webp?v=bda3a9b5fd" alt="French Open posters"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=cybercore"><img src="assets/screenshots/cybercore.webp?v=9df696aa6a" alt="Cybercore"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=neo-brutalism"><img src="assets/screenshots/neo-brutalism.webp?v=bb5ab9a312" alt="Neo-brutalism"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=sato-gradients"><img src="assets/screenshots/sato-gradients.webp?v=0dcf9b7454" alt="Sato-inspired gradients"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=impressionist-paintings"><img src="assets/screenshots/impressionist-paintings.webp?v=2ecbd47c6e" alt="Impressionist paintings"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=fortune-50s"><img src="assets/screenshots/fortune-50s.webp?v=f963bf7e6b" alt="50s Fortune covers"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=nasa-graphics"><img src="assets/screenshots/nasa-graphics.webp?v=5c7f8fb5a0" alt="NASA graphics manual"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=corporate-futurism"><img src="assets/screenshots/corporate-futurism.webp?v=7f1ee136e5" alt="Moody corporate futurism"></a></td>
   </tr>
   <tr>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=vhs-covers"><img src="assets/screenshots/vhs-covers.webp?v=94e557a671" alt="VHS tape covers"></a></td>
-    <td><a href="https://tamiloreo.github.io/style-labs/?s=kinetic-typography"><img src="assets/screenshots/kinetic-typography.webp?v=5d1b05df13" alt="Kinetic type"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=grainy-gradients"><img src="assets/screenshots/grainy-gradients.webp?v=bb0d306dd9" alt="Grainy gradients"></a></td>
+    <td><a href="https://tamiloreo.github.io/style-labs/?s=concrete-poetry"><img src="assets/screenshots/concrete-poetry.webp?v=d7a66856f2" alt="Concrete poetry"></a></td>
   </tr>
 </table>
 <!-- samples:end -->
